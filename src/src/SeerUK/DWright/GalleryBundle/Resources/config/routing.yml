@@ -1,0 +1,7 @@
+seer_ukd_wright_gallery_homepage:
+    pattern:  /gallery
+    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:index }
+
+seer_ukd_wright_gallery_gallery:
+    pattern:  /gallery/{galleryId}-{slug}
+    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:gallery }

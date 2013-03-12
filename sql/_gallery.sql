@@ -50,6 +50,7 @@ CREATE TABLE IF NOT EXISTS GalleryImage (
 	intGalleryImageId int UNSIGNED NOT NULL AUTO_INCREMENT,
 	strGalleryImageName varchar(50) NOT NULL,
 	strGalleryImageDesc varchar(255) NOT NULL,
+	dtmPublished datetime NOT NULL,
 	stmTimestamp timestamp,
 
 	PRIMARY KEY (intGalleryImageId)

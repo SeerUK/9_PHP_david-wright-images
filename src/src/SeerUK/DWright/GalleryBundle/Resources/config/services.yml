@@ -1,0 +1,7 @@
+parameters:
+#    seer_ukd_wright_gallery.example.class: SeerUK\DWright\GalleryBundle\Example
+
+services:
+#    seer_ukd_wright_gallery.example:
+#        class: %seer_ukd_wright_gallery.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

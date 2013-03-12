@@ -1,0 +1,4 @@
+seer_ukd_wright_gallery:
+    resource: "@SeerUKDWrightGalleryBundle/Resources/config/routing.yml"
+    prefix:   /
+
