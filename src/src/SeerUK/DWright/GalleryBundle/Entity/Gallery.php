@@ -40,6 +40,12 @@ class Gallery
 
 
     /**
+     * @ORM\Column(name="intGalleryCategoryId", type="integer")
+     */
+    private $categoryId;
+
+
+    /**
      * Get id
      *
      * @return integer
@@ -69,6 +75,17 @@ class Gallery
     public function getDesc()
     {
         return $this->desc;
+    }
+
+
+    /**
+     * Get categoryId
+     *
+     * @return string
+     */
+    public function getCategoryId()
+    {
+        return $this->categoryId;
     }
 
 
