@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Gallery
  *
  * @ORM\Table(name="GalleryCategory")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="SeerUK\DWright\GalleryBundle\Entity\GalleryCategoryRepository")
  */
 class GalleryCategory
 {
@@ -63,5 +63,31 @@ class GalleryCategory
     public function getDesc()
     {
         return $this->desc;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return GalleryCategory
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Set desc
+     *
+     * @param string $desc
+     * @return GalleryCategory
+     */
+    public function setDesc($desc)
+    {
+        $this->desc = $desc;
+
+        return $this;
     }
 }

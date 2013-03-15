@@ -1,0 +1,18 @@
+<h1>{{ categoryName }} ({{ categoryId }})</h1>
+<p>{{ categoryDesc }}</p>
+
+{% if galleries %}
+
+	<p>There are the following galleries in this category:</p>
+
+	<ul>
+		{% for gallery in galleries %}
+			<li>
+				<strong>{{ gallery.name }}</strong><br />
+				<span>{{ gallery.desc }}</span><br />
+				<span>{{ gallery.publishedOn|date('Y-m-d H:i:s') }}</span>
+			</li>
+		{% endfor %}
+	</ul>
+
+{% endif %}

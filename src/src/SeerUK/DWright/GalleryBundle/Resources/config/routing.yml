@@ -9,3 +9,11 @@ seer_ukd_wright_gallery_gallery_short:
 seer_ukd_wright_gallery_gallery:
     pattern:  /gallery/{galleryId}-{slug}
     defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:gallery }
+
+seer_ukd_wright_gallery_category_short:
+    pattern:  /gallery/category/{categoryId}
+    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:galleryCategory }
+
+seer_ukd_wright_gallery_category:
+    pattern:  /gallery/category/{categoryId}-{slug}
+    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:galleryCategory }

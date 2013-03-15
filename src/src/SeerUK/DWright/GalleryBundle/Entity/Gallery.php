@@ -9,7 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Gallery
  *
  * @ORM\Table(name="Gallery")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="SeerUK\DWright\GalleryBundle\Entity\GalleryRepository")
  */
 class Gallery
 {
@@ -97,5 +97,57 @@ class Gallery
     public function getPublishedOn()
     {
         return $this->publishedOn;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Gallery
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Set desc
+     *
+     * @param string $desc
+     * @return Gallery
+     */
+    public function setDesc($desc)
+    {
+        $this->desc = $desc;
+
+        return $this;
+    }
+
+    /**
+     * Set publishedOn
+     *
+     * @param \DateTime $publishedOn
+     * @return Gallery
+     */
+    public function setPublishedOn($publishedOn)
+    {
+        $this->publishedOn = $publishedOn;
+
+        return $this;
+    }
+
+    /**
+     * Set categoryId
+     *
+     * @param integer $categoryId
+     * @return Gallery
+     */
+    public function setCategoryId($categoryId)
+    {
+        $this->categoryId = $categoryId;
+
+        return $this;
     }
 }

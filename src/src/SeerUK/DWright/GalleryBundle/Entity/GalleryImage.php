@@ -81,4 +81,43 @@ class GalleryImage
     {
         return $this->publishedOn;
     }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return GalleryImage
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Set desc
+     *
+     * @param string $desc
+     * @return GalleryImage
+     */
+    public function setDesc($desc)
+    {
+        $this->desc = $desc;
+    
+        return $this;
+    }
+
+    /**
+     * Set publishedOn
+     *
+     * @param \DateTime $publishedOn
+     * @return GalleryImage
+     */
+    public function setPublishedOn($publishedOn)
+    {
+        $this->publishedOn = $publishedOn;
+    
+        return $this;
+    }
 }
