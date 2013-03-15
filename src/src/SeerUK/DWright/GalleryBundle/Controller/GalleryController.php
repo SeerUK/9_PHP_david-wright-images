@@ -20,7 +20,7 @@ class GalleryController extends Controller
     {
         try
         {
-            $gallery = $this->getDoctrine()->getEntityManager()
+            $gallery = $this->getDoctrine()->getManager()
                 ->getRepository('SeerUKDWrightGalleryBundle:Gallery')
                 ->getById($galleryId);
 
@@ -55,7 +55,7 @@ class GalleryController extends Controller
     {
         try
         {
-            $category = $this->getDoctrine()->getEntityManager()
+            $category = $this->getDoctrine()->getManager()
                 ->getRepository('SeerUKDWrightGalleryBundle:GalleryCategory')
                 ->getById($categoryId);
 
@@ -63,7 +63,7 @@ class GalleryController extends Controller
             $categoryName = $category->getName();
             $categoryDesc = $category->getDesc();
 
-            $galleries = $this->getDoctrine()->getEntityManager()
+            $galleries = $this->getDoctrine()->getManager()
                 ->getRepository('SeerUKDWrightGalleryBundle:Gallery')
                 ->getByCategoryId($categoryId);
 
