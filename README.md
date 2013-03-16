@@ -7,14 +7,14 @@ Bundles
 ---
 
 - CoreBundle
-  [ ] Global code and assets required by most (if not all) other bundles is in here.
+  - [ ] Global code and assets required by most (if not all) other bundles is in here.
 - GalleryBundle
-  [ ] Gallery categories
-  [ ] Gallery images
-  [ ] Galleries
-  [ ] Galleries overview
+  - [ ] Gallery categories
+  - [ ] Gallery images
+  - [ ] Galleries
+  - [ ] Galleries overview
 - SecurityBundle
-  [ ] User authentication (entity and repository
-  [ ] Encryption service
+  - [ ] User authentication (entity and repository
+  - [ ] Encryption service
 
 This shall be my first 'real' project using Symfony 2, as I've never stuck with it before. I hope it turns out well...
