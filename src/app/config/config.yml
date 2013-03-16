@@ -28,9 +28,9 @@ twig:
 # Assetic Configuration
 assetic:
     debug:          %kernel.debug%
-    use_controller: false
-    bundles:        ["SeerUKDWrightGalleryBundle"]
-    #java: /usr/bin/java
+    use_controller: true
+    bundles:        ["SeerUKDWrightCoreBundle", "SeerUKDWrightGalleryBundle"]
+    java: /usr/bin/java
     filters:
         cssrewrite: ~
         #closure:

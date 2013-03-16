@@ -1,35 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+{% extends 'SeerUKDWrightCoreBundle:Core:master.html.twig' %}
 
-	{% stylesheets 'bundles/seerukdwrightgallery/css/*' filter='cssrewrite,yui_css' %}
-    	<link rel="stylesheet" href="{{ asset_url }}" />
-	{% endstylesheets %}
-</head>
-<body>
 
-	<h1>{{ categoryName }} ({{ categoryId }})</h1>
-	<p>{{ categoryDesc }}</p>
+{% block stylesheets %}
+    {% include 'SeerUKDWrightGalleryBundle:Generic:stylesheets.html.twig' %}
+{% endblock %}
 
-	{% if galleries %}
+{% block title %}[Category Name]{% endblock %}
 
-		<p>There are the following galleries in this category:</p>
+{% block body %}
 
-		<ul>
-			{% for gallery in galleries %}
+    <h1>{{ categoryName }} ({{ categoryId }})</h1>
+    <p>{{ categoryDesc }}</p>
 
-				<li>
-					<strong>{{ gallery.name }}</strong><br />
-					<span>{{ gallery.desc }}</span><br />
-					<span>{{ gallery.publishedOn|date('Y-m-d H:i:s') }}</span>
-				</li>
+    {% if galleries %}
 
-			{% endfor %}
-		</ul>
+        <p>There are the following galleries in this category:</p>
 
-	{% endif %}
+        <ul>
+            {% for gallery in galleries %}
 
-</body>
-</html>
+                <li>
+                    <strong>{{ gallery.name }}</strong><br />
+                    <span>{{ gallery.desc }}</span><br />
+                    <span>{{ gallery.publishedOn|date('Y-m-d H:i:s') }}</span>
+                </li>
+
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+{% endblock %}

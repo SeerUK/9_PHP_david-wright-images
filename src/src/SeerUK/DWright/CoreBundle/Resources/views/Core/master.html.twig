@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{% block title %}{% endblock %}{% if block('title') %} | {% endif %}David Wright Images</title>
+
+    {% stylesheets
+        'bundles/seerukdwrightcore/css/bootstrap.css'
+        filter='cssrewrite,yui_css' combine=true output='css/corebundle.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+	<div class="container">
+		{% block body %}{% endblock %}
+	</div>
+</body>
+</html>
