@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Gallery
  *
- * @ORM\Table(name="Gallery")
+ * @ORM\Table(name="GalleryImage")
  * @ORM\Entity
  */
 class GalleryImage
@@ -34,9 +34,15 @@ class GalleryImage
 
 
     /**
+     * @ORM\Column(name="intGalleryId", type="integer")
+     */
+    private $galleryId;
+
+
+    /**
      * @ORM\Column(name="dtmPublished", type="datetime")
      */
-    private $publishedOn;
+    private $posted;
 
 
     /**
@@ -77,9 +83,9 @@ class GalleryImage
      *
      * @return string
      */
-    public function getPublishedOn()
+    public function getPosted()
     {
-        return $this->publishedOn;
+        return $this->posted;
     }
 
     /**
@@ -91,7 +97,7 @@ class GalleryImage
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
@@ -104,7 +110,7 @@ class GalleryImage
     public function setDesc($desc)
     {
         $this->desc = $desc;
-    
+
         return $this;
     }
 
@@ -114,10 +120,33 @@ class GalleryImage
      * @param \DateTime $publishedOn
      * @return GalleryImage
      */
-    public function setPublishedOn($publishedOn)
+    public function setPosted($posted)
     {
-        $this->publishedOn = $publishedOn;
+        $this->posted = $posted;
+
+        return $this;
+    }
+
+    /**
+     * Set galleryId
+     *
+     * @param integer $galleryId
+     * @return GalleryImage
+     */
+    public function setGalleryId($galleryId)
+    {
+        $this->galleryId = $galleryId;
     
         return $this;
+    }
+
+    /**
+     * Get galleryId
+     *
+     * @return integer 
+     */
+    public function getGalleryId()
+    {
+        return $this->galleryId;
     }
 }

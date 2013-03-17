@@ -1,6 +1,3 @@
-<!-- <strong>Gallery {{ galleryId }}'s</strong> name is: {{ galleryName }}! -->
-
-
-<h1>{{ galleryName }} ({{ galleryId }})</h1>
-<p>{{ galleryDesc }}</p>
-<p>{{ galleryPublishedOn }} </p>
+<h1>{{ gallery.name }} ({{ gallery.id }})</h1>
+<p>{{ gallery.desc }}</p>
+<p>{{ gallery.posted|date('Y-m-d H:i:s') }} </p>

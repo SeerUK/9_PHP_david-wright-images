@@ -20,20 +20,12 @@ class GalleryController extends Controller
     {
         try
         {
-            $gallery = $this->getDoctrine()->getManager()
-                ->getRepository('SeerUKDWrightGalleryBundle:Gallery')
-                ->getById($galleryId);
+            $em = $this->getDoctrine()->getManager();
 
-            $galleryId          = $gallery->getId();
-            $galleryName        = $gallery->getName();
-            $galleryDesc        = $gallery->getDesc();
-            $galleryPublishedOn = $gallery->getPublishedOn();
+            $gallery = $em->getRepository('SeerUKDWrightGalleryBundle:Gallery')->findById($galleryId);
 
             return $this->render('SeerUKDWrightGalleryBundle:Gallery:gallery.html.twig', array(
-                'galleryId'          => $galleryId,
-                'galleryName'        => $galleryName,
-                'galleryDesc'        => $galleryDesc,
-                'galleryPublishedOn' => $galleryPublishedOn->format('Y-m-d H:i:s'),
+                'gallery'          => $gallery
             ));
         }
         catch (\Doctrine\ORM\NoResultException $e)
@@ -51,27 +43,48 @@ class GalleryController extends Controller
     }
 
 
+    /**
+     * @todo Add pagination to this action... grabbing the first image of each
+     *       gallery like this isn't the best...
+     * @todo Could do with some more validation of the file type returned by
+     *       the result from glob()...
+     * @todo The bundle resource path should be stored somewhere easier to get
+     *       and more reliable.
+     * @todo The gallery image retrieval should be placed somewhere other than
+     *       in the controller.
+     */
     public function galleryCategoryAction($categoryId)
     {
         try
         {
-            $category = $this->getDoctrine()->getManager()
-                ->getRepository('SeerUKDWrightGalleryBundle:GalleryCategory')
-                ->getById($categoryId);
+            $em = $this->getDoctrine()->getManager();
 
-            $categoryId   = $category->getId();
-            $categoryName = $category->getName();
-            $categoryDesc = $category->getDesc();
+            $category  = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryCategory')->findById($categoryId);
+            $galleries = $em->getRepository('SeerUKDWrightGalleryBundle:Gallery')->findByCategoryId($categoryId);
 
-            $galleries = $this->getDoctrine()->getManager()
-                ->getRepository('SeerUKDWrightGalleryBundle:Gallery')
-                ->getByCategoryId($categoryId);
+            $galleryImages = [];
+            foreach ($galleries as $i => $gallery)
+            {
+                $galleryImage = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryImage')
+                    ->findOneByGalleryId($gallery->getId());
+
+                $dir = __DIR__ . '/../Resources/public/upload/gallery/' . $gallery->getId() . '/';
+
+                if ($galleryImage && $results = glob($dir . $galleryImage->getId() . '.*'))
+                {
+                    $galleryImages[$gallery->getId()] = 'bundles/seerukdwrightgallery/upload/gallery/' . $gallery->getId() . '/' . basename($results[0]);
+                }
+                else
+                {
+                    // Don't show galleries that don't have any images, there's not much point...
+                    unset($galleries[$i]);
+                }
+            }
 
             return $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
-                'categoryId'   => $categoryId,
-                'categoryName' => $categoryName,
-                'categoryDesc' => $categoryDesc,
-                'galleries'    => $galleries
+                'category'      => $category,
+                'galleries'     => $galleries,
+                'galleryImages' => $galleryImages
             ));
         }
         catch (\Doctrine\ORM\NoResultException $e)

@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>{% block title %}{% endblock %}{% if block('title') %} | {% endif %}David Wright Images</title>
 
+    {# Start CSS Stylesheets #}
     {% stylesheets
         'bundles/seerukdwrightcore/css/bootstrap.css'
         filter='cssrewrite,yui_css' combine=true output='css/corebundle.css'
@@ -12,10 +13,20 @@
     {% endstylesheets %}
 
     {% block stylesheets %}{% endblock %}
+    {# End CSS Stylesheets #}
 </head>
 <body>
+    {% include 'SeerUKDWrightCoreBundle:Core:header.html.twig' %}
+    {% include 'SeerUKDWrightCoreBundle:Core:menu.html.twig' %}
+
 	<div class="container">
 		{% block body %}{% endblock %}
 	</div>
+
+    {% include 'SeerUKDWrightCoreBundle:Core:footer.html.twig' %}
+
+    {# Start JS Scripts #}
+
+    {# End JS Scripts #}
 </body>
 </html>

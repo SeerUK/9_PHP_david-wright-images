@@ -7,7 +7,7 @@ use Doctrine\ORM\NoResultException;
 
 class GalleryRepository extends EntityRepository
 {
-	public function getById($id)
+	public function findById($id)
 	{
 		$query = $this->createQueryBuilder('g')
 			->where('g.id = :id')
@@ -21,7 +21,7 @@ class GalleryRepository extends EntityRepository
 		return $gallery;
 	}
 
-	public function getByCategoryId($categoryId)
+	public function findByCategoryId($categoryId)
 	{
 		$query = $this->createQueryBuilder('g')
 			->where('g.categoryId = :categoryId')

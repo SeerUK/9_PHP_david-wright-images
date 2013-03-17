@@ -47,4 +47,4 @@ CREATE TABLE IF NOT EXISTS GalleryImage (
 	FOREIGN KEY (intGalleryId) REFERENCES Gallery (intGalleryId) ON UPDATE CASCADE ON DELETE CASCADE
 )
 ENGINE=InnoDB
-COMMENT="Portfolio gallery category map";
+COMMENT="Portfolio gallery images";

@@ -5,12 +5,12 @@
     {% include 'SeerUKDWrightGalleryBundle:Generic:stylesheets.html.twig' %}
 {% endblock %}
 
-{% block title %}[Category Name]{% endblock %}
+{% block title %}{{ category.name }}{% endblock %}
 
 {% block body %}
 
-    <h1>{{ categoryName }} ({{ categoryId }})</h1>
-    <p>{{ categoryDesc }}</p>
+    <h1>{{ category.name }} ({{ category.id }})</h1>
+    <p>{{ category.desc }}</p>
 
     {% if galleries %}
 
@@ -22,7 +22,8 @@
                 <li>
                     <strong>{{ gallery.name }}</strong><br />
                     <span>{{ gallery.desc }}</span><br />
-                    <span>{{ gallery.publishedOn|date('Y-m-d H:i:s') }}</span>
+                    <span>{{ gallery.posted|date('Y-m-d H:i:s') }}</span><br />
+                    <img src="{{ asset(galleryImages[gallery.id]) }}" alt="" title="" />
                 </li>
 
             {% endfor %}

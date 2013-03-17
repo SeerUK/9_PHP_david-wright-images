@@ -36,7 +36,7 @@ class Gallery
     /**
      * @ORM\Column(name="dtmPublished", type="datetime")
      */
-    private $publishedOn;
+    private $posted;
 
 
     /**
@@ -94,9 +94,9 @@ class Gallery
      *
      * @return string
      */
-    public function getPublishedOn()
+    public function getPosted()
     {
-        return $this->publishedOn;
+        return $this->posted;
     }
 
     /**
@@ -148,6 +148,19 @@ class Gallery
     {
         $this->categoryId = $categoryId;
 
+        return $this;
+    }
+
+    /**
+     * Set posted
+     *
+     * @param \DateTime $posted
+     * @return Gallery
+     */
+    public function setPosted($posted)
+    {
+        $this->posted = $posted;
+    
         return $this;
     }
 }
