@@ -40,6 +40,7 @@ CREATE TABLE IF NOT EXISTS GalleryImage (
 	strGalleryImageName varchar(50) NOT NULL,
 	strGalleryImageDesc varchar(255) NOT NULL,
 	intGalleryId int UNSIGNED NOT NULL,
+	strPath varchar(255) NOT NULL,
 	dtmPublished datetime NOT NULL,
 	stmTimestamp timestamp,
 

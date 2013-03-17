@@ -23,7 +23,10 @@
                     <strong>{{ gallery.name }}</strong><br />
                     <span>{{ gallery.desc }}</span><br />
                     <span>{{ gallery.posted|date('Y-m-d H:i:s') }}</span><br />
-                    <img src="{{ asset(galleryImages[gallery.id]) }}" alt="" title="" />
+                    {% if galleryImages[gallery.id] %}
+                        test
+                        <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" />
+                    {% endif %}
                 </li>
 
             {% endfor %}

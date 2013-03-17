@@ -40,6 +40,12 @@ class GalleryImage
 
 
     /**
+     * @ORM\Column(name="strPath", type="string")
+     */
+    private $path;
+
+
+    /**
      * @ORM\Column(name="dtmPublished", type="datetime")
      */
     private $posted;
@@ -87,6 +93,29 @@ class GalleryImage
     {
         return $this->posted;
     }
+
+
+    /**
+     * Get galleryId
+     *
+     * @return integer
+     */
+    public function getGalleryId()
+    {
+        return $this->galleryId;
+    }
+
+
+    /**
+     * Get assetLoc
+     *
+     * @return string
+     */
+    public function getAssetLoc()
+    {
+        return $this->assetLoc;
+    }
+
 
     /**
      * Set name
@@ -136,17 +165,35 @@ class GalleryImage
     public function setGalleryId($galleryId)
     {
         $this->galleryId = $galleryId;
-    
+
         return $this;
     }
 
-    /**
-     * Get galleryId
-     *
-     * @return integer 
-     */
-    public function getGalleryId()
+
+    public function getAbsolutePath()
     {
-        return $this->galleryId;
+        return null === $this->path
+            ? null
+            : $this->getUploadRootDir() . '/' . $this->path;
+    }
+
+
+    public function getWebPath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadDir() . '/' . $this->path;
+    }
+
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+
+    protected function getUploadDir()
+    {
+        return 'bundles/seerukdwrightgallery/upload/gallery/' . $this->getGalleryId();
     }
 }

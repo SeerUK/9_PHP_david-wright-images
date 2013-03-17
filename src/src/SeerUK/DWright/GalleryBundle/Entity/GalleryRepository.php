@@ -5,6 +5,8 @@ namespace SeerUK\DWright\GalleryBundle\Entity;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
 
+use SeerUK\DWright\GalleryBundle\Entity\GalleryImage;
+
 class GalleryRepository extends EntityRepository
 {
 	public function findById($id)
@@ -20,6 +22,7 @@ class GalleryRepository extends EntityRepository
 
 		return $gallery;
 	}
+
 
 	public function findByCategoryId($categoryId)
 	{

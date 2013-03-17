@@ -62,24 +62,19 @@ class GalleryController extends Controller
             $category  = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryCategory')->findById($categoryId);
             $galleries = $em->getRepository('SeerUKDWrightGalleryBundle:Gallery')->findByCategoryId($categoryId);
 
-            $galleryImages = [];
+            $galleryImages = [ ];
             foreach ($galleries as $i => $gallery)
             {
-                $galleryImage = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryImage')
-                    ->findOneByGalleryId($gallery->getId());
-
-                $dir = __DIR__ . '/../Resources/public/upload/gallery/' . $gallery->getId() . '/';
-
-                if ($galleryImage && $results = glob($dir . $galleryImage->getId() . '.*'))
+                if ($galleryImage = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryImage')
+                    ->findOneByGalleryId($gallery->getId()))
                 {
-                    $galleryImages[$gallery->getId()] = 'bundles/seerukdwrightgallery/upload/gallery/' . $gallery->getId() . '/' . basename($results[0]);
+                    $galleryImages[$gallery->getId()] = $galleryImage;
                 }
-                else
-                {
-                    // Don't show galleries that don't have any images, there's not much point...
-                    unset($galleries[$i]);
-                }
+
+                var_dump($galleryImage->getWebPath());
             }
+
+            var_dump($galleryImages);
 
             return $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
                 'category'      => $category,
