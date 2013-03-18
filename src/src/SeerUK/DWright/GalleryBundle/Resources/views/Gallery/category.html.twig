@@ -2,7 +2,9 @@
 
 
 {% block stylesheets %}
+
     {% include 'SeerUKDWrightGalleryBundle:Generic:stylesheets.html.twig' %}
+
 {% endblock %}
 
 {% block title %}{{ category.name }}{% endblock %}
@@ -13,10 +15,13 @@
     <p>{{ category.desc }}</p>
 
     {% if galleries %}
+
         <p>There are the following galleries in this category:</p>
 
         <ul>
+
             {% for gallery in galleries %}
+
                 <li>
                     <strong>{{ gallery.name }}</strong><br />
                     <span>{{ gallery.desc }}</span><br />
@@ -31,9 +36,13 @@
                         <span>No cover photo</span>
 
                     {% endif %}
+
                 </li>
+
             {% endfor %}
+
         </ul>
+
     {% endif %}
 
 {% endblock %}
