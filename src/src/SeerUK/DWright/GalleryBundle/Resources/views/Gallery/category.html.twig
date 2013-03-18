@@ -13,12 +13,10 @@
     <p>{{ category.desc }}</p>
 
     {% if galleries %}
-
         <p>There are the following galleries in this category:</p>
 
         <ul>
             {% for gallery in galleries %}
-
                 <li>
                     <strong>{{ gallery.name }}</strong><br />
                     <span>{{ gallery.desc }}</span><br />
@@ -28,13 +26,14 @@
 
                         <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" />
 
+                    {% else %}
+
+                        <span>No cover photo</span>
+
                     {% endif %}
-
                 </li>
-
             {% endfor %}
         </ul>
-
     {% endif %}
 
 {% endblock %}
