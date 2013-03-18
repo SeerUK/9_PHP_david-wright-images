@@ -65,16 +65,9 @@ class GalleryController extends Controller
             $galleryImages = [ ];
             foreach ($galleries as $i => $gallery)
             {
-                if ($galleryImage = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryImage')
-                    ->findOneByGalleryId($gallery->getId()))
-                {
-                    $galleryImages[$gallery->getId()] = $galleryImage;
-                }
-
-                var_dump($galleryImage->getWebPath());
+                $galleryImages[$gallery->getId()] = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryImage')
+                    ->findOneByGalleryId($gallery->getId());
             }
-
-            var_dump($galleryImages);
 
             return $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
                 'category'      => $category,
