@@ -44,12 +44,7 @@ class GalleryController extends Controller
 
 
     /**
-     * @todo Add pagination to this action... grabbing the first image of each
-     *       gallery like this isn't the best...
-     * @todo Could do with some more validation of the file type returned by
-     *       the result from glob()...
-     * @todo The bundle resource path should be stored somewhere easier to get
-     *       and more reliable.
+     * @todo Add pagination to this action...
      * @todo The gallery image retrieval should be placed somewhere other than
      *       in the controller.
      */
