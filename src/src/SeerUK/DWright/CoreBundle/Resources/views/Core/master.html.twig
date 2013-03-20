@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>{% block title %}{% endblock %}{% if block('title') %} | {% endif %}David Wright Images</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{% block title %}{% endblock %}{% if block('title') %} | {% endif %}David Wright Images</title>
 
     {# Start CSS Stylesheets #}
+
+    <link href='{{ asset('http://fonts.googleapis.com/css?family=Raleway:300,400,500,700') }}' rel='stylesheet' type='text/css' />
+    <link href='{{ asset('http://fonts.googleapis.com/css?family=Open+Sans:400,700') }}' rel='stylesheet' type='text/css' />
+
     {% stylesheets
         'bundles/seerukdwrightcore/css/bootstrap.css'
+        'bundles/seerukdwrightcore/css/style.css'
         filter='cssrewrite,yui_css' combine=true output='css/corebundle.css'
     %}
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 
     {% block stylesheets %}{% endblock %}
+
     {# End CSS Stylesheets #}
 </head>
 <body>
     {% include 'SeerUKDWrightCoreBundle:Core:header.html.twig' %}
-    {% include 'SeerUKDWrightCoreBundle:Core:menu.html.twig' %}
 
-	<div class="container">
-		{% block body %}{% endblock %}
-	</div>
+    <div class="container">
+        {% block body %}{% endblock %}
+    </div>
 
-    {% include 'SeerUKDWrightCoreBundle:Core:menu.html.twig' %}
     {% include 'SeerUKDWrightCoreBundle:Core:footer.html.twig' %}
 
     {# Start JS Scripts #}

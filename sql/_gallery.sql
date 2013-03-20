@@ -11,7 +11,7 @@ USE dwright;
 CREATE TABLE IF NOT EXISTS GalleryCategory (
 	intGalleryCategoryId int UNSIGNED NOT NULL AUTO_INCREMENT,
 	strGalleryCategoryName varchar(50) NOT NULL,
-	strGalleryCategoryDesc varchar(255) NOT NULL,
+	strGalleryCategoryDesc varchar(5000) NOT NULL,
 	stmTimestamp timestamp,
 
 	PRIMARY KEY (intGalleryCategoryId)
@@ -23,7 +23,7 @@ COMMENT="Portfolio gallery categories";
 CREATE TABLE IF NOT EXISTS Gallery (
 	intGalleryId int UNSIGNED NOT NULL AUTO_INCREMENT,
 	strGalleryName varchar(50) NOT NULL,
-	strGalleryDesc varchar(255) NOT NULL,
+	strGalleryDesc varchar(5000) NOT NULL,
 	intGalleryCategoryId int UNSIGNED NOT NULL,
 	dtmPublished datetime NOT NULL,
 	stmTimestamp timestamp,

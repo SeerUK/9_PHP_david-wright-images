@@ -28,7 +28,7 @@ class GalleryCategory
 
 
     /**
-     * @ORM\Column(name="strGalleryCategoryDesc", type="string", length=255)
+     * @ORM\Column(name="strGalleryCategoryDesc", type="string", length=5000)
      */
     protected $desc;
 

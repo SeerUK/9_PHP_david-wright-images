@@ -1,0 +1,118 @@
+/*!
+ * SeerUK - DWright
+ * CoreBundle
+ *
+ * Copyright 2012 Elliot Wright
+ * Created to stylishly craft the base of my dads website...
+ * Very modern and stylish indeed...
+ */
+
+/**
+ * Page Setup
+ */
+body {
+	background-color: #3B3F41;
+	color: #444;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 18px;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+}
+
+
+p {
+	line-height: 30px;
+	max-height: 999999px;
+}
+
+.container {
+	max-width: 1350px;
+	min-width: 400px;
+	width: auto;
+}
+
+
+.muted {
+	color: #aaa;
+}
+
+
+.hero-unit,
+.header-unit {
+	background-color: #2C2F31;
+	color: white;
+}
+
+.header-unit {
+	margin-bottom: 50px;
+	padding: 6px;
+}
+
+	.header-unit .header-title {
+		float: left;
+		font-size: 26px;
+		font-weight: 500;
+	}
+
+
+.primary-nav {
+	float: left;
+	margin: 21px 0 0 40px;
+}
+
+	.primary-nav > ul {
+		list-style: none;
+	}
+
+		.primary-nav > ul > li {
+			display: inline-block;
+			font-size: 13px;
+		}
+
+			.primary-nav > ul > li:after {
+				color: #444;
+				content: "/";
+				font-weight: 200;
+				font-size: 15px;
+				margin-left: 15px;
+				margin-right: 10px;
+			}
+
+				.primary-nav > ul > li:last-child:after {
+					content: "";
+				}
+
+			.primary-nav > ul > li > a {
+				color: #777;
+				-webkit-transition: .07s ease-in;
+				-moz-transition: .07s ease-in;
+				-o-transition: .07s ease-in;
+				transition: .07s ease-in;
+			}
+
+				.primary-nav > ul > li > a:hover {
+					color: white;
+					text-decoration: none;
+				}
+
+
+.content-title {
+	font-size: 52px;
+	font-weight: 300;
+	letter-spacing: -1px;
+	line-height: 62px;
+}
+
+.container > .content {
+	background-color: white;
+	padding: 5% 10%;
+}

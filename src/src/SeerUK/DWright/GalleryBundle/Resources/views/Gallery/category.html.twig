@@ -11,47 +11,107 @@
 
 {% block body %}
 
-    <div class="row-fluid">
-        <div class="span12">
-            <h1>{{ category.name }} ({{ category.id }})</h1>
-            <p>{{ category.desc }}</p>
-
-            {% if galleries %}
-
-                <p>There are the following galleries in this category:</p>
-
-                <ul class="clearfix galleries">
-
-                    {% for gallery in galleries %}
-
-                        <li>
-                            <div>
-                                <div class="desc">
-                                    <strong>{{ gallery.name }}</strong><br />
-                                    <span>{{ gallery.desc }}</span><br />
-                                    <span>{{ gallery.posted|date('Y-m-d H:i:s') }}</span><br />
-                                </div>
-
-                                {% if galleryImages[gallery.id] %}
-
-                                    <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" />
-
-                                {% else %}
-
-                                    <img src="{{ asset('http://placehold.it/305x229') }}" alt="" title="" />
-
-                                {% endif %}
-
-                            </div>
-                        </li>
-
-                    {% endfor %}
-
-                </ul>
-
-            {% endif %}
-
-        </div>
+    <div class="content">
+        <h2 class="content-title">{{ category.name }}</h2>
     </div>
+
+    <a href="#" class="featured-image">
+        <img src="{{ asset('http://placehold.it/1350x400') }}" alt="" title="" />
+    </a>
+
+    <div class="content">
+        <p>{{ category.desc|raw }}</p>
+    </div>
+
+        {% if galleries %}
+
+            <p>There are the following galleries in this category:</p>
+
+            <ul class="clearfix galleries">
+
+                {% for gallery in galleries %}
+
+                    <li>
+                        <div>
+                            <div class="desc">
+                                <h3 class="entry-title">{{ gallery.name }}</h3>
+                                <p class="desc">{{ gallery.desc }}</p>
+                                <p>Published <span class="posted">{{ gallery.posted|date('Y-m-d H:i:s') }}</span></p>
+                            </div>
+
+                            {% if galleryImages[gallery.id] %}
+
+                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
+
+                                <img src="{{ asset('http://placehold.it/400x400') }}" alt="" title="" />
+
+                            {% else %}
+
+                                <img src="{{ asset('http://placehold.it/305x229') }}" alt="" title="" />
+
+                            {% endif %}
+
+                        </div>
+                    </li>
+
+                {% endfor %}
+
+                {% for gallery in galleries %}
+
+                    <li>
+                        <div>
+                            <div class="desc">
+                                <h3 class="entry-title">{{ gallery.name }}</h3>
+                                <p class="desc">{{ gallery.desc }}</p>
+                                <p class="posted">{{ gallery.posted|date('Y-m-d H:i:s') }}</p>
+                            </div>
+
+                            {% if galleryImages[gallery.id] %}
+
+                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
+
+                                <img src="{{ asset('http://placehold.it/400x400') }}" alt="" title="" />
+
+                            {% else %}
+
+                                <img src="{{ asset('http://placehold.it/305x229') }}" alt="" title="" />
+
+                            {% endif %}
+
+                        </div>
+                    </li>
+
+                {% endfor %}
+
+                {% for gallery in galleries %}
+
+                    <li>
+                        <div>
+                            <div class="desc">
+                                <h3 class="entry-title">{{ gallery.name }}</h3>
+                                <p class="desc">{{ gallery.desc }}</p>
+                                <p class="posted">{{ gallery.posted|date('Y-m-d H:i:s') }}</p>
+                            </div>
+
+                            {% if galleryImages[gallery.id] %}
+
+                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
+
+                                <img src="{{ asset('http://placehold.it/400x400') }}" alt="" title="" />
+
+                            {% else %}
+
+                                <img src="{{ asset('http://placehold.it/305x229') }}" alt="" title="" />
+
+                            {% endif %}
+
+                        </div>
+                    </li>
+
+                {% endfor %}
+
+            </ul>
+
+        {% endif %}
 
 {% endblock %}
