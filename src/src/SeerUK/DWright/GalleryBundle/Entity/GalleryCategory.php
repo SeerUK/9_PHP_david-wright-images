@@ -18,19 +18,19 @@ class GalleryCategory
      * @ORM\Column(name="intGalleryCategoryId", type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
 
     /**
      * @ORM\Column(name="strGalleryCategoryName", type="string", length=50)
      */
-    private $name;
+    protected $name;
 
 
     /**
      * @ORM\Column(name="strGalleryCategoryDesc", type="string", length=255)
      */
-    private $desc;
+    protected $desc;
 
 
     /**

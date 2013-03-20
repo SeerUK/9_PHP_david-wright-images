@@ -1,0 +1,65 @@
+.galleries {
+	display: block;
+	list-style: none;
+	margin: 20px 0;
+	width: 100%;
+}
+
+	.galleries > li {
+		border-radius: 3px;
+		box-shadow: 0 0 3px 1px rgba(0,0,0,0.2);
+		display: block;
+		float: left;
+		margin-right: 1%;
+		width: 32.667882919311%;
+	}
+
+	.galleries > li:nth-child(3n) {
+		margin-right: 0;
+	}
+
+		.galleries > li > div {
+			border: 1px solid #555;
+			border-radius: 3px;
+			overflow: hidden;
+			position: relative;
+		}
+
+			.galleries > li > div:after {
+				content: " ";
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				box-shadow: inset 0px 0px 0px 1px rgba(255,255,255,0.3);
+				z-index: 2;
+			}
+
+			.galleries > li > div > img {
+				position: relative;
+				width: 100%;
+				z-index: 1;
+			}
+
+			.galleries > li > div > .desc {
+				background-color: rgba(0,0,0,0.4);
+				border-bottom-left-radius: 3px;
+				border-bottom-right-radius: 3px;
+				left: 0;
+				padding: 8px;
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				z-index: 3;
+			}
+
+				.galleries > li > div > .desc > strong {
+					color: white;
+					font-size: 1em;
+				}
+
+				.galleries > li > div > .desc > span {
+					color: #ccc;
+					font-size: 0.8em;
+				}

@@ -18,31 +18,31 @@ class Gallery
      * @ORM\Column(name="intGalleryId", type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
 
     /**
      * @ORM\Column(name="strGalleryName", type="string", length=50)
      */
-    private $name;
+    protected $name;
 
 
     /**
      * @ORM\Column(name="strGalleryDesc", type="string", length=255)
      */
-    private $desc;
+    protected $desc;
 
 
     /**
      * @ORM\Column(name="dtmPublished", type="datetime")
      */
-    private $posted;
+    protected $posted;
 
 
     /**
      * @ORM\Column(name="intGalleryCategoryId", type="integer")
      */
-    private $categoryId;
+    protected $categoryId;
 
 
     /**
@@ -160,7 +160,7 @@ class Gallery
     public function setPosted($posted)
     {
         $this->posted = $posted;
-    
+
         return $this;
     }
 }

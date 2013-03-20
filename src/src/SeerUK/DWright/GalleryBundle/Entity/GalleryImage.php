@@ -18,37 +18,37 @@ class GalleryImage
      * @ORM\Column(name="intGalleryImageId", type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
 
     /**
      * @ORM\Column(name="strGalleryImageName", type="string", length=50)
      */
-    private $name;
+    protected $name;
 
 
     /**
      * @ORM\Column(name="strGalleryImageDesc", type="string", length=255)
      */
-    private $desc;
+    protected $desc;
 
 
     /**
      * @ORM\Column(name="intGalleryId", type="integer")
      */
-    private $galleryId;
+    protected $galleryId;
 
 
     /**
      * @ORM\Column(name="strPath", type="string")
      */
-    private $path;
+    protected $path;
 
 
     /**
      * @ORM\Column(name="dtmPublished", type="datetime")
      */
-    private $posted;
+    protected $posted;
 
 
     /**
