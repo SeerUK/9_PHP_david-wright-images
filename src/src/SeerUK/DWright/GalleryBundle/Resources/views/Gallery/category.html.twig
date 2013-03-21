@@ -25,18 +25,16 @@
 
         {% if galleries %}
 
-            <p>There are the following galleries in this category:</p>
-
             <ul class="clearfix galleries">
 
                 {% for gallery in galleries %}
 
                     <li>
                         <div>
-                            <div class="desc">
+                            <div class="overlay">
                                 <h3 class="entry-title">{{ gallery.name }}</h3>
-                                <p class="desc">{{ gallery.desc }}</p>
-                                <p>Published <span class="posted">{{ gallery.posted|date('Y-m-d H:i:s') }}</span></p>
+                                <p class="desc">{{ gallery.desc|raw }}</p>
+                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
                             </div>
 
                             {% if galleryImages[gallery.id] %}
@@ -60,10 +58,10 @@
 
                     <li>
                         <div>
-                            <div class="desc">
+                            <div class="overlay">
                                 <h3 class="entry-title">{{ gallery.name }}</h3>
-                                <p class="desc">{{ gallery.desc }}</p>
-                                <p class="posted">{{ gallery.posted|date('Y-m-d H:i:s') }}</p>
+                                <p class="desc">{{ gallery.desc|raw }}</p>
+                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
                             </div>
 
                             {% if galleryImages[gallery.id] %}
@@ -87,10 +85,64 @@
 
                     <li>
                         <div>
-                            <div class="desc">
+                            <div class="overlay">
                                 <h3 class="entry-title">{{ gallery.name }}</h3>
-                                <p class="desc">{{ gallery.desc }}</p>
-                                <p class="posted">{{ gallery.posted|date('Y-m-d H:i:s') }}</p>
+                                <p class="desc">{{ gallery.desc|raw }}</p>
+                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
+                            </div>
+
+                            {% if galleryImages[gallery.id] %}
+
+                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
+
+                                <img src="{{ asset('http://lorempixel.com/400/400/') }}" alt="" title="" />
+
+                            {% else %}
+
+                                <img src="{{ asset('http://lorempixel.com/400/400/') }}" alt="" title="" />
+
+                            {% endif %}
+
+                        </div>
+                    </li>
+
+                {% endfor %}
+
+                {% for gallery in galleries %}
+
+                    <li>
+                        <div>
+                            <div class="overlay">
+                                <h3 class="entry-title">{{ gallery.name }}</h3>
+                                <p class="desc">{{ gallery.desc|raw }}</p>
+                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
+                            </div>
+
+                            {% if galleryImages[gallery.id] %}
+
+                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
+
+                                <img src="{{ asset('http://lorempixel.com/400/400/') }}" alt="" title="" />
+
+                            {% else %}
+
+                                <img src="{{ asset('http://lorempixel.com/400/400/') }}" alt="" title="" />
+
+                            {% endif %}
+
+                        </div>
+                    </li>
+
+                {% endfor %}
+
+                {% for gallery in galleries %}
+
+                    <li>
+                        <div>
+                            <div class="overlay">
+                                <h3 class="entry-title">{{ gallery.name }}</h3>
+                                <p class="desc">{{ gallery.desc|raw }}</p>
+                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
                             </div>
 
                             {% if galleryImages[gallery.id] %}
