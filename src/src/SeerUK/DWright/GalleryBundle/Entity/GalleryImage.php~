@@ -196,27 +196,4 @@ class GalleryImage
     {
         return 'bundles/seerukdwrightgallery/upload/gallery/' . $this->getGalleryId();
     }
-
-    /**
-     * Set path
-     *
-     * @param string $path
-     * @return GalleryImage
-     */
-    public function setPath($path)
-    {
-        $this->path = $path;
-    
-        return $this;
-    }
-
-    /**
-     * Get path
-     *
-     * @return string 
-     */
-    public function getPath()
-    {
-        return $this->path;
-    }
 }
