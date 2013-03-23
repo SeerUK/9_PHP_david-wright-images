@@ -78,6 +78,7 @@ class GalleryCategory
         return $this->desc;
     }
 
+
     /**
      * Set name
      *
@@ -91,6 +92,7 @@ class GalleryCategory
         return $this;
     }
 
+
     /**
      * Set desc
      *
@@ -102,5 +104,41 @@ class GalleryCategory
         $this->desc = $desc;
 
         return $this;
+    }
+
+
+    /**
+     * Add galleries
+     *
+     * @param \SeerUK\DWright\GalleryBundle\Entity\Gallery $galleries
+     * @return GalleryCategory
+     */
+    public function addGallerie(\SeerUK\DWright\GalleryBundle\Entity\Gallery $galleries)
+    {
+        $this->galleries[] = $galleries;
+
+        return $this;
+    }
+
+
+    /**
+     * Remove galleries
+     *
+     * @param \SeerUK\DWright\GalleryBundle\Entity\Gallery $galleries
+     */
+    public function removeGallerie(\SeerUK\DWright\GalleryBundle\Entity\Gallery $galleries)
+    {
+        $this->galleries->removeElement($galleries);
+    }
+
+
+    /**
+     * Get galleries
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGalleries()
+    {
+        return $this->galleries;
     }
 }

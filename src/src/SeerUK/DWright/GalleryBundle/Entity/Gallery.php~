@@ -41,9 +41,24 @@ class Gallery
 
     /**
      * @ORM\ManyToOne(targetEntity="GalleryCategory", inversedBy="galleries")
-     * @ORM\JoinColumn(name="intGalleryCategoryId", referencedColumnName="id")
+     * @ORM\JoinColumn(name="intGalleryCategoryId", referencedColumnName="intGalleryCategoryId")
      */
     protected $galleryCategory;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="GalleryImage", mappedBy="gallery")
+     */
+    protected $galleryImages;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->galleryImages = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
     /**
@@ -89,6 +104,18 @@ class Gallery
         return $this->posted;
     }
 
+
+    /**
+     * Get galleryCategory
+     *
+     * @return \SeerUK\DWright\GalleryBundle\Entity\GalleryCategory
+     */
+    public function getGalleryCategory()
+    {
+        return $this->galleryCategory;
+    }
+
+
     /**
      * Set name
      *
@@ -101,6 +128,7 @@ class Gallery
 
         return $this;
     }
+
 
     /**
      * Set desc
@@ -115,18 +143,7 @@ class Gallery
         return $this;
     }
 
-    /**
-     * Set publishedOn
-     *
-     * @param \DateTime $publishedOn
-     * @return Gallery
-     */
-    public function setPublishedOn($publishedOn)
-    {
-        $this->publishedOn = $publishedOn;
 
-        return $this;
-    }
     /**
      * Set posted
      *
@@ -136,6 +153,20 @@ class Gallery
     public function setPosted($posted)
     {
         $this->posted = $posted;
+
+        return $this;
+    }
+
+
+    /**
+     * Set galleryCategory
+     *
+     * @param \SeerUK\DWright\GalleryBundle\Entity\GalleryCategory $galleryCategory
+     * @return Gallery
+     */
+    public function setGalleryCategory(\SeerUK\DWright\GalleryBundle\Entity\GalleryCategory $galleryCategory = null)
+    {
+        $this->galleryCategory = $galleryCategory;
 
         return $this;
     }

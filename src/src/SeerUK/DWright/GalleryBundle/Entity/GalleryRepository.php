@@ -4,7 +4,6 @@ namespace SeerUK\DWright\GalleryBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
-
 use SeerUK\DWright\GalleryBundle\Entity\GalleryImage;
 
 class GalleryRepository extends EntityRepository
@@ -33,7 +32,7 @@ class GalleryRepository extends EntityRepository
 
 		$galleries = $query->useQueryCache(true)
 			->setQueryCacheLifetime(600)
-			->getResult();
+			->getSingleResult();
 
 		return $galleries;
 	}

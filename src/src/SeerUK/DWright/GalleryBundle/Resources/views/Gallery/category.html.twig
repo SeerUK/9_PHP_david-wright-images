@@ -32,11 +32,11 @@
         <p>{{ category.desc|raw }}</p>
     </div>
 
-        {% if galleries %}
+        {% if category.galleries %}
 
             <ul class="clearfix galleries">
 
-                {% for gallery in galleries %}
+                {% for gallery in category.galleries %}
 
                     <li>
                         <div>
@@ -46,119 +46,9 @@
                                 <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
                             </div>
 
-                            {% if galleryImages[gallery.id] %}
+                            {% if gallery.galleryImages[0] %}
 
-                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% else %}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% endif %}
-
-                        </div>
-                    </li>
-
-                {% endfor %}
-
-                {% for gallery in galleries %}
-
-                    <li>
-                        <div>
-                            <div class="overlay">
-                                <h3 class="entry-title">{{ gallery.name }}</h3>
-                                <p class="desc">{{ gallery.desc|raw }}</p>
-                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
-                            </div>
-
-                            {% if galleryImages[gallery.id] %}
-
-                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% else %}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% endif %}
-
-                        </div>
-                    </li>
-
-                {% endfor %}
-
-                {% for gallery in galleries %}
-
-                    <li>
-                        <div>
-                            <div class="overlay">
-                                <h3 class="entry-title">{{ gallery.name }}</h3>
-                                <p class="desc">{{ gallery.desc|raw }}</p>
-                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
-                            </div>
-
-                            {% if galleryImages[gallery.id] %}
-
-                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% else %}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% endif %}
-
-                        </div>
-                    </li>
-
-                {% endfor %}
-
-                {% for gallery in galleries %}
-
-                    <li>
-                        <div>
-                            <div class="overlay">
-                                <h3 class="entry-title">{{ gallery.name }}</h3>
-                                <p class="desc">{{ gallery.desc|raw }}</p>
-                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
-                            </div>
-
-                            {% if galleryImages[gallery.id] %}
-
-                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% else %}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% endif %}
-
-                        </div>
-                    </li>
-
-                {% endfor %}
-
-                {% for gallery in galleries %}
-
-                    <li>
-                        <div>
-                            <div class="overlay">
-                                <h3 class="entry-title">{{ gallery.name }}</h3>
-                                <p class="desc">{{ gallery.desc|raw }}</p>
-                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
-                            </div>
-
-                            {% if galleryImages[gallery.id] %}
-
-                                {# <img src="{{ asset(galleryImages[gallery.id].getWebPath) }}" alt="" title="" /> #}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
+                                <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
 
                             {% else %}
 

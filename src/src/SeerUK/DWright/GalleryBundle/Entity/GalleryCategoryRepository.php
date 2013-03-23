@@ -4,20 +4,35 @@ namespace SeerUK\DWright\GalleryBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class GalleryCategoryRepository extends EntityRepository
 {
-	public function findById($id)
-	{
-		$query = $this->createQueryBuilder('gc')
-			->where('gc.id = :id')
-			->setParameter('id', $id)
-			->getQuery();
+    /**
+     * Fetch galleries and gallery images for a given category
+     *
+     * @param  integer $categoryId
+     * @param  integer $page
+     * @param  integer $perPage
+     * @return object
+     *
+     * @todo   Add another field to Gallery table, an image ID, value can be
+     *         null, if null, the gallery has no cover image.
+     */
+    public function findGalleriesById($categoryId, $page, $perPage)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery(
+                  'SELECT gc, g, gi
+                     FROM SeerUKDWrightGalleryBundle:GalleryCategory AS gc
+                LEFT JOIN gc.galleries AS g
+                LEFT JOIN g.galleryImages AS gi
+                    WHERE g.coverId = gi.id
+                      AND gc.id = :categoryId'
+            )->setParameter('categoryId', $categoryId);
 
-		$category = $query->useQueryCache(true)
-			->setQueryCacheLifetime(600)
-			->getSingleResult();
-
-		return $category;
-	}
+        return $query->useQueryCache(true)
+            ->setQueryCacheLifetime(600)
+            ->getSingleResult();
+    }
 }

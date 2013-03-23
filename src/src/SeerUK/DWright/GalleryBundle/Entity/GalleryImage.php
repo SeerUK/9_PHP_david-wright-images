@@ -52,6 +52,13 @@ class GalleryImage
 
 
     /**
+     * @ORM\ManyToOne(targetEntity="Gallery", inversedBy="galleryImages")
+     * @ORM\JoinColumn(name="intGalleryId", referencedColumnName="intGalleryId")
+     */
+    protected $gallery;
+
+
+    /**
      * Get id
      *
      * @return integer
@@ -85,6 +92,17 @@ class GalleryImage
 
 
     /**
+     * Get path
+     *
+     * @return string
+     */
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+
+    /**
      * Get publishedOn
      *
      * @return string
@@ -107,13 +125,57 @@ class GalleryImage
 
 
     /**
-     * Get assetLoc
+     * Get gallery
      *
-     * @return string
+     * @return \SeerUK\DWright\GalleryBundle\Entity\Gallery
      */
-    public function getAssetLoc()
+    public function getGallery()
     {
-        return $this->assetLoc;
+        return $this->gallery;
+    }
+
+
+    public function getAbsolutePath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadRootDir() . '/' . $this->path;
+    }
+
+
+    public function getAbsoluteThumbPath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadRootDir() . '/thumbs/' . $this->path;
+    }
+
+
+    public function getWebPath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadDir() . '/' . $this->path;
+    }
+
+
+    public function getWebThumbPath()
+    {
+        return null === $this->path
+            ? null
+            : $this->getUploadDir() . '/thumbs/' . $this->path;
+    }
+
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+    }
+
+
+    protected function getUploadDir()
+    {
+        return 'bundles/seerukdwrightgallery/upload/gallery/' . $this->getGalleryId();
     }
 
 
@@ -169,34 +231,6 @@ class GalleryImage
         return $this;
     }
 
-
-    public function getAbsolutePath()
-    {
-        return null === $this->path
-            ? null
-            : $this->getUploadRootDir() . '/' . $this->path;
-    }
-
-
-    public function getWebPath()
-    {
-        return null === $this->path
-            ? null
-            : $this->getUploadDir() . '/' . $this->path;
-    }
-
-
-    protected function getUploadRootDir()
-    {
-        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
-    }
-
-
-    protected function getUploadDir()
-    {
-        return 'bundles/seerukdwrightgallery/upload/gallery/' . $this->getGalleryId();
-    }
-
     /**
      * Set path
      *
@@ -206,17 +240,20 @@ class GalleryImage
     public function setPath($path)
     {
         $this->path = $path;
-    
+
         return $this;
     }
 
     /**
-     * Get path
+     * Set gallery
      *
-     * @return string 
+     * @param \SeerUK\DWright\GalleryBundle\Entity\Gallery $gallery
+     * @return GalleryImage
      */
-    public function getPath()
+    public function setGallery(\SeerUK\DWright\GalleryBundle\Entity\Gallery $gallery = null)
     {
-        return $this->path;
+        $this->gallery = $gallery;
+
+        return $this;
     }
 }

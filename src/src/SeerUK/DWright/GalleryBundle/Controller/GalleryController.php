@@ -4,9 +4,7 @@ namespace SeerUK\DWright\GalleryBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-
 use SeerUK\DWright\GalleryBundle\Entity\GalleryRepository;
-
 
 class GalleryController extends Controller
 {
@@ -23,34 +21,21 @@ class GalleryController extends Controller
         $gallery = $em->getRepository('SeerUKDWrightGalleryBundle:Gallery')->findById($galleryId);
 
         return $this->render('SeerUKDWrightGalleryBundle:Gallery:gallery.html.twig', array(
-            'gallery'          => $gallery
+            'gallery' => $gallery
         ));
     }
 
 
     /**
-     * @todo Add pagination to this action...
-     * @todo The gallery image retrieval should be placed somewhere other than
-     *       in the controller.
+     * @todo Add defaults to this for pagination
      */
     public function galleryCategoryAction($categoryId)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $category  = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryCategory')->findById($categoryId);
-        $galleries = $category->getGalleries();
-
-        $galleryImages = [ ];
-        foreach ($galleries as $i => $gallery)
-        {
-            $galleryImages[$gallery->getId()] = $em->getRepository('SeerUKDWrightGalleryBundle:GalleryImage')
-                ->findOneByGalleryId($gallery->getId());
-        }
+        $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
+        $category      = $galleryHelper->getPaginatedCategoryView($categoryId);
 
         return $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
-            'category'      => $category,
-            'galleries'     => $galleries,
-            'galleryImages' => $galleryImages
+            'category' => $category
         ));
     }
 }

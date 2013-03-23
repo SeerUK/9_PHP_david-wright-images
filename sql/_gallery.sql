@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS Gallery (
 	strGalleryName varchar(50) NOT NULL,
 	strGalleryDesc varchar(5000) NOT NULL,
 	intGalleryCategoryId int UNSIGNED NOT NULL,
+	intGalleryCoverImageId int UNSIGNED,
 	dtmPublished datetime NOT NULL,
 	stmTimestamp timestamp,
 
@@ -49,3 +50,5 @@ CREATE TABLE IF NOT EXISTS GalleryImage (
 )
 ENGINE=InnoDB
 COMMENT="Portfolio gallery images";
+
+ALTER TABLE Gallery ADD FOREIGN KEY (intGalleryCoverImageId) REFERENCES GalleryImage (intGalleryImageId) ON UPDATE CASCADE ON DELETE CASCADE;

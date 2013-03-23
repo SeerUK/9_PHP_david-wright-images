@@ -28,7 +28,7 @@ class Gallery
 
 
     /**
-     * @ORM\Column(name="strGalleryDesc", type="string", length=255)
+     * @ORM\Column(name="strGalleryDesc", type="string", length=5000)
      */
     protected $desc;
 
@@ -40,10 +40,31 @@ class Gallery
 
 
     /**
+     * @ORM\Column(name="intGalleryCoverImageId", type="integer")
+     */
+    protected $coverId;
+
+
+    /**
      * @ORM\ManyToOne(targetEntity="GalleryCategory", inversedBy="galleries")
      * @ORM\JoinColumn(name="intGalleryCategoryId", referencedColumnName="intGalleryCategoryId")
      */
     protected $galleryCategory;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="GalleryImage", mappedBy="gallery")
+     */
+    protected $galleryImages;
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->galleryImages = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
     /**
@@ -130,20 +151,6 @@ class Gallery
 
 
     /**
-     * Set publishedOn
-     *
-     * @param \DateTime $publishedOn
-     * @return Gallery
-     */
-    public function setPublishedOn($publishedOn)
-    {
-        $this->publishedOn = $publishedOn;
-
-        return $this;
-    }
-
-
-    /**
      * Set posted
      *
      * @param \DateTime $posted
@@ -168,5 +175,41 @@ class Gallery
         $this->galleryCategory = $galleryCategory;
 
         return $this;
+    }
+
+
+    /**
+     * Add galleryImages
+     *
+     * @param \SeerUK\DWright\GalleryBundle\Entity\GalleryImage $galleryImages
+     * @return Gallery
+     */
+    public function addGalleryImage(\SeerUK\DWright\GalleryBundle\Entity\GalleryImage $galleryImages)
+    {
+        $this->galleryImages[] = $galleryImages;
+
+        return $this;
+    }
+
+
+    /**
+     * Remove galleryImages
+     *
+     * @param \SeerUK\DWright\GalleryBundle\Entity\GalleryImage $galleryImages
+     */
+    public function removeGalleryImage(\SeerUK\DWright\GalleryBundle\Entity\GalleryImage $galleryImages)
+    {
+        $this->galleryImages->removeElement($galleryImages);
+    }
+
+
+    /**
+     * Get galleryImages
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGalleryImages()
+    {
+        return $this->galleryImages;
     }
 }
