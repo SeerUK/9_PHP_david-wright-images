@@ -24,7 +24,11 @@
         <h2 class="content-title">{{ category.name }}</h2>
     </div>
 
-    <img src="{{ asset(category.coverWebPath) }}" alt="" title="" />
+    {% if category.coverWebPath %}
+
+        <img src="{{ asset(category.coverWebPath) }}" alt="" title="" />
+
+    {% endif %}
 
     <div class="content">
         <p>{{ category.desc|raw }}</p>
