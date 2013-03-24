@@ -32,10 +32,9 @@ class GalleryController extends Controller
     public function galleryCategoryAction($categoryId)
     {
         $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
-        $category      = $galleryHelper->getPaginatedCategoryView($categoryId);
 
         return $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
-            'category' => $category
+            'category' => $galleryHelper->getPaginatedCategoryView($categoryId)
         ));
     }
 }

@@ -26,9 +26,8 @@ class GalleryCategoryRepository extends EntityRepository
                   'SELECT gc, g, gi
                      FROM SeerUKDWrightGalleryBundle:GalleryCategory AS gc
                 LEFT JOIN gc.galleries AS g
-                LEFT JOIN g.galleryImages AS gi
-                    WHERE g.coverId = gi.id
-                      AND gc.id = :categoryId'
+                LEFT JOIN g.galleryImages AS gi WITH g.coverId = gi.id
+                    WHERE gc.id = :categoryId'
             )->setParameter('categoryId', $categoryId);
 
         return $query->useQueryCache(true)

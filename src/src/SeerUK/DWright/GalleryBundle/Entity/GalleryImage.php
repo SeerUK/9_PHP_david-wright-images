@@ -169,13 +169,13 @@ class GalleryImage
 
     protected function getUploadRootDir()
     {
-        return __DIR__ . '/../../../../web/' . $this->getUploadDir();
+        return __DIR__ . '/../../../../../web/' . $this->getUploadDir();
     }
 
 
     protected function getUploadDir()
     {
-        return 'bundles/seerukdwrightgallery/upload/gallery/' . $this->getGalleryId();
+        return 'bundles/seerukdwrightgallery/upload/gallery/' . $this->galleryId;
     }
 
 
@@ -192,6 +192,7 @@ class GalleryImage
         return $this;
     }
 
+
     /**
      * Set desc
      *
@@ -204,6 +205,7 @@ class GalleryImage
 
         return $this;
     }
+
 
     /**
      * Set publishedOn
@@ -218,6 +220,7 @@ class GalleryImage
         return $this;
     }
 
+
     /**
      * Set galleryId
      *
@@ -231,6 +234,7 @@ class GalleryImage
         return $this;
     }
 
+
     /**
      * Set path
      *
@@ -243,6 +247,7 @@ class GalleryImage
 
         return $this;
     }
+
 
     /**
      * Set gallery

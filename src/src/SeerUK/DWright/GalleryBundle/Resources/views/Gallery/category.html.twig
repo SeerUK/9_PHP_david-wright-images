@@ -24,45 +24,43 @@
         <h2 class="content-title">{{ category.name }}</h2>
     </div>
 
-    <a href="#" class="featured-image">
-        <img src="{{ asset('http://placebacn.com/1350/400') }}" alt="" title="" />
-    </a>
+    <img src="{{ asset(category.coverWebPath) }}" alt="" title="" />
 
     <div class="content">
         <p>{{ category.desc|raw }}</p>
     </div>
 
-        {% if category.galleries %}
+    {% if category.galleries %}
 
-            <ul class="clearfix galleries">
+        <ul class="clearfix galleries">
 
-                {% for gallery in category.galleries %}
+            {% for gallery in category.galleries %}
 
-                    <li>
-                        <div>
-                            <div class="overlay">
-                                <h3 class="entry-title">{{ gallery.name }}</h3>
-                                <p class="desc">{{ gallery.desc|raw }}</p>
-                                <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
-                            </div>
-
-                            {% if gallery.galleryImages[0] %}
-
-                                <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
-
-                            {% else %}
-
-                                <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                            {% endif %}
-
+                <li>
+                    <div>
+                        <div class="overlay">
+                            <h3 class="entry-title">{{ gallery.name }}</h3>
+                            <p class="desc">{{ gallery.desc|raw }}</p>
+                            <p class="posted"><em>{{ gallery.posted|date('Y-m-d H:i:s') }}</em></p>
                         </div>
-                    </li>
 
-                {% endfor %}
+                        {% if gallery.galleryImages|length %}
 
-            </ul>
+                           <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
 
-        {% endif %}
+                        {% else %}
+
+                            <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
+
+                        {% endif %}
+
+                    </div>
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+    {% endif %}
 
 {% endblock %}

@@ -141,4 +141,56 @@ class GalleryCategory
     {
         return $this->galleries;
     }
+
+
+    public function getCoverAbsolutePath()
+    {
+        $covers = glob($this->getUploadRootDir() . '/cover.*');
+
+        return empty($covers)
+            ? null
+            : $this->getUploadRootDir() . '/' . basename($covers[0]);
+    }
+
+
+    public function getCoverAbsoluteThumbPath()
+    {
+        $covers = glob($this->getUploadRootDir() . '/cover.*');
+
+        return empty($covers)
+            ? null
+            : $this->getUploadRootDir() . '/thumb/' . basename($covers[0]);
+    }
+
+
+    public function getCoverWebPath()
+    {
+        $covers = glob($this->getUploadRootDir() . '/cover.*');
+
+        return empty($covers)
+            ? null
+            : $this->getUploadDir() . '/' . basename($covers[0]);
+    }
+
+
+    public function getCoverWebThumbPath()
+    {
+        $covers = glob($this->getUploadRootDir() . '/cover.*');
+
+        return empty($covers)
+            ? null
+            : $this->getUploadDir() . '/thumb/' . basename($covers[0]);
+    }
+
+
+    protected function getUploadRootDir()
+    {
+        return __DIR__ . '/../../../../../web/' . $this->getUploadDir();
+    }
+
+
+    protected function getUploadDir()
+    {
+        return 'bundles/seerukdwrightgallery/upload/category/' . $this->id;
+    }
 }
