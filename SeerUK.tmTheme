@@ -28,6 +28,17 @@
 			</dict>
 		</dict>
 		<dict>
+            <key>name</key>
+            <string>Bracket Default</string>
+            <key>scope</key>
+            <string>brackethighlighter.default</string>
+            <key>settings</key>
+            <dict>
+                <key>foreground</key>
+                <string>#777777</string>
+            </dict>
+        </dict>
+		<dict>
 			<key>name</key>
 			<string>Text base</string>
 			<key>scope</key>
