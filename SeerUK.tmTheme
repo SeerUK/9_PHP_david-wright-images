@@ -82,6 +82,19 @@
 		</dict>
 		<dict>
 			<key>name</key>
+			<string>Number</string>
+			<key>scope</key>
+			<string>constant.numeric</string>
+			<key>settings</key>
+			<dict>
+				<key>fontStyle</key>
+				<string>bold</string>
+				<key>foreground</key>
+				<string>#FFA200</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Ruby source</string>
 			<key>scope</key>
 			<string>source.ruby</string>
