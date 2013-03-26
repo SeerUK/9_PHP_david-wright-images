@@ -3,6 +3,7 @@
 CREATE DATABASE IF NOT EXISTS dwright
   CHARACTER SET = utf8;
 
+
 USE dwright;
 
 
