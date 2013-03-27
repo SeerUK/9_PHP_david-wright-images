@@ -15,6 +15,8 @@ class GalleryCategoryRepository extends EntityRepository
      * @param  integer $page
      * @param  integer $perPage
      * @return object
+     *
+     * @todo   Add global, can cache boolean?
      */
     public function findGalleriesById($categoryId, $page, $perPage)
     {
