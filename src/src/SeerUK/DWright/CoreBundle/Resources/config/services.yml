@@ -1,7 +1,15 @@
 parameters:
-#    seer_ukd_wright_core.example.class: SeerUK\DWright\CoreBundle\Example
+    # Date Time Formatter
+    seer_ukd_wright_core.date_time_formatter.class: SeerUK\DWright\CoreBundle\Helpers\DateTime\DateTimeFormatter
+    seer_ukd_wright_core.twig.date_time_formatter.class: SeerUK\DWright\CoreBundle\Twig\DateTimeFormatterExtension
 
 services:
-#    seer_ukd_wright_core.example:
-#        class: %seer_ukd_wright_core.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    # Date Time Formatter
+    seer_ukd_wright_core.date_time_formatter:
+        class: %seer_ukd_wright_core.date_time_formatter.class%
+
+    seer_ukd_wright_core.twig.date_time_formatter:
+        class: %seer_ukd_wright_core.twig.date_time_formatter.class%
+        arguments: [@seer_ukd_wright_core.date_time_formatter]
+        tags:
+            - { name: twig.extension }
