@@ -36,7 +36,7 @@ class DateTimeFormatter
             $timeSuffix = 'ago';
         } else {
             $difference = -$difference;
-            $timeSuffix     = 'to go';
+            $timeSuffix = 'to go';
         }
 
         for ($i = 0; $difference >= $lengths[$i]; $i++) {
