@@ -29,7 +29,7 @@ class DateTimeFormatter
         $timestamp = $this->getTimestamp($timestamp);
 
         $difference = time() - $timestamp;
-        $periods    = ['second', 'minute', 'hour', 'day', 'week','month', 'year', 'decade'];
+        $periods    = ['second', 'minute', 'hour', 'day', 'week', 'month', 'year', 'decade'];
         $lengths    = ['60', '60', '24', '7', '4.35', '12', '10'];
 
         if ($difference > 0) {

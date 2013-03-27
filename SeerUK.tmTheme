@@ -607,7 +607,7 @@
 			<key>name</key>
 			<string>PHP Method</string>
 			<key>scope</key>
-			<string>support.function.twig</string>
+			<string>support.function.twig, meta.function-call.other.twig</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
