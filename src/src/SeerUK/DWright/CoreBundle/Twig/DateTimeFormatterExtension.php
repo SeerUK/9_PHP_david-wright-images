@@ -27,7 +27,7 @@ class DateTimeFormatterExtension extends \Twig_Extension
     /**
      * Constructor
      */
-    public function __construct(\SeerUK\DWright\CoreBundle\Helpers\DateTime\DateTimeFormatter $dateTimeFormatter)
+    public function __construct(DateTimeFormatter $dateTimeFormatter)
     {
         $this->dateTimeFormatter = $dateTimeFormatter;
     }
