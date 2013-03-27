@@ -76,8 +76,6 @@ class DateTimeFormatter
      */
     public function getTimestamp($dateTimeString)
     {
-        $dateTimeString = 'seoijsodfjsojfosdf';
-
         // Don't waste CPU cycles if we can already get the timestamp:
         if ($dateTimeString instanceof \DateTime) {
             return $dateTimeString->getTimestamp();
