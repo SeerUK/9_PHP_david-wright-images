@@ -27,8 +27,7 @@ class GalleryCategoryRepository extends EntityRepository
                     WHERE gc.id = :categoryId'
             )->setParameter('categoryId', $categoryId);
 
-        return $query->useQueryCache(true)
-            ->setQueryCacheLifetime(600)
+        return $query->useResultCache(true, 600)
             ->getSingleResult();
     }
 }
