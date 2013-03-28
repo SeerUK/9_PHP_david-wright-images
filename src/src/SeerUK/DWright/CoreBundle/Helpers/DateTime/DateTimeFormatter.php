@@ -11,7 +11,7 @@
 
 namespace SeerUK\DWright\CoreBundle\Helpers\DateTime;
 
-use SeerUK\DWright\CoreBundle\Exception\InvalidDateTimeStringException;
+use SeerUK\DWright\CoreBundle\Exception\InvalidDateTimeException;
 
 /**
  * Date & time formatter
@@ -91,20 +91,20 @@ class DateTimeFormatter
 
             return $dateTime->getTimestamp();
         } catch (\Exception $e) {
-            throw $this->createInvalidDateTimeStringException(
-                'An invalid date time string was given.'
+            throw $this->createInvalidDateTimeException(
+                __METHOD__ . ' couldn\'t convert the given value to a unix timestamp.'
             );
         }
     }
 
     /**
-     * Creates a new createInvalidDateTimeStringException
+     * Creates a new createInvalidDateTimeException
      *
      * @param  string $message A message to store with the exception
      * @return object          The exception object
      */
-    public function createInvalidDateTimeStringException($message)
+    public function createInvalidDateTimeException($message)
     {
-        return new InvalidDateTimeStringException($message);
+        return new InvalidDateTimeException($message);
     }
 }

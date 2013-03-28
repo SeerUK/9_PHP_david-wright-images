@@ -12,8 +12,8 @@
 namespace SeerUK\DWright\CoreBundle\Exception;
 
 /**
- * Invalid Date Time String Exception
+ * Invalid date time string exception
  */
-class InvalidDateTimeStringException extends \Exception
+class InvalidDateTimeException extends \Exception
 {
 }
