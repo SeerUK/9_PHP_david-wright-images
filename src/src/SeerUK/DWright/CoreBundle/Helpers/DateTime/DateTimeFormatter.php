@@ -70,9 +70,6 @@ class DateTimeFormatter
      * @param  string  $datetime A date / time to convert
      * @return integer           The timestamp, or false on failure
      * @throws InvalidDateTimeStringException
-     *
-     * @todo   Create InvalidDateTimeStringException class in ../../Exception
-     *         then use that exception here, for more flexible error handling
      */
     public function getTimestamp($dateTimeString)
     {

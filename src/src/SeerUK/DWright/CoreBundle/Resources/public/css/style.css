@@ -12,7 +12,7 @@
  */
 body {
 	background-color: #3B3F41;
-	color: #444;
+	color: #ccc;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size: 18px;
 }
@@ -37,8 +37,9 @@ p {
 .container {
 	max-width: 1350px;
 	min-width: 940px;
-	padding: 0 40px;
+	padding: 0 50px;
 	width: auto;
+	margin: 0;
 }
 
 
@@ -51,7 +52,16 @@ p {
 .header-unit {
 	background-color: #2C2F31;
 	color: white;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	-o-border-radius: 0;
+	border-radius: 0;
+	padding: 60px 50px;
 }
+
+	.hero-unit > h1 > small {
+		letter-spacing: 0;
+	}
 
 .header-unit {
 	margin-bottom: 50px;
@@ -79,7 +89,7 @@ p {
 
 .primary-nav {
 	float: left;
-	margin: 21px 0 0 40px;
+	margin: 20px 0 0 40px;
 }
 
 	.primary-nav > ul {

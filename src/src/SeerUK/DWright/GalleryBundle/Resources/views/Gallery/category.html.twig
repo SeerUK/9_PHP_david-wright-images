@@ -20,51 +20,85 @@
 
 {% block body %}
 
-    <div class="content">
-        <h2 class="content-title">{{ category.name }}</h2>
+    <div class="hero-unit">
+        <h1>
+            {{ category.name }}<br />
+            <small>Possible category sub-title, this should probably be an optional feature...</small>
+        </h1>
     </div>
 
     {% if category.coverWebPath %}
 
-        <img src="{{ asset(category.coverWebPath) }}" alt="" title="" />
+        <!--<img src="{{ asset(category.coverWebPath) }}" alt="" title="" />-->
 
     {% endif %}
 
-    <div class="content">
-        <p>{{ category.desc|raw }}</p>
+    <div class="row-fluid">
+        <div class="span4">
+            <div class="category-desc">{{ category.desc|raw }}</div>
+        </div>
+
+        <div class="span8">
+
+            {% if category.galleries %}
+
+                <ul class="clearfix galleries">
+
+                    {% for gallery in category.galleries %}
+
+                        <li>
+                            <div>
+                                <div class="overlay">
+                                    <h3 class="entry-title">{{ gallery.name }}</h3>
+                                    <p class="desc">{{ gallery.desc|raw }}</p>
+                                    <p class="posted"><em>{{ gallery.posted|relativeDateTime }}</em></p>
+                                </div>
+
+                                {% if gallery.galleryImages|length %}
+
+                                    <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
+
+                                {% else %}
+
+                                    <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
+
+                                {% endif %}
+
+                            </div>
+                        </li>
+
+                    {% endfor %}
+
+                    {% for gallery in category.galleries %}
+
+                        <li>
+                            <div>
+                                <div class="overlay">
+                                    <h3 class="entry-title">{{ gallery.name }}</h3>
+                                    <p class="desc">{{ gallery.desc|raw }}</p>
+                                    <p class="posted"><em>{{ gallery.posted|relativeDateTime }}</em></p>
+                                </div>
+
+                                {% if gallery.galleryImages|length %}
+
+                                    <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
+
+                                {% else %}
+
+                                    <img src="{{ asset('http://placehold.it/400x400') }}" alt="" title="" />
+
+                                {% endif %}
+
+                            </div>
+                        </li>
+
+                    {% endfor %}
+
+                </ul>
+
+            {% endif %}
+
+        </div>
     </div>
-
-    {% if category.galleries %}
-
-        <ul class="clearfix galleries">
-
-            {% for gallery in category.galleries %}
-
-                <li>
-                    <div>
-                        <div class="overlay">
-                            <h3 class="entry-title">{{ gallery.name }}</h3>
-                            <p class="desc">{{ gallery.desc|raw }}</p>
-                            <p class="posted"><em>{{ gallery.posted|relativeDateTime }}</em></p>
-                        </div>
-
-                        {% if gallery.galleryImages|length %}
-
-                            <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
-
-                        {% else %}
-
-                            <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                        {% endif %}
-
-                    </div>
-                </li>
-
-            {% endfor %}
-
-        </ul>
-
-    {% endif %}
 
 {% endblock %}
