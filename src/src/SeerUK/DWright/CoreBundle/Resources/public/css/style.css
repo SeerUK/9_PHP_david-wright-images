@@ -43,9 +43,20 @@ p {
 }
 
 
+.emp {
+	color: #f74f4f;
+}
+
 .muted {
 	color: #aaa;
 }
+
+	.muted-emp {
+		background-color: #f2f2f2;
+		display: inline-block;
+		line-height: 100%;
+		padding: 4px;
+	}
 
 
 .hero-unit,

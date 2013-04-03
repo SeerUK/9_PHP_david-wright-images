@@ -33,7 +33,7 @@ class GalleryHelper
 
 
     /**
-     * Returns a paginated category view page,
+     * Returns a paginated category view page
      *
      * @param  [integer] $categoryId [A category ID]
      * @param  [integer] $page       [A page number]
@@ -50,7 +50,7 @@ class GalleryHelper
 
 
     /**
-     * Returns a paginated gallery view page,
+     * Returns a paginated gallery view page
      *
      * @param  [integer] $galleryId [A gallery ID]
      * @param  [integer] $page      [A page number]
@@ -60,7 +60,7 @@ class GalleryHelper
     public function getPaginatedGalleryView($galleryId, $page = null, $perPage = null)
     {
         $gallery = $this->em->getRepository('SeerUKDWrightGalleryBundle:Gallery')
-            ->findGalleriesById($categoryId, $page, $perPage);
+            ->findGalleriesById($galleryId, $page, $perPage);
 
         return $gallery;
     }

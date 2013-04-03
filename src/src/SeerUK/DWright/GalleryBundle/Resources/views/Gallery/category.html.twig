@@ -51,7 +51,7 @@
                                 <div class="overlay">
                                     <h3 class="entry-title">{{ gallery.name }}</h3>
                                     <p class="desc">{{ gallery.desc|raw }}</p>
-                                    <p class="posted"><em>{{ gallery.posted|relativeDateTime }}</em></p>
+                                    <p class="posted"><span class="emp">{{ gallery.posted|relativeDateTime }}</span></p>
                                 </div>
 
                                 {% if gallery.galleryImages|length %}
@@ -61,31 +61,6 @@
                                 {% else %}
 
                                     <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                                {% endif %}
-
-                            </div>
-                        </li>
-
-                    {% endfor %}
-
-                    {% for gallery in category.galleries %}
-
-                        <li>
-                            <div>
-                                <div class="overlay">
-                                    <h3 class="entry-title">{{ gallery.name }}</h3>
-                                    <p class="desc">{{ gallery.desc|raw }}</p>
-                                    <p class="posted"><em>{{ gallery.posted|relativeDateTime }}</em></p>
-                                </div>
-
-                                {% if gallery.galleryImages|length %}
-
-                                    <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
-
-                                {% else %}
-
-                                    <img src="{{ asset('http://placehold.it/400x400') }}" alt="" title="" />
 
                                 {% endif %}
 

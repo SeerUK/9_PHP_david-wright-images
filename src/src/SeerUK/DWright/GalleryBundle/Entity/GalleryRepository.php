@@ -1,39 +1,44 @@
 <?php
 
+/*
+ * This file is part of the SeerUKDwrightGalleryBundle
+ *
+ * (c) Elliot Wright <wright.elliot@gmail.com> - 2013
+ *
+ * For full license information please visit
+ * http://license.visualidiot.com/
+ */
+
 namespace SeerUK\DWright\GalleryBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
 use SeerUK\DWright\GalleryBundle\Entity\GalleryImage;
 
+/**
+ * Gallery Repository
+ */
 class GalleryRepository extends EntityRepository
 {
-	public function findById($id)
-	{
-		$query = $this->createQueryBuilder('g')
-			->where('g.id = :id')
-			->setParameter('id', $id)
-			->getQuery();
+    /**
+     * Returns paginated gallery view data
+     *
+     * @param  [integer] $galleryId [A gallery ID]
+     * @param  [integer] $page      [A page number]
+     * @param  [integer] $perPage   [A number of items to show per page]
+     * @return [object]             [Entity result set of gallery contents]
+     */
+    public function findGalleriesById($galleryId, $page, $perPage)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery(
+                  'SELECT g, gi
+                     FROM SeerUKDWrightGalleryBundle:Gallery AS g
+                LEFT JOIN g.galleryImages AS gi
+                    WHERE g.id = :galleryId'
+            )->setParameter('galleryId', $galleryId);
 
-		$gallery = $query->useQueryCache(true)
-			->setQueryCacheLifetime(600)
-			->getSingleResult();
-
-		return $gallery;
-	}
-
-
-	public function findByCategoryId($categoryId)
-	{
-		$query = $this->createQueryBuilder('g')
-			->where('g.categoryId = :categoryId')
-			->setParameter('categoryId', $categoryId)
-			->getQuery();
-
-		$galleries = $query->useQueryCache(true)
-			->setQueryCacheLifetime(600)
-			->getSingleResult();
-
-		return $galleries;
-	}
+        return $query->useResultCache(true, 600)
+            ->getSingleResult();
+    }
 }

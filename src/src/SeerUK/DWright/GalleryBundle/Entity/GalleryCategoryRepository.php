@@ -1,22 +1,32 @@
 <?php
 
+/*
+ * This file is part of the SeerUKDwrightGalleryBundle
+ *
+ * (c) Elliot Wright <wright.elliot@gmail.com> - 2013
+ *
+ * For full license information please visit
+ * http://license.visualidiot.com/
+ */
+
 namespace SeerUK\DWright\GalleryBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NoResultException;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
+/**
+ * Gallery Category Repository
+ */
 class GalleryCategoryRepository extends EntityRepository
 {
     /**
-     * Fetch galleries and gallery images for a given category
+     * Returns paginated category view data
      *
-     * @param  integer $categoryId
-     * @param  integer $page
-     * @param  integer $perPage
-     * @return object
-     *
-     * @todo   Add global, can cache boolean?
+     * @param  [integer] $categoryId [A category ID]
+     * @param  [integer] $page       [A page number]
+     * @param  [integer] $perPage    [A number of items to show per page]
+     * @return [object]              [Entity result set of category contents]
      */
     public function findGalleriesById($categoryId, $page, $perPage)
     {

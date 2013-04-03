@@ -130,8 +130,3 @@
 					text-overflow: ellipsis;
 					white-space: nowrap;
 				}
-
-				.galleries > li > div > .overlay em {
-					color: #f74f4f;
-					font-style: normal;
-				}
