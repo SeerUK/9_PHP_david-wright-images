@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}{% if block('title') %} | {% endif %}{{ site_name }}</title>
 
     {# Start CSS Stylesheets #}
@@ -11,6 +12,7 @@
 
     {% stylesheets
         'bundles/seerukdwrightcore/css/bootstrap.css'
+        'bundles/seerukdwrightcore/css/bootstrap-responsive.css'
         'bundles/seerukdwrightcore/css/style.css'
         filter='cssrewrite,yui_css' combine=true output='css/corebundle.css'
     %}

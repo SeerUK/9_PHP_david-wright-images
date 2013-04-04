@@ -35,13 +35,15 @@ p {
 }
 
 .container {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	max-width: 1350px;
 	min-width: 940px;
+	margin: 0;
 	padding: 0 50px;
 	width: auto;
-	margin: 0;
 }
-
 
 .emp {
 	color: #f74f4f;
@@ -154,3 +156,41 @@ p {
 	.container > .content + .content {
 		padding-top: 0;
 	}
+
+
+
+/**
+ * Responsive!
+ */
+
+@media (min-width: 0px) and (max-width: 940px) {
+	body {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+@media (min-width: 0px) and (max-width: 940px) {
+	.container {
+		min-width: 400px;
+		max-width: 940px;
+		padding: 0 30px;
+	}
+
+	.header-unit {
+		margin-bottom: 30px;
+	}
+
+		.header-unit .header-title {
+			float: none;
+		}
+
+	.primary-nav {
+		float: none;
+		margin: 0;
+	}
+
+		.primary-nav > ul {
+			margin: 0 0 10px;
+		}
+}

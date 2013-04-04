@@ -130,3 +130,14 @@
 					text-overflow: ellipsis;
 					white-space: nowrap;
 				}
+
+@media (min-width: 0px) and (max-width: 940px) {
+	/* Just modify some of bootstraps stuff for galleries here... */
+	.row-fluid .span4,
+	.row-fluid .span8 {
+		display: block;
+		float: none;
+		margin: 0 0 20px;
+		width: auto;
+	}
+}
