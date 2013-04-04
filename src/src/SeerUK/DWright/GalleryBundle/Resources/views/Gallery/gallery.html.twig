@@ -1,26 +1,17 @@
 {% extends 'SeerUKDWrightCoreBundle:Core:master.html.twig' %}
 
-
 {% block stylesheets %}
-
     {% include 'SeerUKDWrightGalleryBundle:Generic:stylesheets.html.twig' %}
-
 {% endblock %}
-
 
 {% block javascripts %}
-
     {% include 'SeerUKDWrightGalleryBundle:Generic:javascripts.html.twig' %}
-
 {% endblock %}
-
 
 {% block title %}{{ gallery.name }}{% endblock %}
 
 
 {% block body %}
-
-    <p> </p>
 
     <div class="hero-unit">
         <h1>
@@ -33,7 +24,7 @@
         <div class="span4">
             <div class="category-desc">
                 <p>
-                    <small class="muted muted-emp">{{ gallery.posted|relativeDateTime }}</small>
+                    <small class="muted muted-emp">Published {{ gallery.posted|relativeDateTime }}</small>
                 </p>
 
                 {# Content here should be in paragraphs... #}
@@ -45,9 +36,21 @@
 
             {% if gallery.galleryImages|length %}
 
+                <ul class="clearfix thumbnails">
+
                 {% for galleryImage in gallery.galleryImages %}
 
-                    <img src="{{ asset(galleryImage.webThumbPath) }}" alt="" title="" />
+                    <li>
+                        <div>
+                            <div class="overlay">
+                                <h3 class="entry-title">{{ galleryImage.name }}</h3>
+                                <p class="desc">{{ galleryImage.desc|raw }}</p>
+                                <p class="posted"><span class="emp">{{ galleryImage.posted|relativeDateTime }}</span></p>
+                            </div>
+
+                            <img src="{{ asset(galleryImage.webThumbPath) }}" alt="" title="" />
+                        </div>
+                    </li>
 
                 {% endfor %}
 

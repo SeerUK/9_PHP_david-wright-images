@@ -1,19 +1,12 @@
 {% extends 'SeerUKDWrightCoreBundle:Core:master.html.twig' %}
 
-
 {% block stylesheets %}
-
     {% include 'SeerUKDWrightGalleryBundle:Generic:stylesheets.html.twig' %}
-
 {% endblock %}
-
 
 {% block javascripts %}
-
     {% include 'SeerUKDWrightGalleryBundle:Generic:javascripts.html.twig' %}
-
 {% endblock %}
-
 
 {% block title %}{{ category.name }}{% endblock %}
 
@@ -42,7 +35,7 @@
 
             {% if category.galleries %}
 
-                <ul class="clearfix galleries">
+                <ul class="clearfix thumbnails">
 
                     {% for gallery in category.galleries %}
 

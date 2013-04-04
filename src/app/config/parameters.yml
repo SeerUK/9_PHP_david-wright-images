@@ -1,4 +1,5 @@
 parameters:
+    # Symfony Standard Configuration
     database_driver: pdo_mysql
     database_host: 127.0.0.1
     database_port: null
@@ -12,4 +13,6 @@ parameters:
     locale: en
     secret: 2872f2f668f43009c6f71fd478d0ccd5
     database_path: null
-    site_name: David Wright Images
+
+    # Twig Variables
+    site_name: "David Wright Images"
