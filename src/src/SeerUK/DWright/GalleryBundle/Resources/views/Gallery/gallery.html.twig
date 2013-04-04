@@ -44,21 +44,23 @@
 
                 <ul class="clearfix thumbnails">
 
-                {% for galleryImage in gallery.galleryImages %}
+                    {% for galleryImage in gallery.galleryImages %}
 
-                    <li>
-                        <div>
-                            <div class="overlay">
-                                <h3 class="entry-title">{{ galleryImage.name }}</h3>
-                                <p class="desc">{{ galleryImage.desc|raw }}</p>
-                                <p class="posted"><span class="emp">{{ galleryImage.posted|relativeDateTime }}</span></p>
+                        <li>
+                            <div>
+                                <div class="overlay">
+                                    <h3 class="entry-title">{{ galleryImage.name }}</h3>
+                                    <p class="desc">{{ galleryImage.desc|raw }}</p>
+                                    <p class="posted"><span class="emp">{{ galleryImage.posted|relativeDateTime }}</span></p>
+                                </div>
+
+                                <img src="{{ asset(galleryImage.webThumbPath) }}" alt="" title="" />
                             </div>
+                        </li>
 
-                            <img src="{{ asset(galleryImage.webThumbPath) }}" alt="" title="" />
-                        </div>
-                    </li>
+                    {% endfor %}
 
-                {% endfor %}
+                </ul>
 
             {% endif %}
 
