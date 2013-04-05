@@ -40,7 +40,7 @@ COMMENT="Portfolio galleries";
 CREATE TABLE IF NOT EXISTS GalleryImage (
 	intGalleryImageId int UNSIGNED NOT NULL AUTO_INCREMENT,
 	strGalleryImageName varchar(100) NOT NULL,
-	strGalleryImageDesc varchar(255) NOT NULL,
+	strGalleryImageDesc varchar(5000) NOT NULL,
 	intGalleryId int UNSIGNED NOT NULL,
 	strPath varchar(255) NOT NULL,
 	dtmPublished datetime NOT NULL,

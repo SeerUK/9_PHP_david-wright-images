@@ -140,4 +140,9 @@
 		margin: 0 0 20px;
 		width: auto;
 	}
+
+
+	.category-desc {
+		font-size: 12px;
+	}
 }
