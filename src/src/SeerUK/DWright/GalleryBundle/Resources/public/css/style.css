@@ -97,7 +97,7 @@
 
 				.thumbnails > li > div > .overlay > p {
 					color: white;
-					font-size: 14px;
+					font-size: 16px;
 					line-height: 24px;
 				}
 
@@ -141,8 +141,35 @@
 		width: auto;
 	}
 
-
 	.category-desc {
-		font-size: 12px;
+		line-height: 24px;
+	}
+
+	.thumbnails > li > div > .overlay > .entry-title {
+		font-size: 26px;
+		line-height: 42px;
+		margin-bottom: 12px;
+		padding-bottom: 12px;
+	}
+
+	.thumbnails > li > div > .overlay > .desc {
+		bottom: 64px;
+		top: 84px;
+	}
+
+	.thumbnails > li > div > .overlay > .posted {
+		bottom: 6%;
+	}
+}
+
+
+@media (min-width: 0px) and (max-width: 480px) {
+	.thumbnails > li {
+		margin: 0 0 20px;
+		width: 100%;
+	}
+
+	.thumbnails > li > div > .overlay > .desc {
+		top: 90px;
 	}
 }

@@ -31,7 +31,11 @@ h6 {
 
 p {
 	line-height: 30px;
-	max-height: 999999px;
+}
+
+p,
+.mobilefix {
+	max-height: 9999999px;
 }
 
 .container {
@@ -196,13 +200,17 @@ p {
 			float: none;
 		}
 
-	.hero-unit h1 {
-		font-size: 40px;
+	.hero-unit {
+		padding: 30px 50px;
 	}
 
-	.hero-unit small {
-		font-size: 18px;
-	}
+		.hero-unit h1 {
+			font-size: 36px;
+		}
+
+		.hero-unit small {
+			font-size: 18px;
+		}
 
 	.primary-nav {
 		float: none;
