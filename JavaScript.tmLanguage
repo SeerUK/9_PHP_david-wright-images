@@ -653,6 +653,12 @@
 		</dict>
 		<dict>
 			<key>match</key>
+			<string>:[ |\t]*</string>
+			<key>name</key>
+			<string>meta.delimiter.object.colon.js</string>
+		</dict>
+		<dict>
+			<key>match</key>
 			<string>\.</string>
 			<key>name</key>
 			<string>meta.delimiter.method.period.js</string>
