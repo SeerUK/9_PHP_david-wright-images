@@ -7,15 +7,30 @@
  * Very modern and stylish indeed...
  */
 
+
 /**
- * Gallery Categories
+ * Gallery Content
  */
-.category-desc {
+.content {
+	height: auto;
+	overflow: hidden;
+}
+
+.content-desc {
 	background-color: white;
 	color: #444;
+	float: right;
 	font-size: 16px;
 	line-height: 28px;
+	margin-left: 30px;
 	padding: 30px 50px;
+	width: 360px;
+}
+
+.content-gallery {
+	float: none;
+	overflow: hidden;
+	width: auto;
 }
 
 /**
@@ -44,19 +59,27 @@
 		}
 
 			.thumbnails > li > div > img {
-				opacity: 0.7;
+				opacity: 1;
 				position: relative;
+				-webkit-transition: opacity .1s ease-in;
+				-moz-transition: opacity .1s ease-in;
+				-o-transition: opacity .1s ease-in;
+				transition: opacity .1s ease-in;
 				width: 100%;
 				z-index: 1;
 			}
 
+				.thumbnails > li > div:hover > img {
+					opacity: 0.2;
+				}
+
 			.thumbnails > li > div > .overlay {
-				background-color: #2C2F31;
 				bottom: 0;
 				display: block;
 				left: 0;
 				opacity: 0;
-				padding: 6% 8%;
+				overflow: hidden;
+				padding: 12% 13%;
 				position: absolute;
 				right: 0;
 				top: 0;
@@ -68,8 +91,19 @@
 			}
 
 			.thumbnails > li > div:hover > .overlay {
+				box-shadow: inset 0px 0px 40px -4px rgba(0, 0, 0, 0.6);
 				opacity: 1;
 			}
+
+				.thumbnails > li > div > .overlay > a {
+					bottom: 0;
+					display: block;
+					left: 0;
+					position: absolute;
+					right: 0;
+					top: 0;
+					z-index: 99;
+				}
 
 				.thumbnails > li > div > .overlay > .entry-title {
 					color: white;
@@ -77,23 +111,14 @@
 					font-size: 40px;
 					font-weight: 200;
 					line-height: 54px;
-					margin: 0 0 25px;
+					margin: 0 0 10px;
+					max-height: 80%;
 					overflow: hidden;
-					padding: 0 0 25px;
+					padding: 0;
 					position: relative;
 					text-overflow: ellipsis;
-					white-space: nowrap;
+					text-rendering: optimizelegibility;
 				}
-
-					.thumbnails > li > div > .overlay > .entry-title:after {
-						content: " ";
-						display: block;
-						position: absolute;
-						bottom: 0;
-						left: 0;
-						width: 25px;
-						border-bottom: solid 1px #5A5A5A;
-					}
 
 				.thumbnails > li > div > .overlay > p {
 					color: white;
@@ -101,75 +126,58 @@
 					line-height: 24px;
 				}
 
-				.thumbnails > li > div > .overlay > .desc {
-					bottom: 80px;
-					display: block;
-					left: 8%;
-					overflow: hidden;
-					position: absolute;
-					right: 8%;
-					top: 129px;
-					word-wrap: break-word;
-				}
-
-					.thumbnails > li > div > .overlay > .desc:after {
-						bottom: 0;
-						box-shadow: inset 0 -44px 30px -20px #2C2F31;
-						content: " ";
-						display: block;
-						height: 40px;
-						left: 0;
-						position: absolute;
-						right: 0;
-					}
-
 				.thumbnails > li > div > .overlay > .posted {
-					bottom: 8%;
+					border-top: 1px solid #5A5A5A;
 					overflow: hidden;
-					position: absolute;
+					padding: 10px 0 0;
 					text-overflow: ellipsis;
 					white-space: nowrap;
 				}
 
+
+@media (min-width: 0px) and (max-width: 1060px) {
+	.thumbnails > li {
+		margin: 0 0 3.5%;
+		width: 100%;
+	}
+}
+
 @media (min-width: 0px) and (max-width: 940px) {
-	/* Just modify some of bootstraps stuff for galleries here... */
-	.row-fluid .span4,
-	.row-fluid .span8 {
-		display: block;
-		float: none;
-		margin: 0 0 20px;
+	.content {
+		height: auto;
+		overflow: hidden;
+	}
+
+	.content-desc {
+		background-color: white;
+		color: #444;
+		font-size: 14px;
+		line-height: 22px;
+		margin-bottom: 3.5%;
+		margin-left: 0;
+		padding: 30px 50px;
 		width: auto;
 	}
 
-	.category-desc {
-		line-height: 24px;
+	.content-gallery {
+		overflow: visible;
 	}
 
-	.thumbnails > li > div > .overlay > .entry-title {
-		font-size: 26px;
-		line-height: 42px;
-		margin-bottom: 12px;
-		padding-bottom: 12px;
+
+	.thumbnails > li {
+		margin: 0 3.5% 3.5% 0;
+		width: 48.2%;
 	}
 
-	.thumbnails > li > div > .overlay > .desc {
-		bottom: 64px;
-		top: 84px;
-	}
-
-	.thumbnails > li > div > .overlay > .posted {
-		bottom: 6%;
-	}
+		.thumbnails > li > div > .overlay > .posted {
+			bottom: 6%;
+		}
 }
 
 
 @media (min-width: 0px) and (max-width: 480px) {
 	.thumbnails > li {
-		margin: 0 0 20px;
+		margin: 0 0 3.5%;
 		width: 100%;
-	}
-
-	.thumbnails > li > div > .overlay > .desc {
-		top: 90px;
 	}
 }

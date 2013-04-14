@@ -98,6 +98,12 @@ p,
 		font-size: 26px;
 	}
 
+		.header-unit .header-title > a,
+		.header-unit .header-title > a:hover {
+			color: white;
+			text-decoration: none;
+		}
+
 
 .footer {
 	color: #666;
@@ -112,7 +118,7 @@ p,
 
 
 .primary-nav {
-	float: left;
+	float: right;
 	margin: 20px 0 0 40px;
 }
 
@@ -158,17 +164,6 @@ p,
 	letter-spacing: -1px;
 	line-height: 62px;
 }
-
-.container > .content {
-	background-color: white;
-	padding: 5% 10%;
-}
-
-	.container > .content + .content {
-		padding-top: 0;
-	}
-
-
 
 /**
  * Responsive!
@@ -220,5 +215,4 @@ p,
 		.primary-nav > ul {
 			margin: 0 0 10px;
 		}
-
 }

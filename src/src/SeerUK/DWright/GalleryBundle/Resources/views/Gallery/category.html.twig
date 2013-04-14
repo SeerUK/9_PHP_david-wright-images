@@ -24,14 +24,14 @@
         <small>Possible category sub-title, this should probably be an optional feature...</small>
     </div>
 
-    <div class="row-fluid">
-        <div class="span4">
-            <div class="category-desc">{{ category.desc|raw }}</div>
+    <div class="content">
+        <div class="content-desc">
+            {# Content here should be in paragraphs... #}
+            {{ category.desc|raw }}
         </div>
+        <div class="content-gallery">
 
-        <div class="span8">
-
-            {% if category.galleries %}
+            {% if category.galleries|length %}
 
                 <ul class="clearfix thumbnails">
 
@@ -40,8 +40,8 @@
                         <li>
                             <div>
                                 <div class="overlay">
+                                    <a class="" href="{{ url('seer_ukd_wright_gallery_gallery_short', { 'galleryId': gallery.id }) }}"></a>
                                     <h3 class="entry-title">{{ gallery.name }}</h3>
-                                    <p class="desc">{{ gallery.desc|raw }}</p>
                                     <p class="posted"><span class="emp">{{ gallery.posted|relativeDateTime }}</span></p>
                                 </div>
 

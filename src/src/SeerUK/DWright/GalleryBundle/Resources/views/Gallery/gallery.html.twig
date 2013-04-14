@@ -24,19 +24,14 @@
         <small>Possible gallery sub-title, this should probably be an optional feature...</small>
     </div>
 
-    <div class="row-fluid">
-        <div class="span4">
-            <div class="category-desc mobilefix">
-                <p>
-                    <small class="muted muted-emp">Published {{ gallery.posted|relativeDateTime }}</small>
-                </p>
+    <div class="content">
+        <div class="content-desc">
+            <p><small class="muted muted-emp">Published {{ gallery.posted|relativeDateTime }}</small></p>
 
-                {# Content here should be in paragraphs... #}
-                {{ gallery.desc|raw }}
-            </div>
+            {# Content here should be in paragraphs... #}
+            {{ gallery.desc|raw }}
         </div>
-
-        <div class="span8">
+        <div class="content-gallery">
 
             {% if gallery.galleryImages|length %}
 
@@ -48,7 +43,6 @@
                             <div>
                                 <div class="overlay">
                                     <h3 class="entry-title">{{ galleryImage.name }}</h3>
-                                    <p class="desc">{{ galleryImage.desc|raw }}</p>
                                     <p class="posted"><span class="emp">{{ galleryImage.posted|relativeDateTime }}</span></p>
                                 </div>
 
