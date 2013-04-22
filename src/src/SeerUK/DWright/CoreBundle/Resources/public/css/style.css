@@ -11,10 +11,11 @@
  * Page Setup
  */
 body {
-	background-color: #3B3F41;
+	background-color: white;
 	color: #ccc;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font: 14px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 18px;
+	line-height: 24px;
 }
 
 
@@ -26,6 +27,19 @@ h5,
 h6 {
 	font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol > li,
+ul > li,
+td {
+	-webkit-font-smoothing: antialiased;
 }
 
 
@@ -42,15 +56,15 @@ p,
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	max-width: 1350px;
-	min-width: 940px;
 	margin: 0;
-	padding: 0 50px;
 	width: auto;
 }
 
 .emp {
 	color: #f74f4f;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
 }
 
 .muted {
@@ -67,30 +81,40 @@ p,
 
 .hero-unit,
 .header-unit {
-	background-color: #2C2F31;
+	background-color: #363F48;
 	color: white;
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-o-border-radius: 0;
 	border-radius: 0;
-	padding: 60px 50px;
+	font-size: 60px;
+	padding: 120px 50px 140px;
+	text-align: center;
 }
 
+	.hero-unit > h1,
+	.hero-unit > small {
+		display: block;
+		margin: 0 auto;
+		max-width: 980px;
+	}
+
 	.hero-unit > h1 {
-		margin-bottom: 10px;
+		line-height: 1.2;
 	}
 
 	.hero-unit > small {
-		color: #aaa;
-		font-size: 24px;
+		color: #A7ABB1;
+		font-size: 20px;
 		letter-spacing: 0;
-		font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-		font-weight: 300;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-weight: normal;
 	}
 
 .header-unit {
-	margin-bottom: 50px;
-	padding: 6px;
+	background-color: #242B33;
+	max-width: 100%;
+	padding: 6px 50px;
 }
 
 	.header-unit .header-title {
@@ -108,6 +132,7 @@ p,
 .footer {
 	color: #666;
 	font-size: 12px;
+	text-align: center;
 	padding-bottom: 30px;
 }
 
@@ -119,7 +144,8 @@ p,
 
 .primary-nav {
 	float: right;
-	margin: 20px 0 0 40px;
+	font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	margin-top: 3px;
 }
 
 	.primary-nav > ul {
@@ -129,19 +155,19 @@ p,
 		.primary-nav > ul > li {
 			display: inline-block;
 			font-size: 13px;
+			text-transform: uppercase;
+			font-weight: bold;
 		}
 
 			.primary-nav > ul > li:after {
 				color: #444;
-				content: "/";
-				font-weight: 200;
+				content: "|";
 				font-size: 15px;
 				margin-left: 15px;
-				margin-right: 10px;
 			}
 
 				.primary-nav > ul > li:last-child:after {
-					content: "";
+					content: " ";
 				}
 
 			.primary-nav > ul > li > a {

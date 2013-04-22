@@ -21,15 +21,11 @@
 
     <div class="hero-unit">
         <h1>{{ category.name }}</h1>
-        <small>Possible category sub-title, this should probably be an optional feature...</small>
+        <small>A beautiful, 14 day travel through the mountains of Canada with my family</small>
     </div>
 
     <div class="content">
-        <div class="content-desc">
-            {# Content here should be in paragraphs... #}
-            {{ category.desc|raw }}
-        </div>
-        <div class="content-gallery">
+        <div class="content-category">
 
             {% if category.galleries|length %}
 
