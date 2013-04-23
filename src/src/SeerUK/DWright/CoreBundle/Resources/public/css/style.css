@@ -209,11 +209,10 @@ p,
 	}
 
 	.container {
-		padding: 0 30px;
+		padding: 0;
 	}
 
 	.header-unit {
-		margin-bottom: 30px;
 		padding: 0;
 	}
 
@@ -222,15 +221,16 @@ p,
 		}
 
 	.hero-unit {
-		padding: 30px 50px;
+		padding: 50px 20px;
 	}
 
 		.hero-unit h1 {
 			font-size: 36px;
+			margin-bottom: 10px;
 		}
 
 		.hero-unit small {
-			font-size: 18px;
+			font-size: 14px;
 		}
 
 	.primary-nav {

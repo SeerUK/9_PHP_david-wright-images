@@ -31,7 +31,7 @@
 .content-category {
 	float: none;
 	overflow: hidden;
-	padding: 40px 10px;
+	padding: 40px 70px;
 	width: auto;
 }
 
@@ -94,7 +94,7 @@
 				left: 0;
 				opacity: 0;
 				overflow: hidden;
-				padding: 12% 13%;
+				padding: 8% 13% 12%;
 				position: absolute;
 				right: 0;
 				top: 0;
@@ -149,14 +149,6 @@
 					white-space: nowrap;
 				}
 
-
-@media (min-width: 0px) and (max-width: 1060px) {
-	.thumbnails > li {
-		margin: 0 0 3.5%;
-		width: 100%;
-	}
-}
-
 @media (min-width: 0px) and (max-width: 940px) {
 	.content {
 		height: auto;
@@ -174,25 +166,38 @@
 		width: auto;
 	}
 
+	.content-gallery,
+	.content-category {
+		padding: 20px 10px;
+	}
+
 	.content-gallery {
 		overflow: visible;
 	}
 
 
-	.thumbnails > li {
-		margin: 0 3.5% 3.5% 0;
-		width: 48.2%;
+	.content-category .thumbnails {
+		margin: 0 20px;
+		width: auto;
 	}
 
-		.thumbnails > li > div > .overlay > .posted {
-			bottom: 6%;
+		.content-category .thumbnails > li {
+			width: 180px;
 		}
+
+			.thumbnails > li > div > .overlay > .posted {
+				bottom: 6%;
+			}
 }
 
 
 @media (min-width: 0px) and (max-width: 480px) {
-	.thumbnails > li {
-		margin: 0 0 3.5%;
+	.content-category .thumbnails {
+		margin: 0 30px;
+		width: auto;
+	}
+
+	.content-category .thumbnails > li {
 		width: 100%;
 	}
 }
