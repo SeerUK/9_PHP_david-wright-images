@@ -23,8 +23,8 @@ class GalleryController extends Controller
     /**
      * Shows a gallery, and the images within.
      *
-     * @param  [integer] $galleryId [A gallery ID]
-     * @return [object]             [Template data]
+     * @param  integer $galleryId
+     * @return object
      */
     public function galleryAction($galleryId)
     {
@@ -40,8 +40,8 @@ class GalleryController extends Controller
      * Shows a gallery category, the galleries within and the cover images
      * of said galleries.
      *
-     * @param  [integer] $categoryId [A category ID]
-     * @return [object]             [Template data]
+     * @param  integer $categoryId
+     * @return object
      */
     public function galleryCategoryAction($categoryId)
     {
@@ -49,15 +49,13 @@ class GalleryController extends Controller
 
         // Redirect to 404 page if there isn't one ...
         if ( ! $category = $galleryHelper->getPaginatedCategoryView($categoryId)) {
-            $response = $this->forward('', array());
+            throw $this->createNotFoundException('The category does not exist!');
 
         // Show category if there is one ...
         } else {
-            $response = $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
+            return $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
                 'category' => $category
             ));
         }
-
-        return $response;
     }
 }

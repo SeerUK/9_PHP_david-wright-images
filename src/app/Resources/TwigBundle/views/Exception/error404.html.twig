@@ -1,0 +1,25 @@
+{##
+ #  Page metadata
+ #}
+{% extends '::master.html.twig' %}
+
+{% block title %}{{ status_text }}{% endblock %}
+
+
+{##
+ #  Page content
+ #}
+{% block body %}
+
+    <div class="hero-unit">
+        <h1>{{ status_code }} {{ status_text }}</h1>
+        <small>{{ exception.message }}</small>
+    </div>
+
+    <div class="content">
+        <div class="" style="color: #242B33; font-size: 14px; max-width: 980px; font-weight: normal; text-align: center; margin: 0 auto;">
+            <p style="line-height: 24px;">Sorry, but the page you're looking for has not been found! Try checking the URL for errors, then hit the refresh button in your browser. If you're sure something is meant to be here then please e-mail us at <a href="mailto:wright.elliot@gmail.com">wright.elliot@gmail.com</a> and let us know.</p>
+        </div>
+    </div>
+
+{% endblock %}
