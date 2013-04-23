@@ -23,7 +23,8 @@
 	font-size: 16px;
 	line-height: 28px;
 	margin-left: 30px;
-	padding: 30px 50px;
+	margin-right: 10%;
+	padding: 40px 0;
 	width: 360px;
 }
 
@@ -33,6 +34,11 @@
 	overflow: hidden;
 	padding: 40px 70px;
 	width: auto;
+}
+
+.content-gallery {
+	margin-left: 15%;
+	padding: 40px 0;
 }
 
 /**
@@ -49,12 +55,6 @@
 		background: #363F48;
 	}
 
-	.content-gallery .thumbnails > li {
-		margin: 0 3.5% 3.5% 0;
-		width: 48.2%;
-		display: block;
-		float: left;
-	}
 
 	.content-category .thumbnails {
 		margin-right: -10px;
@@ -67,6 +67,14 @@
 			margin: 0 10px 10px 0;
 			text-align: left;
 			width: 300px;
+		}
+
+		.content-gallery .thumbnails > li {
+			margin-bottom: 3.5%;
+			margin-left: 0;
+			width: 100%;
+			display: block;
+			float: left;
 		}
 
 		.thumbnails > li > div {
@@ -160,18 +168,21 @@
 		color: #444;
 		font-size: 14px;
 		line-height: 22px;
-		margin-bottom: 3.5%;
-		margin-left: 0;
-		padding: 30px 50px;
+		margin: 0;
+		padding: 20px 50px;
 		width: auto;
 	}
 
-	.content-gallery,
 	.content-category {
-		padding: 20px 10px;
+		padding: 20px 22px;
 	}
 
 	.content-gallery {
+		padding: 20px 50px;
+	}
+
+	.content-gallery {
+		margin: 0;
 		overflow: visible;
 	}
 
@@ -192,6 +203,10 @@
 
 
 @media (min-width: 0px) and (max-width: 480px) {
+	.content-category {
+		padding: 23px;
+	}
+
 	.content-category .thumbnails {
 		margin: 0 30px;
 		width: auto;
@@ -199,5 +214,11 @@
 
 	.content-category .thumbnails > li {
 		width: 100%;
+	}
+
+	.content-desc,
+	.content-desc p {
+		font-size: 14px;
+		line-height: 22px;
 	}
 }

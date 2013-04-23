@@ -26,10 +26,11 @@
 
     <div class="content">
         <div class="content-desc">
-            <p><small class="muted muted-emp">Published {{ gallery.posted|relativeDateTime }}</small></p>
-
             {# Content here should be in paragraphs... #}
             {{ gallery.desc|raw }}
+
+            <p><small class="muted">PUBLISHED</small><br />{{ gallery.posted|relativeDateTime }}</p>
+            <p><small class="muted">NUMBER OF IMAGES</small><br />{{ gallery.galleryImages|length }}</p>
         </div>
         <div class="content-gallery">
 
@@ -40,14 +41,47 @@
                     {% for galleryImage in gallery.galleryImages %}
 
                         <li>
-                            <div>
-                                <div class="overlay">
-                                    <h3 class="entry-title">{{ galleryImage.name }}</h3>
-                                    <p class="posted"><span class="emp">{{ galleryImage.posted|relativeDateTime }}</span></p>
-                                </div>
+                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
+                        </li>
 
-                                <img src="{{ asset(galleryImage.webThumbPath) }}" alt="" title="" />
-                            </div>
+                    {% endfor %}
+
+                    {% for galleryImage in gallery.galleryImages %}
+
+                        <li>
+                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
+                        </li>
+
+                    {% endfor %}
+
+                    {% for galleryImage in gallery.galleryImages %}
+
+                        <li>
+                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
+                        </li>
+
+                    {% endfor %}
+
+                    {% for galleryImage in gallery.galleryImages %}
+
+                        <li>
+                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
+                        </li>
+
+                    {% endfor %}
+
+                    {% for galleryImage in gallery.galleryImages %}
+
+                        <li>
+                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
+                        </li>
+
+                    {% endfor %}
+
+                    {% for galleryImage in gallery.galleryImages %}
+
+                        <li>
+                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
                         </li>
 
                     {% endfor %}
