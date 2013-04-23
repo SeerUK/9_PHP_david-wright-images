@@ -41,47 +41,9 @@
                     {% for galleryImage in gallery.galleryImages %}
 
                         <li>
-                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
-                        </li>
-
-                    {% endfor %}
-
-                    {% for galleryImage in gallery.galleryImages %}
-
-                        <li>
-                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
-                        </li>
-
-                    {% endfor %}
-
-                    {% for galleryImage in gallery.galleryImages %}
-
-                        <li>
-                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
-                        </li>
-
-                    {% endfor %}
-
-                    {% for galleryImage in gallery.galleryImages %}
-
-                        <li>
-                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
-                        </li>
-
-                    {% endfor %}
-
-                    {% for galleryImage in gallery.galleryImages %}
-
-                        <li>
-                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
-                        </li>
-
-                    {% endfor %}
-
-                    {% for galleryImage in gallery.galleryImages %}
-
-                        <li>
-                            <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
+                            <a href="{{ asset(galleryImage.webPath) }}" class="view" rel="adventure">
+                                <img src="{{ asset(galleryImage.webPath) }}" alt="" title="" />
+                            </a>
                         </li>
 
                     {% endfor %}
