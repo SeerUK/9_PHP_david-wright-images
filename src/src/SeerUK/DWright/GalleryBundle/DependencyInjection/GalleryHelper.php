@@ -11,6 +11,8 @@
 
 namespace SeerUK\DWright\GalleryBundle\DependencyInjection;
 
+use Doctrine\ORM\NoResultException;
+
 /**
  * Provides more flexible, decoupled access to Gallery related repositories
  * and entities.
@@ -24,7 +26,7 @@ class GalleryHelper
 
 
     /**
-     * @param [object] $em [An entity manager]
+     * @param object $em
      */
     public function __construct($em)
     {
@@ -35,15 +37,19 @@ class GalleryHelper
     /**
      * Returns a paginated category view page
      *
-     * @param  [integer] $categoryId [A category ID]
-     * @param  [integer] $page       [A page number]
-     * @param  [integer] $perPage    [A number of items to show per page]
-     * @return [object]              [Entity result set of category contents]
+     * @param  integer $categoryId
+     * @param  integer $page
+     * @param  integer $perPage
+     * @return object
      */
     public function getPaginatedCategoryView($categoryId, $page = null, $perPage = null)
     {
-        $category = $this->em->getRepository('SeerUKDWrightGalleryBundle:GalleryCategory')
-            ->findGalleriesById($categoryId, $page, $perPage);
+        try {
+            $category = $this->em->getRepository('SeerUKDWrightGalleryBundle:GalleryCategory')
+                ->findGalleriesById($categoryId, $page, $perPage);
+        } catch (NoResultException $e) {
+            return false;
+        }
 
         return $category;
     }
@@ -52,10 +58,10 @@ class GalleryHelper
     /**
      * Returns a paginated gallery view page
      *
-     * @param  [integer] $galleryId [A gallery ID]
-     * @param  [integer] $page      [A page number]
-     * @param  [integer] $perPage   [A number of items to show per page]
-     * @return [object]             [Entity result set of gallery contents]
+     * @param  integer $galleryId
+     * @param  integer $page
+     * @param  integer $perPage
+     * @return object
      */
     public function getPaginatedGalleryView($galleryId, $page = null, $perPage = null)
     {

@@ -47,8 +47,17 @@ class GalleryController extends Controller
     {
         $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
 
-        return $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
-            'category' => $galleryHelper->getPaginatedCategoryView($categoryId)
-        ));
+        // Redirect to 404 page if there isn't one ...
+        if ( ! $category = $galleryHelper->getPaginatedCategoryView($categoryId)) {
+            $response = $this->forward('', array());
+
+        // Show category if there is one ...
+        } else {
+            $response = $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
+                'category' => $category
+            ));
+        }
+
+        return $response;
     }
 }

@@ -1,0 +1,27 @@
+{##
+ #  Page metadata
+ #}
+{% extends '::master.html.twig' %}
+
+{% block title %}An Error Occurred: {{ status_text }}{% endblock %}
+
+
+{##
+ #  Page content
+ #}
+{% block body %}
+
+    <div class="hero-unit">
+        <h1>Oops! An Error Occurred</h1>
+        <small>The server returned a "{{ status_code }} {{ status_text }}".</small>
+    </div>
+
+    <div class="content">
+        <div class="" style="color: #242B33; font-size: 14px; max-width: 980px; font-weight: normal; text-align: center; margin: 0 auto;">
+            <p>Something is broken. Please e-mail us at <a href="mailto:wright.elliot@gmail.com">wright.elliot@gmail.com</a> and let us know
+            what you were doing when this error occurred. We will fix it as soon
+            as possible. Sorry for any inconvenience caused.</p>
+        </div>
+    </div>
+
+{% endblock %}

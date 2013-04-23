@@ -8,6 +8,7 @@
     {# Start CSS Stylesheets #}
 
     <link href='{{ asset('http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,700') }}' rel='stylesheet' type='text/css' />
+    <link href='{{ asset('http://fonts.googleapis.com/css?family=Open+Sans:400,700') }}' rel='stylesheet' type='text/css' />
 
     {% stylesheets
         'bundles/seerukdwrightcore/css/bootstrap.css'
@@ -23,13 +24,13 @@
     {# End CSS Stylesheets #}
 </head>
 <body>
-    {% include '::header.html.twig' %}
+    {% include 'SeerUKDWrightCoreBundle:Core:header.html.twig' %}
 
     <div class="container">
         {% block body %}{% endblock %}
     </div>
 
-    {% include '::footer.html.twig' %}
+    {% include 'SeerUKDWrightCoreBundle:Core:footer.html.twig' %}
 
     {# Start JS Scripts #}
 
