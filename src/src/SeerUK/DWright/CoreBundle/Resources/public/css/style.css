@@ -238,10 +238,11 @@ p,
 
 	.primary-nav {
 		float: none;
-		margin: 0;
+		margin: 0 0 10px;
 	}
 
 		.primary-nav > ul {
-			margin: 0 0 10px;
+			display: inline-block;
+			margin: 0 auto;
 		}
 }
