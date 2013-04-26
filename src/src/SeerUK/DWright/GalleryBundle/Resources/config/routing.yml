@@ -9,22 +9,8 @@ seer_ukd_wright_gallery_gallery_short:
         _method: GET
         galleryId: \d+
 
-seer_ukd_wright_gallery_gallery:
-    pattern:  /gallery/{galleryId}-{slug}
-    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:gallery }
-    requirements:
-        _method: GET
-        galleryId: \d+
-
 seer_ukd_wright_gallery_category_short:
     pattern:  /gallery/category/{categoryId}
-    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:galleryCategory }
-    requirements:
-        _method: GET
-        categoryId: \d+
-
-seer_ukd_wright_gallery_category:
-    pattern:  /gallery/category/{categoryId}-{slug}
     defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:galleryCategory }
     requirements:
         _method: GET

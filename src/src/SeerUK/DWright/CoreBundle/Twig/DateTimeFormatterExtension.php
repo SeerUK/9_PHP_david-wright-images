@@ -32,6 +32,7 @@ class DateTimeFormatterExtension extends \Twig_Extension
         $this->dateTimeFormatter = $dateTimeFormatter;
     }
 
+
     /**
      * @return array An array of filters within this extension
      */
@@ -42,6 +43,7 @@ class DateTimeFormatterExtension extends \Twig_Extension
         );
     }
 
+
     /**
      * @return string The name of this extension
      */
@@ -49,6 +51,7 @@ class DateTimeFormatterExtension extends \Twig_Extension
     {
         return 'datetimeformatter_extension';
     }
+
 
     /**
      * Returns the relative time of a timestamp from now.

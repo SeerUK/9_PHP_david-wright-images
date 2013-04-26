@@ -1,0 +1,19 @@
+{% set primary_nav = menu_data('primary') %}
+
+<nav role="navigation" class="primary-nav">
+	<ul>
+		{% for key, item in primary_nav if item.enabled is defined and item.enabled %}
+			{% if item.routes is defined and app.request.attributes.get('_route') in item.routes %}
+				<li class="active">
+			{% else %}
+				<li>
+			{% endif %}
+				{% if item.target is defined %}
+					<a href="{{ path(item.target) }}">{{ key }}</a>
+				{% else %}
+					{{ key }}
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+</nav>

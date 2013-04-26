@@ -13,7 +13,6 @@ namespace SeerUK\DWright\GalleryBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use SeerUK\DWright\GalleryBundle\Entity\GalleryRepository;
 
 /**
  * Gallery Controller
@@ -49,7 +48,7 @@ class GalleryController extends Controller
 
         // Redirect to 404 page if there isn't one ...
         if ( ! $category = $galleryHelper->getPaginatedCategoryView($categoryId)) {
-            throw $this->createNotFoundException('The category does not exist!');
+            throw $this->createNotFoundException('That category does not exist!');
 
         // Show category if there is one ...
         } else {

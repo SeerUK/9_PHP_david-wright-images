@@ -3,6 +3,13 @@ parameters:
     seer_ukd_wright_core.date_time_formatter.class: SeerUK\DWright\CoreBundle\Helpers\DateTime\DateTimeFormatter
     seer_ukd_wright_core.twig.date_time_formatter.class: SeerUK\DWright\CoreBundle\Twig\DateTimeFormatterExtension
 
+    # Menu Config & Services
+    seer_ukd_wright_core.menu_provider.class: SeerUK\DWright\CoreBundle\Menu\Provider
+    seer_ukd_wright_core.menu_config_loader_factory.class: SeerUK\DWright\CoreBundle\Menu\Configuration\LoaderFactory
+    seer_ukd_wright_core.menu_config_loader.twig.class: SeerUK\DWright\CoreBundle\Twig\MenuProviderExtension
+    seer_ukd_wright_core.menu_config_loader.file: "%kernel.root_dir%/../src/SeerUK/DWright/CoreBundle/Resources/config/menu.yml"
+
+
 services:
     # Date Time Formatter
     seer_ukd_wright_core.date_time_formatter:
@@ -11,5 +18,19 @@ services:
     seer_ukd_wright_core.twig.date_time_formatter:
         class: %seer_ukd_wright_core.twig.date_time_formatter.class%
         arguments: [@seer_ukd_wright_core.date_time_formatter]
+        tags:
+            - { name: twig.extension }
+
+    # Menu Services
+    seer_ukd_wright_core.menu_provider:
+        class: %seer_ukd_wright_core.menu_provider.class%
+
+    seer_ukd_wright_core.menu_config_loader_factory:
+        class: %seer_ukd_wright_core.menu_config_loader_factory.class%
+        arguments: ["%seer_ukd_wright_core.menu_config_loader.file%"]
+
+    seer_ukd_wright_core.menu_provider.twig:
+        class: %seer_ukd_wright_core.menu_config_loader.twig.class%
+        arguments: [@seer_ukd_wright_core.menu_config_loader_factory]
         tags:
             - { name: twig.extension }
