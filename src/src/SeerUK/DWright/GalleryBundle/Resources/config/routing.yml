@@ -1,6 +1,8 @@
 seer_ukd_wright_gallery_homepage:
-    pattern:  /gallery
-    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:index }
+    pattern:  /gallery/
+    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:galleryHome }
+    requirements:
+        _method: GET
 
 seer_ukd_wright_gallery_gallery_short:
     pattern:  /gallery/{galleryId}
@@ -8,10 +10,3 @@ seer_ukd_wright_gallery_gallery_short:
     requirements:
         _method: GET
         galleryId: \d+
-
-seer_ukd_wright_gallery_category_short:
-    pattern:  /gallery/category/{categoryId}
-    defaults: { _controller: SeerUKDWrightGalleryBundle:Gallery:galleryCategory }
-    requirements:
-        _method: GET
-        categoryId: \d+

@@ -20,30 +20,17 @@ use Symfony\Component\HttpFoundation\Response;
 class GalleryController extends Controller
 {
     /**
-     * Shows a gallery, and the images within.
-     *
-     * @param  integer $galleryId
-     * @return object
-     */
-    public function galleryAction($galleryId)
-    {
-        $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
-
-        return $this->render('SeerUKDWrightGalleryBundle:Gallery:gallery.html.twig', array(
-            'gallery' => $galleryHelper->getPaginatedGalleryView($galleryId)
-        ));
-    }
-
-
-    /**
      * Shows a gallery category, the galleries within and the cover images
      * of said galleries.
      *
      * @param  integer $categoryId
      * @return object
      */
-    public function galleryCategoryAction($categoryId)
+    public function galleryHomeAction()
     {
+        // This is terrible, but, categories are being abandoned!
+        $categoryId = 1;
+
         $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
 
         // Redirect to 404 page if there isn't one ...
@@ -56,5 +43,20 @@ class GalleryController extends Controller
                 'category' => $category
             ));
         }
+    }
+
+    /**
+     * Shows a gallery, and the images within.
+     *
+     * @param  integer $galleryId
+     * @return object
+     */
+    public function galleryAction($galleryId)
+    {
+        $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
+
+        return $this->render('SeerUKDWrightGalleryBundle:Gallery:gallery.html.twig', array(
+            'gallery' => $galleryHelper->getPaginatedGalleryView($galleryId)
+        ));
     }
 }

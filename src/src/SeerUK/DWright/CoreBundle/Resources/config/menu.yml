@@ -10,7 +10,6 @@ primary:
         routes:
             - "seer_ukd_wright_gallery_homepage"
             - "seer_ukd_wright_gallery_gallery_short"
-            - "seer_ukd_wright_gallery_category_short"
         target: "seer_ukd_wright_gallery_homepage"
 
     Contact:

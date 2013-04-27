@@ -56,7 +56,7 @@ class YamlLoader extends FileLoader implements LoaderInterface
         // If key is set, but the key doesn't exist in the configuration:
         } elseif ( ! isset($this->config[$key])) {
             throw new \InvalidArgumentException(sprintf(
-                'The key "%s" must contain exist in "%s".',
+                'The menu config key "%s" must exist in "%s".',
                 $key,
                 $this->getPath()
             ));

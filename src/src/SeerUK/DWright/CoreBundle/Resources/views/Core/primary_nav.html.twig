@@ -9,7 +9,7 @@
                 <li>
             {% endif %}
                 {% if item.target is defined %}
-                    <a href="{{ path(item.target) }}">{{ key }}</a>
+                    <a href="{{ url(item.target) }}">{{ key }}</a>
                 {% else %}
                     {{ key }}
                 {% endif %}
