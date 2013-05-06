@@ -1,4 +1,17 @@
 <br /><br />
 <div class="container">
-    <div class="footer">&copy; 2013 - <em>David Wright</em> - Don't steal me pictures! It's not nice</div>
+    <div class="footer">
+        &copy; 2013 - <em>David Wright</em> - Don't steal me pictures! It's not nice |
+
+        {% if app.user %}
+
+            <a href="{{ path('seer_ukd_wright_account_logout') }}">Sign Out</a>
+
+        {% else %}
+
+            <a href="{{ path('seer_ukd_wright_account_login') }}">Sign In</a>
+
+        {% endif %}
+
+    </div>
 </div>
