@@ -34,6 +34,13 @@ class GalleryHelper
     }
 
 
+    /**
+     * Returns the paginated gallery overview page data
+     *
+     * @param  integer $page
+     * @param  integer $perPage
+     * @return object
+     */
     public function getPaginatedHomeView($page = null, $perPage = null)
     {
         try {
@@ -48,7 +55,7 @@ class GalleryHelper
 
 
     /**
-     * Returns a paginated category view page
+     * Returns the paginated category view page data
      *
      * @param  integer $categoryId
      * @param  integer $page
@@ -69,7 +76,7 @@ class GalleryHelper
 
 
     /**
-     * Returns a paginated gallery view page
+     * Returns the paginated gallery view page data
      *
      * @param  integer $galleryId
      * @param  integer $page

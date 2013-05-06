@@ -21,12 +21,12 @@ use SeerUK\DWright\GalleryBundle\Entity\GalleryImage;
 class GalleryRepository extends EntityRepository
 {
     /**
-     * Returns paginated gallery view data
+     * Returns paginated gallery view data for the given gallery
      *
-     * @param  [integer] $galleryId [A gallery ID]
-     * @param  [integer] $page      [A page number]
-     * @param  [integer] $perPage   [A number of items to show per page]
-     * @return [object]             [Entity result set of gallery contents]
+     * @param  integer $galleryId A gallery ID
+     * @param  integer $page      A page number
+     * @param  integer $perPage   A number of items to show per page
+     * @return object             Entity result set of gallery contents
      */
     public function findGalleriesById($galleryId, $page, $perPage)
     {
@@ -42,6 +42,14 @@ class GalleryRepository extends EntityRepository
             ->getSingleResult();
     }
 
+
+    /**
+     * Returns paginated gallery view data
+     *
+     * @param  integer $page      A page number
+     * @param  integer $perPage   A number of items to show per page
+     * @return object             Entity result set of galleries
+     */
     public function findGalleries($page, $perPage)
     {
         $query = $this->getEntityManager()
