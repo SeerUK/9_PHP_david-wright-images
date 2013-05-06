@@ -1,0 +1,58 @@
+{##
+ #  Page metadata
+ #}
+{% extends '::master.html.twig' %}
+
+{% block stylesheets %}
+    {# {% include 'SeerUKDWrightGalleryBundle:Generic:stylesheets.html.twig' %} #}
+{% endblock %}
+
+{% block javascripts %}
+    {# {% include 'SeerUKDWrightGalleryBundle:Generic:javascripts.html.twig' %} #}
+{% endblock %}
+
+{% block title %}Login{% endblock %}
+
+
+{##
+ #  Page content
+ #}
+{% block body %}
+
+    <div class="hero-unit">
+        <h1>Sign In</h1>
+        <small>This is a secured area</small>
+    </div>
+
+    <div class="content content-form">
+        <div class="row-fluid">
+            <div class="span4 offset4">
+
+                {% if error %}
+
+                    <div class="alert alert-error">Login error - {{ error.message }}</div>
+
+                {% endif %}
+
+                <form action="{{ path('seer_ukd_wright_account_login_check') }}" class="form-horizontal" method="POST">
+                    <fieldset>
+                        <label for="_username">Username <small>(required)</small></label>
+                        <input type="text" class="" name="_username" value="{{ last_username }}" />
+
+                        <label for="_password">Password <small>(required)</small></label>
+                        <input type="password" class="" name="_password" />
+
+                        <input type="hidden" name="_target_path" value="/gallery" />
+
+                        <div class="text-right">
+                            <input type="reset" class="btn" value="Reset" />
+                            <input type="submit" class="btn btn-success" value="Sign In" />
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

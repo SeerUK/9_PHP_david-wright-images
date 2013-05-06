@@ -1,0 +1,9 @@
+seer_ukd_wright_account_login:
+    pattern: /account/login
+    defaults: { _controller: SeerUKDWrightSecurityBundle:Default:Login }
+
+seer_ukd_wright_account_login_check:
+    pattern: /account/login/check
+
+seer_ukd_wright_account_logout:
+    pattern: /account/logout

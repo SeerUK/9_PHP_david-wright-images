@@ -1,3 +1,7 @@
+seer_ukd_wright_security:
+    resource: "@SeerUKDWrightSecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
 seer_ukd_wright_core:
     resource: "@SeerUKDWrightCoreBundle/Resources/config/routing.yml"
     prefix:   /

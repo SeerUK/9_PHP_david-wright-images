@@ -9,7 +9,7 @@
  * http://license.visualidiot.com/
  */
 
-namespace SeerUK\DWright\GalleryBundle\DependencyInjection;
+namespace SeerUK\DWright\GalleryBundle\Helper;
 
 use Doctrine\ORM\NoResultException;
 
@@ -31,6 +31,19 @@ class GalleryHelper
     public function __construct($em)
     {
         $this->em = $em;
+    }
+
+
+    public function getPaginatedHomeView($page = null, $perPage = null)
+    {
+        try {
+            $galleries = $this->em->getRepository('SeerUKDWrightGalleryBundle:Gallery')
+                ->findGalleries($page, $perPage);
+        } catch (NoResultException $e) {
+            return false;
+        }
+
+        return $galleries;
     }
 
 

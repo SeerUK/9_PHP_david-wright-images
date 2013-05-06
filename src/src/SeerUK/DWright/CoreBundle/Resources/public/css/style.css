@@ -186,12 +186,103 @@ p,
 				}
 
 
+.content {
+	color: #363F48;
+}
+
+.content-form {
+	padding-top: 40px;
+}
+
 .content-title {
 	font-size: 52px;
 	font-weight: 300;
 	letter-spacing: -1px;
 	line-height: 62px;
 }
+
+
+/**
+ * Forms!
+ */
+
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"] {
+		-webkit-border-radius: 1px;
+		-moz-border-radius: 1px;
+		border-radius: 1px;
+		box-sizing: border-box;
+		height: 39px;
+		margin-bottom: 40px;
+		padding: 9px 10px 8px;
+		width: 100%;
+	}
+
+		input[type="text"]:focus,
+		input[type="password"]:focus,
+		input[type="email"]:focus {
+			border-color: rgba(87, 99, 121, 0.8);
+		}
+
+	label small {
+		color: #999;
+	}
+
+
+/**
+ * Buttons!
+ */
+
+.btn {
+	background-color: #eee;
+	background-image: none;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: none;
+	box-shadow: none;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 8px 15px;
+	text-shadow: none;
+}
+
+	.btn.btn-success {
+		background-color: #7CC576;
+	}
+
+		.btn.btn-success:hover {
+			background-color: #6BB665;
+		}
+
+	.btn.btn-primary {
+		background-color: #728EA8;
+	}
+
+		.btn.btn-primary:hover {
+			background-color: #5F7C97;
+		}
+
+/**
+ * Alerts!
+ */
+
+.alert {
+	background: #F26C4F;
+	color: white;
+	font-size: 18px;
+	margin-bottom: 20px;
+	text-align: center;
+	text-shadow: none;
+}
+
 
 /**
  * Responsive!

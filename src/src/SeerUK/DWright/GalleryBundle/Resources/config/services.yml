@@ -1,5 +1,5 @@
 parameters:
-    seer_ukd_wright_gallery.gallery_helper.class: SeerUK\DWright\GalleryBundle\DependencyInjection\GalleryHelper
+    seer_ukd_wright_gallery.gallery_helper.class: SeerUK\DWright\GalleryBundle\Helper\GalleryHelper
 
 services:
     seer_ukd_wright_gallery.gallery_helper:

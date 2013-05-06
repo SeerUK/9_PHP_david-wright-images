@@ -11,7 +11,7 @@
     {% include 'SeerUKDWrightGalleryBundle:Generic:javascripts.html.twig' %}
 {% endblock %}
 
-{% block title %}{{ category.name }}{% endblock %}
+{% block title %}Portfolio{% endblock %}
 
 
 {##
@@ -20,18 +20,18 @@
 {% block body %}
 
     <div class="hero-unit">
-        <h1>{{ category.name }}</h1>
-        <small>{{ category.desc }}</small>
+        <h1>Portfolio</h1>
+        <small>Peruse my galleries</small>
     </div>
 
     <div class="content">
         <div class="content-category">
 
-            {% if category.galleries|length %}
+            {% if galleries|length %}
 
-            <ul class="clearfix thumbnails">
+                <ul class="clearfix thumbnails">
 
-                    {% for gallery in category.galleries %}
+                    {% for gallery in galleries %}
 
                         <li>
                             <div>

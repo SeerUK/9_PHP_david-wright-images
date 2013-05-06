@@ -28,19 +28,17 @@ class GalleryController extends Controller
      */
     public function galleryHomeAction()
     {
-        // This is terrible, but, categories are being abandoned!
-        $categoryId = 1;
-
         $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
 
         // Redirect to 404 page if there isn't one ...
-        if ( ! $category = $galleryHelper->getPaginatedCategoryView($categoryId)) {
-            throw $this->createNotFoundException('That category does not exist!');
+        if ( ! $galleries = $galleryHelper->getPaginatedHomeView()) {
+            // Needs to have something for when no galleries exist instead ...
+            //throw $this->createNotFoundException('That category does not exist!');
 
         // Show category if there is one ...
         } else {
-            return $this->render('SeerUKDWrightGalleryBundle:Gallery:category.html.twig', array(
-                'category' => $category
+            return $this->render('SeerUKDWrightGalleryBundle:Gallery:home.html.twig', array(
+                'galleries' => $galleries
             ));
         }
     }

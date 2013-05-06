@@ -196,9 +196,13 @@
 			width: 180px;
 		}
 
-			.thumbnails > li > div > .overlay > .posted {
-				bottom: 6%;
-			}
+	.thumbnails > li > div > .overlay {
+		padding: 6% 13% 12%;
+	}
+
+		.thumbnails > li > div > .overlay > .posted {
+			bottom: 6%;
+		}
 }
 
 
@@ -220,5 +224,9 @@
 	.content-desc p {
 		font-size: 14px;
 		line-height: 22px;
+	}
+
+	.thumbnails > li > div > .overlay {
+		padding: 8% 13% 12%;
 	}
 }

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new SeerUK\DWright\GalleryBundle\SeerUKDWrightGalleryBundle(),
             new SeerUK\DWright\CoreBundle\SeerUKDWrightCoreBundle(),
+            new SeerUK\DWright\SecurityBundle\SeerUKDWrightSecurityBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

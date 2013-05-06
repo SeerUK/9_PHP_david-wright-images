@@ -41,4 +41,17 @@ class GalleryRepository extends EntityRepository
         return $query->useResultCache(true, 600)
             ->getSingleResult();
     }
+
+    public function findGalleries($page, $perPage)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery(
+                  'SELECT g, gi
+                     FROM SeerUKDWrightGalleryBundle:Gallery AS g
+                LEFT JOIN g.galleryImages AS gi'
+            );
+
+        return $query->useResultCache(true, 600)
+            ->getResult();
+    }
 }
