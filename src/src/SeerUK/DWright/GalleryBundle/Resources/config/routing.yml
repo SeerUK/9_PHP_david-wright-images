@@ -10,3 +10,7 @@ seer_ukd_wright_gallery_gallery_short:
     requirements:
         _method: GET
         galleryId: \d+
+
+seer_ukd_wright_admin_homepage:
+    pattern: /admin/gallery/
+    defaults: { _controller: SeerUKDWrightGalleryBundle:Admin:adminHome }
