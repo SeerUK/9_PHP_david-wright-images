@@ -12,8 +12,9 @@
     {% stylesheets
         'bundles/seerukdwrightcore/css/bootstrap.css'
         'bundles/seerukdwrightcore/css/bootstrap-responsive.css'
+        'bundles/seerukdwrightcore/css/style.css'
         'bundles/seerukdwrightcore/css/admin.css'
-        filter='cssrewrite,yui_css' combine=true output='css/coreadminbundle.css'
+        filter='cssrewrite,yui_css' combine=true output='css/adminaggregate.css'
     %}
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
@@ -37,7 +38,7 @@
 
     {% javascripts
         '@SeerUKDWrightCoreBundle/Resources/public/js/bootstrap.js'
-        filter='yui_js' combine=true output='css/corebundle.js'
+        filter='yui_js' combine=true output='css/adminaggregate.js'
     %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}

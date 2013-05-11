@@ -5,6 +5,12 @@
 
         {% if app.user %}
 
+            {% if is_granted('ROLE_ADMIN') %}
+
+                <a href="{{ path('seer_ukd_wright_admin_gallery') }}">Admin</a> |
+
+            {% endif %}
+
             <a href="{{ path('seer_ukd_wright_account_logout') }}">Sign Out</a>
 
         {% else %}

@@ -11,6 +11,6 @@ seer_ukd_wright_gallery_gallery_short:
         _method: GET
         galleryId: \d+
 
-seer_ukd_wright_admin_homepage:
+seer_ukd_wright_admin_gallery:
     pattern: /admin/gallery/
     defaults: { _controller: SeerUKDWrightGalleryBundle:Admin:adminHome }

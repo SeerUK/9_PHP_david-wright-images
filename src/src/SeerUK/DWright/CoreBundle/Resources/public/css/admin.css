@@ -1,0 +1,50 @@
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    margin-left: 300px;
+    min-height: 100%;
+    width: auto;
+}
+
+.sidebar {
+    background: #363F48;
+    float: left;
+    font-size: 14px;
+    height: 100%;
+    line-height: 27px;
+    padding: 30px;
+    width: 240px;
+}
+
+    .sidebar a {
+        color: #A7ABB1;
+    }
+
+        .sidebar a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+    .sidebar .menu {
+        list-style: none;
+        margin: 0;
+    }
+
+        .sidebar .menu > li {
+            line-height: 27px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sidebar .menu .sidebar-icon {
+            background-image: url('../img/sidebar-icons.png');
+            padding: 1px 0 0 25px;
+        }
+
+            .sidebar .menu .sidebar-icon-gallery {
+                background-position: 0px -148px;
+            }
