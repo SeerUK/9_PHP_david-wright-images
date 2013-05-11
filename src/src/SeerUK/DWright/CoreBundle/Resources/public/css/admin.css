@@ -41,10 +41,15 @@ body {
         }
 
         .sidebar .menu .sidebar-icon {
-            background-image: url('../img/sidebar-icons.png');
+            background: url('../img/sidebar-icons.png') no-repeat;
             padding: 1px 0 0 25px;
         }
 
             .sidebar .menu .sidebar-icon-gallery {
-                background-position: 0px -148px;
+                background-position: 0 -119px;
             }
+
+                .sidebar .menu .active .sidebar-icon-gallery,
+                .sidebar .menu .sidebar-icon-gallery:hover {
+                    background-position: 0 -234px;
+                }
