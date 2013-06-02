@@ -14,3 +14,27 @@ primary:
 
     Contact:
         enabled: true
+
+admin_primary:
+    About:
+        enabled: true
+        class: nav-icon-page
+
+    Portfolio:
+        enabled: true
+        class: nav-icon-gallery
+        routes:
+            - "seer_ukd_wright_admin_gallery"
+        target: "seer_ukd_wright_admin_gallery"
+
+    Contact:
+        enabled: true
+        class: nav-icon-page
+
+    spacer:
+        enabled: true
+        class: spacer
+
+    Settings:
+        enabled: true
+        class: nav-icon-settings

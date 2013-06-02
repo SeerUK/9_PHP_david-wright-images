@@ -1,55 +1,137 @@
-html,
-body {
-    height: 100%;
-}
+/*!
+ * David Wright Admin CSS
+ *
+ * Main admin stylesheet, probably duplicating some styles with the main
+ * stylesheet, but oh well ...
+ */
 
-.container {
-    margin-left: 300px;
-    min-height: 100%;
-    width: auto;
-}
 
-.sidebar {
-    background: #363F48;
-    float: left;
-    font-size: 14px;
-    height: 100%;
-    line-height: 27px;
-    padding: 30px;
-    width: 240px;
-}
+/**
+ * Contents
+ *
+ * 1.0 ... Page Setup
+ *     1.1 ... Base
+ *     1.2 ... Containers
+ * 2.0 ... Typography
+ *     2.1 ... Headers
+ *     2.2 ... Paragraphs
+ * 3.0 ... Components
+ *     3.1 ... Navigation
+ * 4.0 ... Icons
+ *     4.1 ... Navigation Icons
+ *
+ */
 
-    .sidebar a {
-        color: #A7ABB1;
+
+/**
+ * 1.0 ... Page Setup
+ */
+
+    /**
+     * 1.1 ... Base
+     */
+
+    html,
+    body {
+        background: white url('../img/admin/bg.jpg') repeat-y;
+        height: 100%;
     }
 
-        .sidebar a:hover {
-            color: white;
-            text-decoration: none;
-        }
 
-    .sidebar .menu {
+    /**
+     * 1.2 ... Containers
+     */
+
+    .container-content {
+        margin-left: 300px;
+        min-height: 100%;
+        width: auto;
+    }
+
+    .container-nav {
+        float: left;
+        font-size: 14px;
+        line-height: 27px;
+        padding: 30px;
+        width: 240px;
+    }
+
+
+/**
+ * 3.0 ... Components
+ */
+
+    /**
+     * 3.1 ... Navigation
+     */
+
+    .nav {
         list-style: none;
-        margin: 0;
+        margin: 0 0 20px;
     }
 
-        .sidebar .menu > li {
-            line-height: 27px;
+        .nav > li {
+            margin: 6px 0;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
 
-        .sidebar .menu .sidebar-icon {
-            background: url('../img/sidebar-icons.png') no-repeat;
-            padding: 1px 0 0 25px;
-        }
-
-            .sidebar .menu .sidebar-icon-gallery {
-                background-position: 0 -119px;
+            .nav > li.spacer {
+                height: 14px;
+                visibility: hidden;
             }
 
-                .sidebar .menu .active .sidebar-icon-gallery,
-                .sidebar .menu .sidebar-icon-gallery:hover {
-                    background-position: 0 -234px;
+            .nav > li,
+            .nav > li > a {
+                color: #A7ABB1;
+            }
+
+                .nav > li > a:hover,
+                .nav > li > a.active {
+                    background-color: transparent;
+                    color: white;
+                    text-decoration: none;
                 }
+
+
+/**
+ * 4.0 ... Icons
+ */
+
+    /**
+     * 4.1 ... Navigation Icons
+     */
+
+    [class^="nav-icon-"],
+    [class*=" nav-icon-"] {
+        background: url('../img/admin/nav-icons.png') no-repeat;
+        padding: 1px 0 0 25px;
+    }
+
+    .nav-icon-gallery {
+        background-position: 0 -117px;
+    }
+
+        .nav-icon-gallery:hover,
+        .nav-icon-gallery.active {
+            background-position: 0 -232px;
+        }
+
+    .nav-icon-page {
+        background-position: 0 -88px;
+    }
+
+        .nav-icon-page:hover,
+        .nav-icon-page.active {
+            background-position: 0 -203px;
+        }
+
+    .nav-icon-settings {
+        background-position: 0 -31px;
+    }
+
+        .nav-icon-settings:hover,
+        .nav-icon-settings.active {
+            background-position: 0 -146px;
+        }
