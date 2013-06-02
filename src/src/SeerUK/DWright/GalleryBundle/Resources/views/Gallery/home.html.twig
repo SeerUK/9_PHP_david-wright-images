@@ -21,7 +21,7 @@
 
     <div class="hero-unit">
         <h1>Portfolio</h1>
-        <small>Peruse my galleries</small>
+        <small>Some tagline for my galleries</small>
     </div>
 
     <div class="content">
@@ -33,30 +33,28 @@
 
                     {% for gallery in galleries %}
 
-                        <li>
-                            <div>
-                                <div class="overlay">
-                                    <a class="" href="{{ url('seer_ukd_wright_gallery_gallery_short', { 'galleryId': gallery.id }) }}"></a>
-                                    <h3 class="entry-title">{{ gallery.name }}</h3>
-                                    <p class="posted"><span class="emp">{{ gallery.posted|relativeDateTime }}</span></p>
-                                </div>
+                        {% if gallery.galleryImages|length %}
 
-                                {% if gallery.galleryImages|length %}
-
+                            <li>
+                                <div>
+                                    <div class="overlay">
+                                        <a class="" href="{{ url('seer_ukd_wright_gallery_gallery_short', { 'galleryId': gallery.id }) }}"></a>
+                                        <h3 class="entry-title">{{ gallery.name }}</h3>
+                                        <p class="posted"><span class="emp">{{ gallery.posted|relativeDateTime }}</span></p>
+                                    </div>
                                     <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
+                                </div>
+                            </li>
 
-                                {% else %}
-
-                                    <img src="{{ asset('http://placebacn.com/400/400') }}" alt="" title="" />
-
-                                {% endif %}
-
-                            </div>
-                        </li>
+                        {% endif %}
 
                     {% endfor %}
 
                 </ul>
+
+            {% else %}
+
+                <p class="text-center">There are currently no galleries.</p>
 
             {% endif %}
 

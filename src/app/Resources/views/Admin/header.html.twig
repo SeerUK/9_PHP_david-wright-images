@@ -2,4 +2,8 @@
 
     {% include ':Admin:primary_nav.html.twig' %}
 
+    <ul>
+        <li class="section">Logged in as {{ app.user.userName }}</li>
+        <li><a href="{{ path('seer_ukd_wright_account_logout') }}">Sign Out</a></li>
+    </ul>
 </div>

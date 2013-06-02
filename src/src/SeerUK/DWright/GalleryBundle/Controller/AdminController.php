@@ -15,19 +15,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Admin Controller
+ * Gallery Admin Controller
  */
 class AdminController extends Controller
 {
     public function adminHomeAction()
     {
-        return $this->render('SeerUKDWrightGalleryBundle:Admin:home.html.twig', array(
+        $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
 
+        return $this->render('SeerUKDWrightGalleryBundle:Admin:home.html.twig', array(
+            'galleries' => $galleryHelper->getPaginatedHomeView()
         ));
     }
 
 
-    public function galleryAdminAction()
+    public function newGalleryAction()
     {
         return new Response('test');
     }

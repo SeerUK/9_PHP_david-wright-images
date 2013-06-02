@@ -11,6 +11,49 @@
  #}
 {% block body %}
 
+    <section class="main">
+        <section class="page-title">
+            <a class="btn btn-success pull-right" href="#"><i class="icon-plus icon-white"></i> Add Gallery</a>
+            <h4>Portfolio</h4>
+        </section>
 
+        {% if galleries|length %}
+
+            <ul class="clearfix thumbnails">
+
+                {% for gallery in galleries %}
+
+                    {% if gallery.galleryImages|length %}
+
+                        {% spaceless %}
+
+                            <li>
+                                <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
+                                <section class="desc">
+                                    <p>{{ gallery.name }}</p>
+                                </section>
+{#
+                                <header>
+                                    <p>Posted {{ gallery.posted|relativeDateTime }}</p>
+                                    <a class="btn" href="{{ url('seer_ukd_wright_gallery_gallery_short', { 'galleryId': gallery.id }) }}">View Gallery</a>
+                                </header>
+#}
+                            </li>
+
+                        {% endspaceless %}
+
+                    {% endif %}
+
+                {% endfor %}
+
+            </ul>
+
+        {% else %}
+
+            <p class="text-center">There are currently no galleries.</p>
+
+        {% endif %}
+
+    </section>
 
 {% endblock %}

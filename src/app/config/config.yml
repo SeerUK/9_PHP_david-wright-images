@@ -26,6 +26,7 @@ twig:
     strict_variables: %kernel.debug%
     globals:
         site_name: %configurable.site_name%
+        site_url: %configurable.site_url%
         webmaster: %configurable.webmaster%
 
 # Assetic Configuration

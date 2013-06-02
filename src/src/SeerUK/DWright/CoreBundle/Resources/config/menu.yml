@@ -16,6 +16,14 @@ primary:
         enabled: true
 
 admin_primary:
+    Home:
+        enabled: true
+        class: nav-icon-dashboard
+
+    spacer1:
+        enabled: true
+        class: spacer
+
     About:
         enabled: true
         class: nav-icon-page
@@ -31,10 +39,10 @@ admin_primary:
         enabled: true
         class: nav-icon-page
 
-    spacer:
+    spacer2:
         enabled: true
         class: spacer
 
     Settings:
         enabled: true
-        class: nav-icon-settings
+        class: nav-icon-grid

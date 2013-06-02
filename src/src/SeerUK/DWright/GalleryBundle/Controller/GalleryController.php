@@ -30,18 +30,11 @@ class GalleryController extends Controller
     {
         $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
 
-        // Redirect to 404 page if there isn't one ...
-        if ( ! $galleries = $galleryHelper->getPaginatedHomeView()) {
-            // Needs to have something for when no galleries exist instead ...
-            //throw $this->createNotFoundException('That category does not exist!');
-
-        // Show category if there is one ...
-        } else {
-            return $this->render('SeerUKDWrightGalleryBundle:Gallery:home.html.twig', array(
-                'galleries' => $galleries
-            ));
-        }
+        return $this->render('SeerUKDWrightGalleryBundle:Gallery:home.html.twig', array(
+            'galleries' => $galleryHelper->getPaginatedHomeView()
+        ));
     }
+
 
     /**
      * Shows a gallery, and the images within.

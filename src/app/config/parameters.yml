@@ -16,4 +16,5 @@ parameters:
 
     # Configurable parameters ...
     configurable.site_name: "David Wright Images"
+    configurable.site_url: "misa/dwright/app_dev.php/"
     configurable.webmaster: "wright.elliot@gmail.com"
