@@ -23,11 +23,12 @@
     {# End CSS Stylesheets #}
 </head>
 <body>
+
     {% include ':Admin:header.html.twig' %}
 
     <div class="container-content">
         <header class="page-header">
-            <h3>{{ site_name }} <small><a href="http://{{ site_url }}">{{ site_url }}</a></small></h3>
+            <h3>{{ site_name }} <small><a href="{{ 'http://' ~ app.request.host ~ app.request.baseUrl ~ '/' }}">{{ 'http://' ~ app.request.host ~ app.request.baseUrl ~ '/' }}</a></small></h3>
         </header>
 
         {% block body %}{% endblock %}

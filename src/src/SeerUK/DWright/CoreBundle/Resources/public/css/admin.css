@@ -246,12 +246,16 @@
                     opacity: 1;
                     position: relative;
                     -webkit-transition: opacity .1s ease-in;
-                    -moz-transition: opacity .1s ease-in;
-                    -o-transition: opacity .1s ease-in;
-                    transition: opacity .1s ease-in;
+                       -moz-transition: opacity .1s ease-in;
+                         -o-transition: opacity .1s ease-in;
+                            transition: opacity .1s ease-in;
                     width: 100%;
                     z-index: 1;
                 }
+
+                    .thumbnails > li:hover > img {
+                        opacity: 0.6;
+                    }
 
     /**
      * 3.3 ... Buttons
