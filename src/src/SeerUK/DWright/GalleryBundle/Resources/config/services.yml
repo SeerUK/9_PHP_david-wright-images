@@ -1,5 +1,6 @@
 parameters:
     seer_ukd_wright_gallery.gallery_helper.class: SeerUK\DWright\GalleryBundle\Helper\GalleryHelper
+    seer_ukd_wright_gallery.create_gallery_model.class: SeerUK\DWright\GalleryBundle\Form\Model\CreateGallery;
 
 services:
     seer_ukd_wright_gallery.gallery_helper:

@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="Gallery")
  * @ORM\Entity(repositoryClass="SeerUK\DWright\GalleryBundle\Entity\GalleryRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Gallery
 {
@@ -37,19 +38,6 @@ class Gallery
      * @ORM\Column(name="dtmPublished", type="datetime")
      */
     protected $posted;
-
-
-    /**
-     * @ORM\Column(name="intGalleryCoverImageId", type="integer")
-     */
-    protected $coverId;
-
-
-    /**
-     * @ORM\ManyToOne(targetEntity="GalleryCategory", inversedBy="galleries")
-     * @ORM\JoinColumn(name="intGalleryCategoryId", referencedColumnName="intGalleryCategoryId")
-     */
-    protected $galleryCategory;
 
 
     /**
@@ -101,24 +89,13 @@ class Gallery
 
 
     /**
-     * Get publishedOn
+     * Get posted
      *
      * @return string
      */
     public function getPosted()
     {
         return $this->posted;
-    }
-
-
-    /**
-     * Get galleryCategory
-     *
-     * @return \SeerUK\DWright\GalleryBundle\Entity\GalleryCategory
-     */
-    public function getGalleryCategory()
-    {
-        return $this->galleryCategory;
     }
 
 
@@ -156,7 +133,7 @@ class Gallery
      * @param \DateTime $posted
      * @return Gallery
      */
-    public function setPosted($posted)
+    public function setPosted(\DateTime $posted)
     {
         $this->posted = $posted;
 
@@ -165,14 +142,11 @@ class Gallery
 
 
     /**
-     * Set galleryCategory
-     *
-     * @param \SeerUK\DWright\GalleryBundle\Entity\GalleryCategory $galleryCategory
-     * @return Gallery
+     * @ORM\PrePersist
      */
-    public function setGalleryCategory(\SeerUK\DWright\GalleryBundle\Entity\GalleryCategory $galleryCategory = null)
+    public function setPostedOnCreation()
     {
-        $this->galleryCategory = $galleryCategory;
+        $this->posted = new \DateTime();
 
         return $this;
     }

@@ -14,3 +14,7 @@ seer_ukd_wright_gallery_gallery_short:
 seer_ukd_wright_admin_gallery:
     pattern: /admin/gallery/
     defaults: { _controller: SeerUKDWrightGalleryBundle:Admin:adminHome }
+
+seer_ukd_wright_admin_gallery_new_gallery:
+    pattern: /admin/gallery/new/
+    defaults: { _controller: SeerUKDWrightGalleryBundle:Admin:newGallery }

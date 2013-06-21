@@ -11,6 +11,8 @@
 
 namespace SeerUK\DWright\GalleryBundle\Controller;
 
+use SeerUK\DWright\GalleryBundle\Form\Model\CreateGallery;
+use SeerUK\DWright\GalleryBundle\Form\Type\CreateGalleryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -31,6 +33,29 @@ class AdminController extends Controller
 
     public function newGalleryAction()
     {
-        return new Response('test');
+        $em      = $this->getDoctrine()->getEntityManager();
+        $request = $this->getRequest();
+        $form    = $this->createForm(
+            new CreateGalleryType(),
+            new CreateGallery()
+        );
+
+        if ($request->getMethod() == 'POST') {
+            $form->bind($this->getRequest());
+
+            if ($form->isValid()) {
+                $gallery = $form->getData()
+                    ->getGallery();
+
+                $em->persist($gallery);
+                $em->flush();
+
+                return new Response('Gallery ' . $gallery->getName() . ' successfully created.');
+            }
+        }
+
+        return $this->render('SeerUKDWrightGalleryBundle:Admin:new-gallery.html.twig', array(
+            'form' => $form->createView(),
+        ));
     }
 }

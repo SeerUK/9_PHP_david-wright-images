@@ -18,26 +18,23 @@ primary:
 admin_primary:
     Home:
         enabled: true
-        class: nav-icon-dashboard
-
-    spacer1:
-        enabled: true
-        class: spacer
+        class: flaticon stroke home-2
 
     About:
         enabled: true
-        class: nav-icon-page
+        class: flaticon stroke article-3
 
     Portfolio:
         enabled: true
-        class: nav-icon-gallery
+        class: flaticon stroke photo-1
         routes:
             - "seer_ukd_wright_admin_gallery"
+            - "seer_ukd_wright_admin_gallery_new_gallery"
         target: "seer_ukd_wright_admin_gallery"
 
     Contact:
         enabled: true
-        class: nav-icon-page
+        class: flaticon stroke mail-3
 
     spacer2:
         enabled: true
@@ -45,4 +42,4 @@ admin_primary:
 
     Settings:
         enabled: true
-        class: nav-icon-grid
+        class: flaticon stroke settings-1

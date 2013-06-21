@@ -201,6 +201,11 @@
                 color: #A7ABB1;
             }
 
+            .nav > li > a {
+                display: inline-block;
+                margin-left: 4px;
+            }
+
                 .nav > li > a:hover,
                 .nav > li > a.active {
                     background-color: transparent;
@@ -262,13 +267,21 @@
      */
 
     .btn {
+        background-color: #bbb;
         background-image: none;
         box-shadow: none;
         border: none;
+        color: white;
+        display: inline-block;
         font-weight: bold;
         padding: 8px 14px;
         text-shadow: none;
     }
+
+        .btn:hover {
+            background-color: #ccc;
+            color: white;
+        }
 
     .btn-success {
         background-color: #7CC576;

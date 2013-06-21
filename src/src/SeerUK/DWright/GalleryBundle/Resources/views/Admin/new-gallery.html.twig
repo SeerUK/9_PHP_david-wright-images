@@ -1,0 +1,27 @@
+{##
+ #  Page metadata
+ #}
+{% extends ':Admin:master.html.twig' %}
+
+{% block title %}New Gallery{% endblock %}
+
+
+{##
+ #  Page content
+ #}
+{% block body %}
+
+    <section class="main">
+        <section class="page-title">
+            <a class="btn btn-success pull-right" href="{{ url('seer_ukd_wright_admin_gallery_new_gallery') }}"><i class="icon-plus icon-white"></i> Add Gallery</a>
+            <h4>Add Gallery</h4>
+        </section>
+
+        <form action="{{ path('seer_ukd_wright_admin_gallery_new_gallery') }}" method="post" {{ form_enctype(form) }}>
+            {{ form_widget(form) }}
+
+            <input type="submit" />
+        </form>
+    </section>
+
+{% endblock %}

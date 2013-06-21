@@ -13,7 +13,10 @@
 
     <section class="main">
         <section class="page-title">
-            <a class="btn btn-success pull-right" href="#"><i class="icon-plus icon-white"></i> Add Gallery</a>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new_gallery') }}"><i class="icon-plus icon-white"></i> Add Gallery</a>
+                <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}">View Galleries</a>
+            </div>
             <h4>Portfolio</h4>
         </section>
 
@@ -23,26 +26,26 @@
 
                 {% for gallery in galleries %}
 
-                    {% if gallery.galleryImages|length %}
+                    {% spaceless %}
 
-                        {% spaceless %}
-
-                            <li>
+                        <li>
+                            {% if gallery.galleryImages|length %}
                                 <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
-                                <section class="desc">
-                                    <p>{{ gallery.name }}</p>
-                                </section>
+                            {% else %}
+                                <img src="http://placehold.it/200x200" alt="" title="" />
+                            {% endif %}
+                            <section class="desc">
+                                <p>{{ gallery.name }}</p>
+                            </section>
 {#
-                                <header>
-                                    <p>Posted {{ gallery.posted|relativeDateTime }}</p>
-                                    <a class="btn" href="{{ url('seer_ukd_wright_gallery_gallery_short', { 'galleryId': gallery.id }) }}">View Gallery</a>
-                                </header>
+                            <header>
+                                <p>Posted {{ gallery.posted|relativeDateTime }}</p>
+                                <a class="btn" href="{{ url('seer_ukd_wright_gallery_gallery_short', { 'galleryId': gallery.id }) }}">View Gallery</a>
+                            </header>
 #}
-                            </li>
+                        </li>
 
-                        {% endspaceless %}
-
-                    {% endif %}
+                    {% endspaceless %}
 
                 {% endfor %}
 
