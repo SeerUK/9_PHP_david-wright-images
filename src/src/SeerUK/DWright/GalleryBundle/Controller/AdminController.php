@@ -11,6 +11,7 @@
 
 namespace SeerUK\DWright\GalleryBundle\Controller;
 
+use SeerUK\DWright\GalleryBundle\Entity\Gallery;
 use SeerUK\DWright\GalleryBundle\Form\Model\CreateGallery;
 use SeerUK\DWright\GalleryBundle\Form\Type\CreateGalleryType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -21,16 +22,22 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class AdminController extends Controller
 {
+    /**
+     * Gallery Admin Home
+     */
     public function adminHomeAction()
     {
         $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
 
         return $this->render('SeerUKDWrightGalleryBundle:Admin:home.html.twig', array(
-            'galleries' => $galleryHelper->getPaginatedHomeView()
+            'galleries' => $galleryHelper->getPaginatedHomeView(false)
         ));
     }
 
 
+    /**
+     * Action for creating a gallery ...
+     */
     public function newGalleryAction()
     {
         $em      = $this->getDoctrine()->getEntityManager();
@@ -57,5 +64,22 @@ class AdminController extends Controller
         return $this->render('SeerUKDWrightGalleryBundle:Admin:new-gallery.html.twig', array(
             'form' => $form->createView(),
         ));
+    }
+
+
+    /**
+     * Action for deleting a gallery ...
+     */
+    public function deleteGalleryAction(Gallery $gallery)
+    {
+        if ( ! $gallery) {
+            throw $this->createNotFoundException('That gallery doesn\'t exist.');
+        }
+
+        $em = $this->getDoctrine()->getEntityManager();
+        $em->remove($gallery);
+        $em->flush();
+
+        return new Response('Gallery ' . $gallery->getName() . ' successfully deleted.');
     }
 }

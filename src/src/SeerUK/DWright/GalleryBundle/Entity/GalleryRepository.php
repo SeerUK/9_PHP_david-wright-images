@@ -28,7 +28,7 @@ class GalleryRepository extends EntityRepository
      * @param  integer $perPage   A number of items to show per page
      * @return object             Entity result set of gallery contents
      */
-    public function findGalleriesById($galleryId, $page, $perPage)
+    public function findGalleriesById($galleryId, $bolCache = true, $page, $perPage)
     {
         $query = $this->getEntityManager()
             ->createQuery(
@@ -38,7 +38,7 @@ class GalleryRepository extends EntityRepository
                     WHERE g.id = :galleryId'
             )->setParameter('galleryId', $galleryId);
 
-        return $query->useResultCache(true, 600)
+        return $query->useResultCache((bool) $bolCache, 600)
             ->getSingleResult();
     }
 
@@ -50,7 +50,7 @@ class GalleryRepository extends EntityRepository
      * @param  integer $perPage   A number of items to show per page
      * @return object             Entity result set of galleries
      */
-    public function findGalleries($page, $perPage)
+    public function findGalleries($bolCache = true, $page, $perPage)
     {
         $query = $this->getEntityManager()
             ->createQuery(
@@ -59,7 +59,7 @@ class GalleryRepository extends EntityRepository
                 LEFT JOIN g.galleryImages AS gi'
             );
 
-        return $query->useResultCache(true, 600)
+        return $query->useResultCache((bool) $bolCache, 600)
             ->getResult();
     }
 }

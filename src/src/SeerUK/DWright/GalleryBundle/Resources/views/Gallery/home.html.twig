@@ -33,7 +33,6 @@
 
                     {% for gallery in galleries %}
 
-                        {% if gallery.galleryImages|length %}
 
                             <li>
                                 <div>
@@ -42,11 +41,16 @@
                                         <h3 class="entry-title">{{ gallery.name }}</h3>
                                         <p class="posted"><span class="emp">{{ gallery.posted|relativeDateTime }}</span></p>
                                     </div>
-                                    <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
+
+                                    {% if gallery.galleryImages|length %}
+                                        <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
+                                    {% else %}
+                                        <img src="{{ asset('http://placehold.it/300x300') }}" alt="" title="" />
+                                    {% endif %}
+
                                 </div>
                             </li>
 
-                        {% endif %}
 
                     {% endfor %}
 

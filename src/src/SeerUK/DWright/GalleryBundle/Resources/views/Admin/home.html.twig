@@ -3,7 +3,7 @@
  #}
 {% extends ':Admin:master.html.twig' %}
 
-{% block title %}Galleries{% endblock %}
+{% block title %}Portfolio{% endblock %}
 
 
 {##
@@ -14,8 +14,8 @@
     <section class="main">
         <section class="page-title">
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new_gallery') }}"><i class="icon-plus icon-white"></i> Add Gallery</a>
-                <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}">View Galleries</a>
+                <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon stroke add-window-1"></i> Add Gallery</a>
+                <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}" target="_blank"><i class="flaticon stroke share-2"></i> View Galleries</a>
             </div>
             <h4>Portfolio</h4>
         </section>
@@ -28,21 +28,19 @@
 
                     {% spaceless %}
 
-                        <li>
+                        <li class="relative">
+                            <a href="{{ url('seer_ukd_wright_admin_gallery_delete', {'id': gallery.id}) }}" class="absolute btn btn-danger pull-right spaced">
+                                <i class="flaticon stroke trash-3"></i>
+                            </a>
                             {% if gallery.galleryImages|length %}
                                 <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
                             {% else %}
                                 <img src="http://placehold.it/200x200" alt="" title="" />
                             {% endif %}
                             <section class="desc">
-                                <p>{{ gallery.name }}</p>
+                                <p class="nomargin">{{ gallery.name }}</p>
+                                <p class="muted nomargin">{{ gallery.desc }}</p>
                             </section>
-{#
-                            <header>
-                                <p>Posted {{ gallery.posted|relativeDateTime }}</p>
-                                <a class="btn" href="{{ url('seer_ukd_wright_gallery_gallery_short', { 'galleryId': gallery.id }) }}">View Gallery</a>
-                            </header>
-#}
                         </li>
 
                     {% endspaceless %}

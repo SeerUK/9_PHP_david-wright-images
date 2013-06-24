@@ -12,13 +12,14 @@
             {% endif %}
 
             <li class="{{ item.class }} {{ active }}">
+
                 {% if item.target is defined %}
 
                     <a class="{{ active }}" href="{{ url(item.target) }}">{{ key }}</a>
 
                 {% else %}
 
-                    {{ key }}
+                    <span>{{ key }}</span>
 
                 {% endif %}
             </li>

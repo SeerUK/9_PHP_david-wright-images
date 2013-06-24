@@ -11,10 +11,19 @@ seer_ukd_wright_gallery_gallery_short:
         _method: GET
         galleryId: \d+
 
+##
+ # Admin
+ #
 seer_ukd_wright_admin_gallery:
     pattern: /admin/gallery/
     defaults: { _controller: SeerUKDWrightGalleryBundle:Admin:adminHome }
 
-seer_ukd_wright_admin_gallery_new_gallery:
+seer_ukd_wright_admin_gallery_new:
     pattern: /admin/gallery/new/
     defaults: { _controller: SeerUKDWrightGalleryBundle:Admin:newGallery }
+
+seer_ukd_wright_admin_gallery_delete:
+    pattern: /admin/gallery/delete/{id}
+    defaults: { _controller: SeerUKDWrightGalleryBundle:Admin:deleteGallery }
+    requirements:
+        id: \d+

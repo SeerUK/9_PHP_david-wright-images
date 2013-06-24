@@ -41,37 +41,16 @@ class GalleryHelper
      * @param  integer $perPage
      * @return object
      */
-    public function getPaginatedHomeView($page = null, $perPage = null)
+    public function getPaginatedHomeView($bolCache = true, $page = null, $perPage = null)
     {
         try {
             $galleries = $this->em->getRepository('SeerUKDWrightGalleryBundle:Gallery')
-                ->findGalleries($page, $perPage);
+                ->findGalleries($bolCache, $page, $perPage);
         } catch (NoResultException $e) {
             return false;
         }
 
         return $galleries;
-    }
-
-
-    /**
-     * Returns the paginated category view page data
-     *
-     * @param  integer $categoryId
-     * @param  integer $page
-     * @param  integer $perPage
-     * @return object
-     */
-    public function getPaginatedCategoryView($categoryId, $page = null, $perPage = null)
-    {
-        try {
-            $category = $this->em->getRepository('SeerUKDWrightGalleryBundle:GalleryCategory')
-                ->findGalleriesById($categoryId, $page, $perPage);
-        } catch (NoResultException $e) {
-            return false;
-        }
-
-        return $category;
     }
 
 
@@ -83,10 +62,10 @@ class GalleryHelper
      * @param  integer $perPage
      * @return object
      */
-    public function getPaginatedGalleryView($galleryId, $page = null, $perPage = null)
+    public function getPaginatedGalleryView($galleryId, $bolCache = true, $page = null, $perPage = null)
     {
         $gallery = $this->em->getRepository('SeerUKDWrightGalleryBundle:Gallery')
-            ->findGalleriesById($galleryId, $page, $perPage);
+            ->findGalleriesById($galleryId, $bolCache, $page, $perPage);
 
         return $gallery;
     }
