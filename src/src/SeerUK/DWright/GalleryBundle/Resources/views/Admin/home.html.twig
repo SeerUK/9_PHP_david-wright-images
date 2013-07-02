@@ -38,8 +38,8 @@
                                 <img src="http://placehold.it/200x200" alt="" title="" />
                             {% endif %}
                             <section class="desc">
-                                <p class="nomargin">{{ gallery.name }}</p>
-                                <p class="muted nomargin">{{ gallery.desc }}</p>
+                                <p class="nomargin">{{ gallery.name|striptags }}</p>
+                                <p class="muted nomargin">{{ gallery.desc|striptags }}</p>
                             </section>
                         </li>
 
