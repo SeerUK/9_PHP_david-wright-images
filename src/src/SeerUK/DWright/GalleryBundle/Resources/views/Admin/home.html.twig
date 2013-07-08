@@ -26,7 +26,7 @@
             <ul class="clearfix thumbnails">
                 {% for gallery in galleries %}
                     {% spaceless %}
-                        <li class="relative">
+                        <li class="relative" title="{{ gallery.name|striptags }}">
                             <a href="{{ url('seer_ukd_wright_admin_gallery_delete', {'id': gallery.id}) }}" class="absolute btn btn-danger pull-right spaced">
                                 <i class="flaticon stroke trash-3"></i>
                             </a>
@@ -39,7 +39,7 @@
 
                             <section class="desc">
                                 <p class="nomargin">{{ gallery.name|striptags }}</p>
-                                <p class="muted nomargin">{{ gallery.desc|striptags }}</p>
+                                <p class="muted nomargin" title="{{ gallery.desc|striptags }}">{{ gallery.desc|striptags }}</p>
                             </section>
                         </li>
                     {% endspaceless %}

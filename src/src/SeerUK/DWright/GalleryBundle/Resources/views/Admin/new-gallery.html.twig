@@ -16,11 +16,18 @@
             <h4>Add Gallery</h4>
         </section>
 
-        <form action="{{ path('seer_ukd_wright_admin_gallery_new') }}" method="post" {{ form_enctype(form) }}>
-            {{ form_widget(form) }}
+        {{ form_start(form) }}
 
-            <input type="submit" />
-        </form>
+            <div>
+                {{ form_errors(form.gallery) }}
+                {{ form_widget(form.gallery) }}
+            </div>
+
+            <p class="text-right">
+                <input class="btn btn-success" type="submit" />
+            </p>
+
+        {{ form_end(form) }}
     </section>
 
 {% endblock %}
