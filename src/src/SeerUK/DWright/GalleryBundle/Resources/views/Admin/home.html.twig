@@ -14,47 +14,48 @@
     <section class="main">
         <section class="page-title">
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon stroke add-window-1"></i> Add Gallery</a>
+                {% if galleries|length %}
+                    <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon stroke add-window-1"></i> Add Gallery</a>
+                {% endif %}
                 <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}" target="_blank"><i class="flaticon stroke share-2"></i> View Galleries</a>
             </div>
             <h4>Portfolio</h4>
         </section>
 
         {% if galleries|length %}
-
             <ul class="clearfix thumbnails">
-
                 {% for gallery in galleries %}
-
                     {% spaceless %}
-
                         <li class="relative">
                             <a href="{{ url('seer_ukd_wright_admin_gallery_delete', {'id': gallery.id}) }}" class="absolute btn btn-danger pull-right spaced">
                                 <i class="flaticon stroke trash-3"></i>
                             </a>
+
                             {% if gallery.galleryImages|length %}
                                 <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
                             {% else %}
                                 <img src="http://placehold.it/200x200" alt="" title="" />
                             {% endif %}
+
                             <section class="desc">
                                 <p class="nomargin">{{ gallery.name|striptags }}</p>
                                 <p class="muted nomargin">{{ gallery.desc|striptags }}</p>
                             </section>
                         </li>
-
                     {% endspaceless %}
-
                 {% endfor %}
-
             </ul>
-
         {% else %}
-
-            <p class="text-center">There are currently no galleries.</p>
-
+            <div class="well well-padded">
+                <h4 class="text-center">
+                    You currently have no galleries!<br />
+                    <small>Create a gallery to add images and videos.</small>
+                </h4>
+                <p class="text-center">
+                    <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon stroke add-window-1"></i> Add Gallery</a>
+                </p>
+            </div>
         {% endif %}
-
     </section>
 
 {% endblock %}
