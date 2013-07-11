@@ -1,0 +1,11 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_label %}
+    <div class="form_label">
+        {{ parent() }}
+
+        {% if required %}
+            <span class="muted" title="This field is required">(required)</span>
+        {% endif %}
+    </div>
+{% endblock %}
