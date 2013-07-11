@@ -61,7 +61,7 @@ class AdminController extends Controller
             }
         }
 
-        return $this->render('SeerUKDWrightGalleryBundle:Admin:new-gallery.html.twig', array(
+        return $this->render('SeerUKDWrightGalleryBundle:Admin:new_gallery.html.twig', array(
             'form' => $form->createView(),
         ));
     }

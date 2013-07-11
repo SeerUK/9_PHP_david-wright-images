@@ -32,7 +32,7 @@ body {
 }
 
 .well {
-    background: #f4f4f4;
+    background: #F3F5F7;
     border: none;
     box-shadow: none;
 }
@@ -41,8 +41,24 @@ body {
     padding: 60px 60px 50px;
 }
 
+.page-title {
+    background-color: #F3F5F7;
+    padding: 30px;
+}
+
+    .page-title h1 {
+        font-size: 22px;
+        letter-spacing: 0;
+        line-height: 34px;
+        margin: 0;
+    }
+
+.muted {
+    color: #B6BAC2;
+}
+
 form {
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 700px;
     min-width: 400px;
 }
@@ -54,23 +70,10 @@ form label {
     font-size: 14px;
 }
 
-.page-title {
-    background-color: #F3F5F7;
-    padding: 40px;
-}
-
-    .page-title h1 {
-        font-size: 22px;
-        letter-spacing: 0;
-        line-height: 34px;
-        margin: 0;
-    }
-
-.muted {
-    color: #A7ABB1;
+form .form_label .muted {
     display: inline-block;
     font-size: 13px;
-    margin-left: 10px;
+    margin-left: 6px;
 }
 
 form label span {
@@ -159,7 +162,7 @@ form textarea {
     }
 
     section.main {
-        padding: 40px 40px 0 40px;
+        padding: 30px 30px 0 30px;
     }
 
     /**
@@ -256,7 +259,7 @@ form textarea {
     .page-header {
         background: #616C7A;
         margin: 0;
-        padding: 40px;
+        padding: 30px;
     }
 
         .page-header .main {
@@ -268,21 +271,40 @@ form textarea {
             margin: 0;
         }
 
-        .page-header a {
-            color: #aaa;
-            margin-left: 10px;
+        .page-header h1 {
+            font-size: 24.5px;
+            line-height: 30px;
+            margin: 0;
         }
 
-            .page-header a:hover {
-                color: #ddd;
+            .page-header h1 a,
+            .page-header h1 a:hover {
+                color: white;
                 text-decoration: none;
             }
 
-                .page-header a:hover:after {
-                    content: "\2192";
-                    display: inline-block;
-                    margin-left: 4px;
+        .page-header h2 {
+            font-size: 14px;
+            letter-spacing: 0;
+            line-height: 20px;
+            margin: 0;
+        }
+
+            .page-header h2 a {
+                color: #B6BAC2;
+                margin-left: 10px;
+            }
+
+                .page-header h2 a:hover {
+                    color: #D8DCE4;
+                    text-decoration: none;
                 }
+
+                    .page-header h2 a:hover:after {
+                        content: "\2192";
+                        display: inline-block;
+                        margin-left: 4px;
+                    }
 
     .container-nav ul {
         list-style: none;
@@ -320,10 +342,6 @@ form textarea {
         font-size: 14px;
         font-weight: bold;
         text-transform: uppercase;
-    }
-
-    .muted {
-        color: #aaa;
     }
 
 

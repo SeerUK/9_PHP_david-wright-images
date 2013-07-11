@@ -29,12 +29,16 @@
 
     <div class="container-content">
         <header class="page-header">
-            <h3 class="main inline-block">{{ site_name }}</h3>
-            <h5 class="sub inline-block">
+            <h1 class="inline-block">
+                <a href="#">
+                    {{ site_name }} / <span class="muted">Admin</span>
+                </a>
+            </h1>
+            <h2 class="sub inline-block">
                 <a href="{{ app.request.scheme ~ '://' ~ app.request.host ~ app.request.baseUrl ~ '/' }}">
                     {{ app.request.host ~ app.request.baseUrl ~ '/' }}
                 </a>
-            </h5>
+            </h2>
         </header>
 
         {% block body %}{% endblock %}
