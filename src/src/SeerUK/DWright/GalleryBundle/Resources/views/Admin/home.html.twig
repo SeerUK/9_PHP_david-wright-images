@@ -5,23 +5,21 @@
 
 {% block title %}Portfolio{% endblock %}
 
-
 {##
  #  Page content
  #}
 {% block body %}
 
+    <section class="page-title">
+        <div class="pull-right">
+            {% if galleries|length %}
+                <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon stroke add-window-1"></i> Add Gallery</a>
+            {% endif %}
+            <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}" target="_blank"><i class="flaticon stroke share-2"></i> View Galleries</a>
+        </div>
+        <h1>Portfolio</h1>
+    </section>
     <section class="main">
-        <section class="page-title">
-            <div class="pull-right">
-                {% if galleries|length %}
-                    <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon stroke add-window-1"></i> Add Gallery</a>
-                {% endif %}
-                <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}" target="_blank"><i class="flaticon stroke share-2"></i> View Galleries</a>
-            </div>
-            <h4>Portfolio</h4>
-        </section>
-
         {% if galleries|length %}
             <ul class="clearfix thumbnails">
                 {% for gallery in galleries %}

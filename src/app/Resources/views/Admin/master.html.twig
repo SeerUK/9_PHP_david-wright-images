@@ -7,7 +7,7 @@
 
     {# Start CSS Stylesheets #}
 
-    <link href='{{ asset('http://fonts.googleapis.com/css?family=Raleway:200,300,400,500,700') }}' rel='stylesheet' type='text/css' />
+    <link href='{{ asset('http://fonts.googleapis.com/css?family=Open+Sans:300,400,700') }}' rel='stylesheet' type='text/css' />
 
     {% stylesheets
         'bundles/seerukdwrightcore/css/bootstrap.css'
@@ -29,14 +29,12 @@
 
     <div class="container-content">
         <header class="page-header">
-            <h3>
-                {{ site_name }}
-                <small>
-                    <a href="{{ app.request.scheme ~ '://' ~ app.request.host ~ app.request.baseUrl ~ '/' }}">
-                        {{ app.request.scheme ~ '://' ~ app.request.host ~ app.request.baseUrl ~ '/' }}
-                    </a>
-                </small>
-            </h3>
+            <h3 class="main inline-block">{{ site_name }}</h3>
+            <h5 class="sub inline-block">
+                <a href="{{ app.request.scheme ~ '://' ~ app.request.host ~ app.request.baseUrl ~ '/' }}">
+                    {{ app.request.host ~ app.request.baseUrl ~ '/' }}
+                </a>
+            </h5>
         </header>
 
         {% block body %}{% endblock %}

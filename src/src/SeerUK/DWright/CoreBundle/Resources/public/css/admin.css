@@ -26,8 +26,13 @@
  *
  */
 
+html,
+body {
+    min-width: 980px;
+}
+
 .well {
-    background: white;
+    background: #f4f4f4;
     border: none;
     box-shadow: none;
 }
@@ -37,36 +42,85 @@
 }
 
 form {
-    margin: 0 0 20px;
-    width: 740px;
+    margin: 0 auto;
+    max-width: 700px;
+    min-width: 400px;
 }
 
-input[type="text"],
-textarea {
-    border: none;
-    color: #55606E;
-    height: 40px;
-    margin: 0 0 10px 0;
-    outline: 0;
-    padding: 0 10px;
-    width: 100%;
-    -webkit-box-shadow: 0px 1px rgba(0, 0, 0, 0.05);
-       -moz-box-shadow: 0px 1px rgba(0, 0, 0, 0.05);
-            box-shadow: 0px 1px rgba(0, 0, 0, 0.05);
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
+form label {
+    display: inline-block;
+    margin: 0 0 12px;
+    color: #55606e;
+    font-size: 14px;
 }
 
-input[type="text"]:focus,
-textarea:focus {
-    box-shadow: none;
+.page-title {
+    background-color: #F3F5F7;
+    padding: 40px;
+}
+
+    .page-title h1 {
+        font-size: 22px;
+        letter-spacing: 0;
+        line-height: 34px;
+        margin: 0;
+    }
+
+.muted {
+    color: #A7ABB1;
+    display: inline-block;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+form label span {
+    color: #a7abb1;
+    font-size: 12px;
+}
+
+form input[type=text],
+form input[type=password],
+form textarea {
+    background: #fff;
+    border: 1px solid #c2c6cb;
+    box-sizing: border-box;
+    color: #55606e;
+    font: 14px/20px Helvetica, Arial, sans-serif;
+    margin: 0 0 28px;
     outline: none;
+    padding: 9px 10px 8px;
+    width: 100%;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+            border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.05);
+       -moz-box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.05);
+            box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.05);
 }
 
-textarea {
-    height: 360px;
-    padding: 10px;
+form input[type=text]:hover,
+form input[type=password]:hover,
+form textarea:hover {
+    border-color: #8b8f95;
+}
+
+form input[type=text]:focus,
+form input[type=password]:focus,
+form textarea:focus {
+    border-color: #8b8f95;
+    -webkit-box-shadow: 0 0 0 2px #eff1f3;
+       -moz-box-shadow: 0 0 0 2px #eff1f3;
+            box-shadow: 0 0 0 2px #eff1f3;
+}
+
+
+form input[type=text],
+form input[type=password] {
+    height: 39px;
+}
+
+form textarea {
+    height: 140px;
     resize: none;
 }
 
@@ -80,7 +134,7 @@ textarea {
 
     html,
     body {
-        background: #f4f4f4 url('../img/admin/bg.jpg') repeat-y;
+        background: white url('../img/admin/bg.jpg') repeat-y;
         height: 100%;
         margin: 0;
     }
@@ -105,7 +159,7 @@ textarea {
     }
 
     section.main {
-        padding: 30px 40px 0 40px;
+        padding: 40px 40px 0 40px;
     }
 
     /**
@@ -142,6 +196,10 @@ textarea {
         margin: 5px;
     }
 
+    .inline-block {
+        display: inline-block;
+    }
+
     .nomargin {
         margin: 0 !important;
         margin-top: 0 !important;
@@ -164,8 +222,8 @@ textarea {
     h4,
     h5,
     h6 {
-        font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 500;
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 300;
     }
 
     h1 > small,
@@ -179,6 +237,12 @@ textarea {
         letter-spacing: 0;
     }
 
+    h1,
+    h2,
+    h3 {
+        letter-spacing: -1px;
+    }
+
     h3 {
         line-height: 30px;
     }
@@ -190,13 +254,18 @@ textarea {
     }
 
     .page-header {
-        background: white;
+        background: #616C7A;
         margin: 0;
-        padding: 30px 40px 20px;
+        padding: 40px;
     }
 
-        .page-header h3 {
-            margin-top: 0;
+        .page-header .main {
+            color: white;
+            margin: 0;
+        }
+
+        .page-header .sub {
+            margin: 0;
         }
 
         .page-header a {
@@ -205,14 +274,14 @@ textarea {
         }
 
             .page-header a:hover {
-                color: #555;
+                color: #ddd;
                 text-decoration: none;
             }
 
                 .page-header a:hover:after {
                     content: "\2192";
                     display: inline-block;
-                    margin-left: 10px;
+                    margin-left: 4px;
                 }
 
     .container-nav ul {
@@ -278,6 +347,12 @@ textarea {
             white-space: nowrap;
         }
 
+            .nav > li:hover,
+            .nav > li:hover a,
+            .nav > li.active {
+                color: white;
+            }
+
             .nav > li.spacer {
                 height: 14px;
                 visibility: hidden;
@@ -325,10 +400,13 @@ textarea {
         }
 
             .thumbnails > li > section.desc > p {
+                box-sizing: border-box;
+                display: block;
                 overflow: hidden;
-                padding: 0 8px
-;                text-overflow: ellipsis;
+                padding: 0 8px;
+                text-overflow: ellipsis;
                 white-space: nowrap;
+                width: 100%;
             }
 
             .thumbnails > li > img {

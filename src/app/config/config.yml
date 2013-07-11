@@ -24,6 +24,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form:
+        resources:
+            - '::fields.html.twig'
     globals:
         site_name: %configurable.site_name%
         site_url: %configurable.site_url%
