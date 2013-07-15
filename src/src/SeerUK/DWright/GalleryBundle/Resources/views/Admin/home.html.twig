@@ -5,6 +5,13 @@
 
 {% block title %}Portfolio{% endblock %}
 
+{% block subnav %}
+
+    {% include 'SeerUKDWrightGalleryBundle:Admin:Portfolio/subnav.html.twig' %}
+
+{% endblock %}
+
+
 {##
  #  Page content
  #}
@@ -17,7 +24,7 @@
             {% endif %}
             <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}" target="_blank"><i class="flaticon stroke share-2"></i> View Galleries</a>
         </div>
-        <h1>Portfolio</h1>
+        <h3 class="section">Portfolio</h3>
     </section>
     <section class="main">
         {% if galleries|length %}

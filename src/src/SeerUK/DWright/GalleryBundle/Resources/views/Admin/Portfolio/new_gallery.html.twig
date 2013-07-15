@@ -1,0 +1,50 @@
+{##
+ #  Page metadata
+ #}
+{% extends ':Admin:master.html.twig' %}
+
+{% block title %}New Gallery{% endblock %}
+
+{% block subnav %}
+
+    {% include 'SeerUKDWrightGalleryBundle:Admin:Portfolio/subnav.html.twig' %}
+
+{% endblock %}
+
+
+{##
+ #  Page content
+ #}
+{% block body %}
+
+    <section class="page-title">
+        <h3 class="section"><a href="{{ url('seer_ukd_wright_admin_gallery') }}">&larr;</a> New Gallery</h3>
+    </section>
+    <section class="main">
+        {{ form_start(form) }}
+
+            <div>
+                {{ form_errors(form.gallery) }}
+                {{ form_widget(form.gallery) }}
+            </div>
+
+            <div>
+                <div class="form_label">
+                    <label for="" class="required">Category</label><span class="muted" title="This field is required">(required)</span>
+                </div>
+                <select name="" id="">
+                    <option value="">Test</option>
+                    <option value="">Test</option>
+                    <option value="">Test</option>
+                </select>
+            </div>
+
+            <p class="text-right">
+                <input class="btn pull-left" type="reset" value="Reset" />
+                <input class="btn btn-success pull-right" type="submit" value="Create Gallery" />
+            </p>
+
+        {{ form_end(form) }}
+    </section>
+
+{% endblock %}

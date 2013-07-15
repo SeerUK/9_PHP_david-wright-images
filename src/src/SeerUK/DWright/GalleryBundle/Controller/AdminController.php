@@ -40,7 +40,7 @@ class AdminController extends Controller
      */
     public function newGalleryAction()
     {
-        $em      = $this->getDoctrine()->getEntityManager();
+        $em      = $this->getDoctrine()->getManager();
         $request = $this->getRequest();
         $form    = $this->createForm(
             new CreateGalleryType(),
@@ -61,7 +61,7 @@ class AdminController extends Controller
             }
         }
 
-        return $this->render('SeerUKDWrightGalleryBundle:Admin:new_gallery.html.twig', array(
+        return $this->render('SeerUKDWrightGalleryBundle:Admin:Portfolio/new_gallery.html.twig', array(
             'form' => $form->createView(),
         ));
     }
@@ -76,7 +76,7 @@ class AdminController extends Controller
             throw $this->createNotFoundException('That gallery doesn\'t exist.');
         }
 
-        $em = $this->getDoctrine()->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
         $em->remove($gallery);
         $em->flush();
 

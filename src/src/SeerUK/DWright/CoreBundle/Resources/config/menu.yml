@@ -16,11 +16,11 @@ primary:
         enabled: true
 
 admin_primary:
-    Home:
+    Dashboard:
         enabled: true
-        class: flaticon stroke home-2
+        class: flaticon stroke graph-2
 
-    About:
+    Pages:
         enabled: true
         class: flaticon stroke article-3
 
@@ -29,16 +29,8 @@ admin_primary:
         class: flaticon stroke photo-1
         routes:
             - "seer_ukd_wright_admin_gallery"
-            - "seer_ukd_wright_admin_gallery_new_gallery"
+            - "seer_ukd_wright_admin_gallery_new"
         target: "seer_ukd_wright_admin_gallery"
-
-    Contact:
-        enabled: true
-        class: flaticon stroke mail-3
-
-    spacer2:
-        enabled: true
-        class: spacer
 
     Settings:
         enabled: true

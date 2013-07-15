@@ -1,9 +1,12 @@
 <div class="container-nav">
-
     {% include ':Admin:primary_nav.html.twig' %}
 
-    <ul>
-        <li class="section">Logged in as {{ app.user.userName }}</li>
-        <li><a href="{{ path('seer_ukd_wright_account_logout') }}">Sign Out</a></li>
+    <ul class="nav nav-user">
+        <li>
+            <a class="nav-anchor" href="{{ path('seer_ukd_wright_account_logout') }}">
+                <i class="icon flaticon stroke logout-1"></i><br />
+                <span class="name">Sign Out</span>
+            </a>
+        </li>
     </ul>
 </div>

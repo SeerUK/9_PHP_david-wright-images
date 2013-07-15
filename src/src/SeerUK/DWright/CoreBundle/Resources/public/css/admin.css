@@ -1,533 +1,144 @@
 /*!
- * David Wright Admin CSS
+ * David Wright Images
  *
- * Main admin stylesheet, probably duplicating some styles with the main
- * stylesheet, but oh well ...
- */
-
-
-/**
- * Contents
+ * Copyright 2013 Elliot Wright
+ * This is licensed under the ":) Licence".
+ * http://licence.visualidiot.com/
  *
- * 1.0 ... Page Setup
- *     1.1 ... Base
- *     1.2 ... Containers
- *     1.3 ... Support Styles
- * 2.0 ... Typography
- *     2.1 ... Headers
- *     2.2 ... Paragraphs
- *     2.3 ... Support Styles
- * 3.0 ... Components
- *     3.1 ... Navigation
- *     3.2 ... Thumbnails
- *     3.3 ... Buttons
- * 4.0 ... Icons
- *     4.1 ... Navigation Icons
- *
+ * Designed and built with all the love in the world by @SeerUK
  */
 
 html,
 body {
-    min-width: 980px;
+    height: 100%;
 }
 
-.well {
-    background: #F3F5F7;
-    border: none;
-    box-shadow: none;
-}
-
-.well-padded {
-    padding: 60px 60px 50px;
-}
-
-.page-title {
-    background-color: #F3F5F7;
-    padding: 30px;
-}
-
-    .page-title h1 {
-        font-size: 22px;
-        letter-spacing: 0;
-        line-height: 34px;
-        margin: 0;
-    }
-
-.muted {
-    color: #B6BAC2;
+body {
+    background: #fff;
+    font: 14px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0;
+    min-height: 500px;
+    padding: 0 0 0 130px;
 }
 
 form {
-    margin: 20px auto;
-    max-width: 700px;
     min-width: 400px;
-}
-
-form label {
-    display: inline-block;
-    margin: 0 0 12px;
-    color: #55606e;
-    font-size: 14px;
-}
-
-form .form_label .muted {
-    display: inline-block;
-    font-size: 13px;
-    margin-left: 6px;
-}
-
-form label span {
-    color: #a7abb1;
-    font-size: 12px;
-}
-
-form input[type=text],
-form input[type=password],
-form textarea {
-    background: #fff;
-    border: 1px solid #c2c6cb;
-    box-sizing: border-box;
-    color: #55606e;
-    font: 14px/20px Helvetica, Arial, sans-serif;
-    margin: 0 0 28px;
-    outline: none;
-    padding: 9px 10px 8px;
-    width: 100%;
-    -webkit-border-radius: 2px;
-       -moz-border-radius: 2px;
-            border-radius: 2px;
-    -webkit-box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.05);
-       -moz-box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.05);
-            box-shadow: inset 0 1px 1px 0 rgba(0,0,0,0.05);
-}
-
-form input[type=text]:hover,
-form input[type=password]:hover,
-form textarea:hover {
-    border-color: #8b8f95;
-}
-
-form input[type=text]:focus,
-form input[type=password]:focus,
-form textarea:focus {
-    border-color: #8b8f95;
-    -webkit-box-shadow: 0 0 0 2px #eff1f3;
-       -moz-box-shadow: 0 0 0 2px #eff1f3;
-            box-shadow: 0 0 0 2px #eff1f3;
-}
-
-
-form input[type=text],
-form input[type=password] {
-    height: 39px;
-}
-
-form textarea {
-    height: 140px;
-    resize: none;
+    max-width: 800px;
 }
 
 /**
- * 1.0 ... Page Setup
+ * Primary Navigation
  */
 
-    /**
-     * 1.1 ... Base
-     */
+.container-nav {
+    background: #0e0e0e;
+    bottom: 0;
+    color: white;
+    font: 14px/20px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    left: 0;
+    min-height: 500px;
+    position: fixed;
+    top: 0;
+    width: 130px;
+}
 
-    html,
-    body {
-        background: white url('../img/admin/bg.jpg') repeat-y;
-        height: 100%;
-        margin: 0;
-    }
-
-    /**
-     * 1.2 ... Containers
-     */
-
-    .container-content {
-        margin-left: 260px;
-        min-height: 100%;
-        width: auto;
-    }
-
-    .container-nav {
-        color: #A7ABB1;
-        float: left;
-        font-size: 14px;
-        line-height: 27px;
-        padding: 30px 36px;
-        width: 200px;
-    }
-
-    section.main {
-        padding: 30px 30px 0 30px;
-    }
-
-    /**
-     * 1.3 ... Support Styles
-     */
-
-    .absolute {
-        position: absolute;
-        z-index: 2;
-    }
-
-    .relative {
-        position: relative;
-        z-index: 1;
-    }
-
-    .absolute.pull-top {
-        top: 0;
-    }
-
-    .absolute.pull-right {
-        right: 0;
-    }
-
-    .absolute.pull-bottom {
+    .container-nav .nav-user {
         bottom: 0;
-    }
-
-    .absolute.pull-left {
         left: 0;
+        position: absolute;
+        width: 70px;
     }
 
-    .absolute.spaced {
-        margin: 5px;
-    }
-
-    .inline-block {
-        display: inline-block;
-    }
-
-    .nomargin {
-        margin: 0 !important;
-        margin-top: 0 !important;
-        margin-right: 0 !important;
-        margin-bottom: 0 !important;
-        margin-left: 0 !important;
-    }
-
-/**
- * 2.0 ... Typography
- */
-
-    /**
-     * 2.1 ... Headers
-     */
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 300;
-    }
-
-    h1 > small,
-    h2 > small,
-    h3 > small,
-    h4 > small,
-    h5 > small,
-    h6 > small {
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: normal;
-        letter-spacing: 0;
-    }
-
-    h1,
-    h2,
-    h3 {
-        letter-spacing: -1px;
-    }
-
-    h3 {
-        line-height: 30px;
-    }
-
-    h4 {
-        font-size: 20px;
-        line-height: 25px;
-        margin: 0 0 25px;
-    }
-
-    .page-header {
-        background: #616C7A;
+    .container-nav .nav {
+        list-style: none;
         margin: 0;
         padding: 30px;
     }
 
-        .page-header .main {
-            color: white;
-            margin: 0;
+        .container-nav .nav li {
+            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
         }
 
-        .page-header .sub {
-            margin: 0;
-        }
-
-        .page-header h1 {
-            font-size: 24.5px;
-            line-height: 30px;
-            margin: 0;
-        }
-
-            .page-header h1 a,
-            .page-header h1 a:hover {
-                color: white;
-                text-decoration: none;
-            }
-
-        .page-header h2 {
-            font-size: 14px;
-            letter-spacing: 0;
-            line-height: 20px;
-            margin: 0;
-        }
-
-            .page-header h2 a {
-                color: #B6BAC2;
-                margin-left: 10px;
-            }
-
-                .page-header h2 a:hover {
-                    color: #D8DCE4;
-                    text-decoration: none;
-                }
-
-                    .page-header h2 a:hover:after {
-                        content: "\2192";
-                        display: inline-block;
-                        margin-left: 4px;
-                    }
-
-    .container-nav ul {
-        list-style: none;
-        margin-left: 0;
-    }
-
-    .container-nav ul > li.section  {
-        color: #7E8186;
-        font-size: 11px;
-        margin: 0;
-        text-transform: uppercase;
-    }
-
-    .container-nav a {
-        color: #A7ABB1;
-    }
-
-        .container-nav a:hover {
-            color: white;
-            text-decoration: none;
-        }
-
-
-    /**
-     * 2.2 ... Paragraphs
-     */
-
-
-    /**
-     * 2.3 ... Support Styles
-     */
-
-    .emp {
-        color: #f74f4f;
-        font-size: 14px;
-        font-weight: bold;
-        text-transform: uppercase;
-    }
-
-
-/**
- * 3.0 ... Components
- */
-
-    /**
-     * 3.1 ... Navigation
-     */
-
-    .nav {
-        list-style: none;
-        margin: 0 0 30px;
-    }
-
-        .nav > li {
-            margin: 6px 0;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
-            .nav > li:hover,
-            .nav > li:hover a,
-            .nav > li.active {
-                color: white;
-            }
-
-            .nav > li.spacer {
-                height: 14px;
-                visibility: hidden;
-            }
-
-            .nav > li,
-            .nav > li > a {
-                color: #A7ABB1;
-            }
-
-            .nav > li > a,
-            .nav > li > span {
-                display: inline-block;
-                margin-left: 6px;
-            }
-
-                .nav > li > a:hover,
-                .nav > li > a.active {
-                    background-color: transparent;
-                    color: white;
-                    text-decoration: none;
-                }
-
-    /**
-     * 3.2 ... Thumbnails
-     */
-
-    .thumbnails {
-        display: block;
-        list-style: none;
-        margin: 0;
-        margin-left: -16px;
-        width: 100%;
-        width: calc(100% + 16px);
-    }
-
-        .thumbnails > li {
-            color: #55606E;
-            display: block;
-            float: left;
-            margin: 0 0 0 16px;
-            padding-bottom: 16px;
-            text-align: left;
-            width: 200px;
-        }
-
-            .thumbnails > li > section.desc > p {
-                box-sizing: border-box;
-                display: block;
-                overflow: hidden;
-                padding: 0 8px;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                width: 100%;
-            }
-
-            .thumbnails > li > img {
-                border-radius: 3px;
-                margin-bottom: 8px;
-                opacity: 1;
-                position: relative;
-                -webkit-transition: opacity .1s ease-in;
-                   -moz-transition: opacity .1s ease-in;
-                     -o-transition: opacity .1s ease-in;
-                        transition: opacity .1s ease-in;
-                width: 100%;
-                z-index: 1;
-            }
-
-                .thumbnails > li:hover > img {
-                    opacity: 0.6;
-                }
-
-    /**
-     * 3.3 ... Buttons
-     */
-
-    .btn {
-        background-color: #bbb;
-        background-image: none;
-        box-shadow: none;
-        border: none;
+    .container-nav .nav-anchor {
         color: white;
-        display: inline-block;
-        font-weight: bold;
-        padding: 8px 14px;
-        text-shadow: none;
+        display: block;
+        font-size: 24px;
+        line-height: 1.1;
+        opacity: 0.4;
+        text-decoration: none;
     }
 
-        .btn:hover {
-            background-color: #ccc;
-            color: white;
+    .container-nav .nav li.active .nav-anchor,
+    .container-nav .nav-anchor:hover,
+    .container-nav .nav-anchor:focus {
+        outline: 0;
+        opacity: 1;
+        text-decoration: none;
+    }
+
+        .container-nav .nav-anchor .icon {
+            background: #212121 ;
+            border-radius: 3px;
+            display: inline-block;
+            font-size: 16px;
+            padding: 12px 13px 11px;
         }
 
-    .btn-success {
-        background-color: #7CC576;
-    }
-
-        .btn-success:hover {
-            background-color: #8CD286;
-        }
-
-    .btn-danger {
-        background-color: #F26C4F;
-    }
-
-        .btn-danger:hover {
-            background-color: #FF8267;
+        .container-nav .nav-anchor .name {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 300;
         }
 
 
 /**
- * 4.0 ... Icons
+ * Secondary Navigation
  */
 
-    /**
-     * 4.1 ... Navigation Icons
-     */
+.container-subnav {
+    background: #212121;
+    color: #666;
+    height: 100%;
+    left: 130px;
+    top: 0;
+    position: absolute;
+    width: 260px;
+}
 
-    [class^="nav-icon-"],
-    [class*=" nav-icon-"] {
-        background: url('../img/admin/nav-icons.png') no-repeat;
-        padding: 1px 0 0 25px;
+    .container-subnav .inner {
+        background: #212121;
+        padding: 30px;
     }
 
-    .nav-icon-dashboard {
-        background-position: 0 -59px;
+    .container-subnav .section,
+    .container-subnav .section a {
+        color: #ddd;
+        margin-bottom: 24px;
+        text-decoration: none;
     }
 
-        .nav-icon-dashboard:hover,
-        .nav-icon-dashboard.active {
-            background-position: 0 -174px;
+        .container-subnav .section a:hover {
+            text-decoration: underline;
         }
 
-    .nav-icon-grid {
-        background-position: 0 -31px;
+
+/**
+ * Page Content
+ */
+.container-content {
+    margin-left: 260px;
+    padding: 30px;
+}
+
+    .container-content .section,
+    .container-content .section a {
+        color: #333;
+        margin-bottom: 24px;
+        text-decoration: none;
     }
 
-        .nav-icon-grid:hover,
-        .nav-icon-grid.active {
-            background-position: 0 -146px;
-        }
-
-    .nav-icon-gallery {
-        background-position: 0 -117px;
-    }
-
-        .nav-icon-gallery:hover,
-        .nav-icon-gallery.active {
-            background-position: 0 -232px;
-        }
-
-    .nav-icon-page {
-        background-position: 0 -88px;
-    }
-
-        .nav-icon-page:hover,
-        .nav-icon-page.active {
-            background-position: 0 -203px;
+        .container-content .section a:hover {
+            text-decoration: underline;
         }

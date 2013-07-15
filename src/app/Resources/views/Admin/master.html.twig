@@ -3,15 +3,15 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=0.9">
-    <title>{% block title %}{% endblock %}{% if block('title') %} | {% endif %} Admin | {{ site_name }}</title>
+    <title>{% block title %}{% endblock %}{% if block('title') %} - {% endif %} Admin - {{ site_name }}</title>
 
     {# Start CSS Stylesheets #}
 
     <link href='{{ asset('http://fonts.googleapis.com/css?family=Open+Sans:300,400,700') }}' rel='stylesheet' type='text/css' />
 
     {% stylesheets
-        'bundles/seerukdwrightcore/css/bootstrap.css'
-        'bundles/seerukdwrightcore/css/bootstrap-responsive.css'
+        'bundles/seerukdwrightcore/css/normalize.css'
+        'bundles/seerukdwrightcore/css/framework.css'
         'bundles/seerukdwrightcore/css/admin.css'
         'bundles/seerukdwrightcore/fonts/flaticons-stroke/stroke.css'
         filter='cssrewrite' combine=true output='css/adminaggregate.css'
@@ -27,8 +27,14 @@
 
     {% include ':Admin:header.html.twig' %}
 
+    <div class="container-subnav">
+        <div class="inner">
+            {% block subnav %}{% endblock %}
+        </div>
+    </div>
+
     <div class="container-content">
-        <header class="page-header">
+<!--         <header class="page-header">
             <h1 class="inline-block">
                 <a href="#">
                     {{ site_name }} / <span class="muted">Admin</span>
@@ -39,7 +45,7 @@
                     {{ app.request.host ~ app.request.baseUrl ~ '/' }}
                 </a>
             </h2>
-        </header>
+        </header> -->
 
         {% block body %}{% endblock %}
     </div>

@@ -5,25 +5,29 @@
 <nav role="navigation">
     <ul class="nav">
         {% for key, item in primary_nav if item.enabled is defined and item.enabled %}
-
             {% set active = '' %}
             {% if item.routes is defined and app.request.attributes.get('_route') in item.routes %}
                 {% set active = 'active' %}
             {% endif %}
 
-            <li class="{{ item.class }} {{ active }}">
+            <li class="clearfix {{ active }}">
 
                 {% if item.target is defined %}
 
-                    <a class="{{ active }}" href="{{ url(item.target) }}">{{ key }}</a>
+                    <a class="nav-anchor" title="{{ key }}" href="{{ url(item.target) }}">
+                        <i class="icon {{ item.class }}"></i><br />
+                        <span class="name">{{ key }}</span>
+                    </a>
 
                 {% else %}
 
-                    <span>{{ key }}</span>
+                    <a class="nav-anchor" title="{{ key }}" href="#">
+                        <i class="icon {{ item.class }}"></i><br />
+                        <span class="name">{{ key }}</span>
+                    </a>
 
                 {% endif %}
             </li>
-
         {% endfor %}
     </ul>
 </nav>
