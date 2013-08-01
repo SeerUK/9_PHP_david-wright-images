@@ -57,7 +57,11 @@ class AdminController extends Controller
                 $em->persist($gallery);
                 $em->flush();
 
-                return new Response('Gallery ' . $gallery->getName() . ' successfully created.');
+                return $this->render('SeerUKDWrightGalleryBundle:Admin:Portfolio/success.html.twig', array(
+                    'type'   => 'Gallery',
+                    'name'   => $gallery->getName(),
+                    'action' => 'created',
+                ));
             }
         }
 

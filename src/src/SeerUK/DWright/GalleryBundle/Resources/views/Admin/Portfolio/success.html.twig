@@ -1,0 +1,27 @@
+{##
+ #  Page metadata
+ #}
+{% extends ':Admin:master.html.twig' %}
+
+{% block title %}Success{% endblock %}
+
+{% block subnav %}
+
+    {% include 'SeerUKDWrightGalleryBundle:Admin:Portfolio/subnav.html.twig' %}
+
+{% endblock %}
+
+
+{##
+ #  Page content
+ #}
+{% block body %}
+
+    <section class="page-title">
+        <h3 class="section"><a href="{{ url('seer_ukd_wright_admin_gallery') }}">&larr;</a> New Gallery</h3>
+    </section>
+    <section class="main">
+        <p>{{ type }} '{{ name }}' {{ action }} successfully.</p>
+    </section>
+
+{% endblock %}

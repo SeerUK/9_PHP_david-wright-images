@@ -24,7 +24,7 @@
             {% endif %}
             <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}" target="_blank"><i class="flaticon stroke share-2"></i> View Galleries</a>
         </div>
-        <h3 class="section">Portfolio</h3>
+        <h3 class="section">Galleries</h3>
     </section>
     <section class="main">
         {% if galleries|length %}
@@ -32,19 +32,19 @@
                 {% for gallery in galleries %}
                     {% spaceless %}
                         <li class="relative" title="{{ gallery.name|striptags }}">
-                            <a href="{{ url('seer_ukd_wright_admin_gallery_delete', {'id': gallery.id}) }}" class="absolute btn btn-danger pull-right spaced">
+                            <a href="{{ url('seer_ukd_wright_admin_gallery_delete', {'id': gallery.id}) }}" class="btn-delete">
                                 <i class="flaticon stroke trash-3"></i>
                             </a>
 
                             {% if gallery.galleryImages|length %}
-                                <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" />
+                                <img src="{{ asset(gallery.galleryImages[0].webThumbPath) }}" alt="" title="" width="200" height="200" />
                             {% else %}
-                                <img src="http://placehold.it/200x200" alt="" title="" />
+                                <img src="http://lorempixel.com/200/200/?{{ random() }}" alt="" title="" width="200" height="200" />
                             {% endif %}
 
                             <section class="desc">
-                                <p class="nomargin">{{ gallery.name|striptags }}</p>
-                                <p class="muted nomargin" title="{{ gallery.desc|striptags }}">{{ gallery.desc|striptags }}</p>
+                                <p>{{ gallery.name|striptags }}</p>
+                                <p class="muted" title="{{ gallery.desc|striptags }}">{{ gallery.desc|striptags }}</p>
                             </section>
                         </li>
                     {% endspaceless %}

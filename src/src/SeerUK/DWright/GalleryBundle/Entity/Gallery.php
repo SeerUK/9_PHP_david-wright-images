@@ -1,9 +1,18 @@
 <?php
 
+/**
+ * Gallery Entity
+ *
+ * Acts as a container for a single gallery
+ *
+ * @package    DWright
+ * @subpackage GalleryBundle
+ */
+
 namespace SeerUK\DWright\GalleryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Gallery
@@ -23,12 +32,14 @@ class Gallery
 
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(name="strGalleryName", type="string", length=50)
      */
     protected $name;
 
 
     /**
+     * @Assert\NotBlank()
      * @ORM\Column(name="strGalleryDesc", type="string", length=5000)
      */
     protected $desc;
