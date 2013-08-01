@@ -12,28 +12,14 @@
 namespace SeerUK\DWright\GalleryBundle\Helper;
 
 use Doctrine\ORM\NoResultException;
+use SeerUK\DWright\GalleryBundle\Helper\EntityHelper;
 
 /**
  * Provides more flexible, decoupled access to Gallery related repositories
  * and entities.
  */
-class GalleryHelper
+class GalleryHelper extends EntityHelper
 {
-    /**
-     * @var object
-     */
-    protected $em;
-
-
-    /**
-     * @param object $em
-     */
-    public function __construct($em)
-    {
-        $this->em = $em;
-    }
-
-
     /**
      * Returns the paginated gallery overview page data
      *
