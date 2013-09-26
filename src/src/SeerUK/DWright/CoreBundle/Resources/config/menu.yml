@@ -18,15 +18,15 @@ primary:
 admin_primary:
     Dashboard:
         enabled: true
-        class: flaticon stroke graph-2
+        class: graph-2
 
     Pages:
         enabled: true
-        class: flaticon stroke article-3
+        class: article-3
 
     Portfolio:
         enabled: true
-        class: flaticon stroke photo-1
+        class: camera-4
         routes:
             - "seer_ukd_wright_admin_gallery"
             - "seer_ukd_wright_admin_gallery_new"
@@ -34,4 +34,4 @@ admin_primary:
 
     Settings:
         enabled: true
-        class: flaticon stroke settings-1
+        class: settings-1

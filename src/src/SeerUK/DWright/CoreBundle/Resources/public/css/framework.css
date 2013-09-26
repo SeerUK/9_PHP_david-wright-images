@@ -95,7 +95,7 @@ h3 {
 .btn {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 7px 14px;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: 500;
@@ -294,16 +294,16 @@ fieldset[disabled] .btn-danger.active {
 }
 
 .btn-success {
-    background-color: #5cb85c;
-    border-color: #5cb85c;
+    background-color: #00AD6F;
+    border-color: #00AD6F;
 }
 
 .btn-success:hover,
 .btn-success:focus,
 .btn-success:active,
 .btn-success.active {
-    background-color: #4cae4c;
-    border-color: #449d44;
+    background-color: #00925E;
+    border-color: #00925E;
 }
 
 .btn-success.disabled:hover,
@@ -318,8 +318,8 @@ fieldset[disabled] .btn-success:active,
 .btn-success.disabled.active,
 .btn-success[disabled].active,
 fieldset[disabled] .btn-success.active {
-    background-color: #5cb85c;
-    border-color: #5cb85c;
+    background-color: #00AD6F;
+    border-color: #00AD6F;
 }
 
 .btn-info {

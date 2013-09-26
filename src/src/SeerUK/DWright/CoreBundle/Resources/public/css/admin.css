@@ -39,7 +39,7 @@ form {
     min-height: 500px;
     position: fixed;
     top: 0;
-    width: 130px;
+    width: 100px;
 }
 
     .container-nav .nav-user {
@@ -52,38 +52,53 @@ form {
     .container-nav .nav {
         list-style: none;
         margin: 0;
-        padding: 30px;
+        padding: 30px 0 20px;
+        width: 100%;
     }
 
         .container-nav .nav li {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             text-align: center;
             width: 100%;
         }
+
+            .container-nav .nav li.active {
+                background-color: #212121;
+            }
+
+            .container-nav .nav li a {
+                opacity: 0.5;
+                padding: 14px 0;
+            }
+
+            .container-nav .nav li.active a,
+            .container-nav .nav li:hover a {
+                opacity: 1;
+            }
 
     .container-nav .nav-anchor {
         color: white;
         display: block;
         font-size: 24px;
         line-height: 1.1;
-        opacity: 0.4;
         text-decoration: none;
     }
+
+        .container-nav .nav-anchor i {
+            display: block;
+            margin: auto;
+        }
 
     .container-nav .nav li.active .nav-anchor,
     .container-nav .nav-anchor:hover,
     .container-nav .nav-anchor:focus {
         outline: 0;
-        opacity: 1;
         text-decoration: none;
     }
 
         .container-nav .nav-anchor .icon {
-            background: #212121 ;
-            border-radius: 3px;
             display: inline-block;
-            font-size: 16px;
-            padding: 12px 13px 11px;
+            font-size: 15px;
         }
 
         .container-nav .nav-anchor .name {
@@ -99,12 +114,12 @@ form {
 
 .container-subnav {
     background: #212121;
-    color: #666;
+    color: #777;
     height: 100%;
-    left: 130px;
+    left: 100px;
     top: 0;
     position: absolute;
-    width: 260px;
+    width: 280px;
 }
 
     .container-subnav .inner {
@@ -128,7 +143,7 @@ form {
  * Page Content
  */
 .container-content {
-    margin-left: 260px;
+    margin-left: 250px;
     padding: 30px;
 }
 

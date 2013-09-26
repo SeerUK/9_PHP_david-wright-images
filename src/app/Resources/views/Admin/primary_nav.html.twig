@@ -15,14 +15,14 @@
                 {% if item.target is defined %}
 
                     <a class="nav-anchor" title="{{ key }}" href="{{ url(item.target) }}">
-                        <i class="icon {{ item.class }}"></i><br />
+                        <i class="flaticon flaticon-{{ item.class }}"></i>
                         <span class="name">{{ key }}</span>
                     </a>
 
                 {% else %}
 
                     <a class="nav-anchor" title="{{ key }}" href="#">
-                        <i class="icon {{ item.class }}"></i><br />
+                        <i class="flaticon flaticon-{{ item.class }}"></i>
                         <span class="name">{{ key }}</span>
                     </a>
 
