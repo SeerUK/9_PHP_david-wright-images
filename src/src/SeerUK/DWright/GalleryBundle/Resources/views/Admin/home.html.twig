@@ -22,7 +22,6 @@
             {% if galleries|length %}
                 <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon stroke add-window-1"></i> Add Gallery</a>
             {% endif %}
-            <a class="btn" href="{{ url('seer_ukd_wright_gallery_homepage') }}" target="_blank"><i class="flaticon stroke share-2"></i> View Galleries</a>
         </div>
         <h3 class="section">Galleries</h3>
     </section>
@@ -52,12 +51,10 @@
             </ul>
         {% else %}
             <div class="well well-padded">
-                <h4 class="text-center">
-                    You currently have no galleries!<br />
-                    <small>Create a gallery to add images and videos.</small>
-                </h4>
+                <h3 class="text-center">You currently have no galleries!</h3>
+                <p class="text-center">Create a gallery to add photos. You can use galleries to show off recent work or to group a set of photos.</p>
                 <p class="text-center">
-                    <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon stroke add-window-1"></i> Add Gallery</a>
+                    <a class="btn btn-success" href="{{ url('seer_ukd_wright_admin_gallery_new') }}"><i class="flaticon16 flaticon16-plus-2"></i> Add Gallery</a>
                 </p>
             </div>
         {% endif %}

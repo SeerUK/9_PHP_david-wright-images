@@ -30,7 +30,7 @@ class AdminController extends Controller
         $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
 
         return $this->render('SeerUKDWrightGalleryBundle:Admin:home.html.twig', array(
-            'galleries' => $galleryHelper->getPaginatedHomeView(false)
+            'galleries' => $galleryHelper->getPaginatedHomeView(false),
         ));
     }
 
@@ -47,6 +47,9 @@ class AdminController extends Controller
             new CreateGallery()
         );
 
+        $galleryHelper = $this->get('seer_ukd_wright_gallery.gallery_helper');
+        $galleries     = $galleryHelper->getPaginatedHomeView(false);
+
         if ($request->getMethod() == 'POST') {
             $form->bind($this->getRequest());
 
@@ -58,15 +61,17 @@ class AdminController extends Controller
                 $em->flush();
 
                 return $this->render('SeerUKDWrightGalleryBundle:Admin:Portfolio/success.html.twig', array(
-                    'type'   => 'Gallery',
-                    'name'   => $gallery->getName(),
-                    'action' => 'created',
+                    'type'      => 'Gallery',
+                    'name'      => $gallery->getName(),
+                    'action'    => 'created',
+                    'galleries' => $galleries,
                 ));
             }
         }
 
         return $this->render('SeerUKDWrightGalleryBundle:Admin:Portfolio/new_gallery.html.twig', array(
-            'form' => $form->createView(),
+            'form'      => $form->createView(),
+            'galleries' => $galleries,
         ));
     }
 

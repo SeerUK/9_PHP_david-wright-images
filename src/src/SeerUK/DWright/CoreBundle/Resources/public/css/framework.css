@@ -51,6 +51,10 @@
     border: 0;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .muted {
     color: #A7ABB1;
 }
@@ -69,6 +73,13 @@
 
 .relative {
     position: relative;
+}
+
+.sep {
+    background: #444;
+    margin: 20px 0;
+    height: 1px;
+    width: 100%;
 }
 
 body {
@@ -92,10 +103,16 @@ h3 {
     line-height: 30px;
 }
 
+.well {
+    background: #f8f8f8;
+    border-radius: 3px;
+    padding: 20px;
+}
+
 .btn {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: inline-block;
-    padding: 7px 14px;
+    padding: 8px 14px;
     margin-bottom: 0;
     font-size: 14px;
     font-weight: 500;
